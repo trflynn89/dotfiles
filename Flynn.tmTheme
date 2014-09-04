@@ -166,7 +166,7 @@
 			<key>name</key>
 			<string>Keyword</string>
 			<key>scope</key>
-			<string>keyword, entity.name.tag.css</string>
+			<string>keyword, entity.name.tag.css, storage.modifier</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
