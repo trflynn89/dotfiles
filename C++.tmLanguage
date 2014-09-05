@@ -71,7 +71,7 @@
 			<key>comment</key>
 			<string>common C++ instance var naming idiom -- fMemberName</string>
 			<key>match</key>
-			<string>\b(f|m|s)_[A-Za-z]\w*\b</string>
+			<string>\b(f|m|s|g)_[A-Za-z]\w*\b</string>
 			<key>name</key>
 			<string>variable.other.readwrite.member.c++</string>
 		</dict>
