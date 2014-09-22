@@ -1,0 +1,13 @@
+{
+    "color_scheme": "Packages/User/Flynn.tmTheme",
+
+    // Don't let the tabs bunch up
+    "enable_tab_scrolling": false,
+
+    // Editing behavior
+    "ensure_newline_at_eof_on_save": true,
+    "trim_trailing_white_space_on_save": true,
+
+    // Ignore these files in the GoTo Anything feature
+    "file_exclude_patterns": ["*.d", "*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", "*.psd", "*.db", "*.sublime-workspace"],
+}
