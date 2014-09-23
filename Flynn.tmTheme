@@ -57,7 +57,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#ed6d54</string>
+				<string>#f18b77</string>
 			</dict>
 		</dict>
 		<dict>
@@ -96,7 +96,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#AE81FF</string>
+				<string>#bb95ff</string>
 			</dict>
 		</dict>
 		<dict>
