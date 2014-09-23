@@ -38,3 +38,8 @@ YANG syntax highlighting
 Open the Command Palette, start typing "instpkg" and select the Install Package option. Start typing YANG, and select "YANG Syntax Highlighting".
 
 The yang-syntax.tmLanguage file in this repository fixes some issues with this package and adds support for the "tailf:" statements. Open the Command Palette, start typing Open Resource, and open the YANG > yang-syntax.tmLanguage file. Replace its contents with the file in this repository.
+
+Other recommended packages
+------
+
+Makefile Improved: https://sublime.wbond.net/packages/Makefile%20Improved
