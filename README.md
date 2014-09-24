@@ -1,7 +1,7 @@
 sublime
 =======
 
-My sublime language / theme settings. Provides simplified language settings for C/C++ and slightly personalized syntax highlighting. Also provides YANG syntax highlighting with tailf support.
+My sublime language / theme settings. Provides simplified language settings for C/C++ and slightly personalized syntax highlighting. Also provides MIB and YANG syntax highlighting with tailf support.
 
 Editing user settings
 ------
@@ -38,6 +38,11 @@ YANG syntax highlighting
 Open the Command Palette, start typing "instpkg" and select the Install Package option. Start typing YANG, and select "YANG Syntax Highlighting".
 
 The yang-syntax.tmLanguage file in this repository fixes some issues with this package and adds support for the "tailf:" statements. Open the Command Palette, start typing Open Resource, and open the YANG > yang-syntax.tmLanguage file. Replace its contents with the file in this repository.
+
+MIB syntax highlighting
+------
+
+Create a directory called MIB in the same directory as the C++, YANG, User, etc. directories. Place MIB.tmLanguage from this repository in the MIB directory.
 
 Other recommended packages
 ------
