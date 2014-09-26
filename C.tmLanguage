@@ -460,7 +460,7 @@
 			(\b
 				(?!(new|delete|while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\s*\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\b | :: )++                  # actual name
 			)
-			 (\(|&lt;)</string>
+			 \s*(\(|&lt;)</string>
 					<key>name</key>
 					<string>meta.function-call.c</string>
 				</dict>
