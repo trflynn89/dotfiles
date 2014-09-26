@@ -133,7 +133,8 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#8ABEB7</string>
+				<!--string>#8ABEB7</string-->
+				<string>#ff5a73</string>
 			</dict>
 		</dict>
 		<dict>
