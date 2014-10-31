@@ -775,7 +775,7 @@
     {
         "class": "quick_panel_label",
         "fg": [255,255,255,255],
-        "match_fg": [104,81,49,255],
+        "match_fg": [140,120,213,255],
         "selected_fg": [255,255,255,255],
         "selected_match_fg": [255,223,0,255]
     },
@@ -830,7 +830,7 @@
     {
         "class": "auto_complete_label",
         "fg": [255,255,255],
-        "match_fg": [104,81,49,255],
+        "match_fg": [140,120,213,255],
         "selected_fg": [255,255,255,255],
         "selected_match_fg": [255,223,0,255]
     },
