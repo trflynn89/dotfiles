@@ -3,11 +3,6 @@ sublime
 
 My sublime language / theme settings. Provides simplified language settings for C/C++ and slightly personalized syntax highlighting. Also provides MIB and YANG syntax highlighting with tailf support.
 
-Editing user settings
-------
-
-Go to "Preferences >  Settings - User" and replace the file contents with Preferences.sublime-settings file in this repository.
-
 Editing language resources
 ------
 
@@ -17,6 +12,11 @@ To edit language/syntax settings, I use PackageResourceViewer. This sublime plug
 
 Install the Package Control plugin here:
 https://sublime.wbond.net/installation
+
+#####Seti Theme
+
+First install the Seti Theme from here:
+https://sublime.wbond.net/packages/Seti_UI
 
 #####PackageResourceViewer
 
@@ -31,6 +31,11 @@ We can now edit any language file with PackageResourceViewer. Open the Command P
 #####Editing syntax highlighting
 
 Copy the Flynn.tmTheme file to same location as the Preferences.sublime-settings file. Then select "Preferences > Color Scheme > User > Flynn". FYI once this file is saved, it can be opened with PackageResourceViewer.
+
+Editing user settings
+------
+
+Go to "Preferences >  Settings - User" and replace the file contents with Preferences.sublime-settings file in this repository. This will use the Flynn color scheme with the Seti theme.
 
 YANG syntax highlighting
 ------
