@@ -171,15 +171,36 @@
 		</dict-->
 		<dict>
 			<key>match</key>
-			<string>(include|ifeq|ifneq|ifdef|ifndef|else|endif|vpath|export|unexport|define|endef|override)</string>
+			<string>\b(include|ifeq|ifneq|ifdef|ifndef|else|endif|vpath|export|unexport|define|endef|override)\b</string>
 			<key>name</key>
 			<string>keyword.control.makefile</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>(subst|patsubst|strip|findstring|filter|filter-out|sort|word|wordlist|words|firstword|lastword|dir|notdir|suffix|basename|addsuffix|addprefix|join|wildcard|realpath|abspath|if|or|and|foreach|file|call|value|eval|origin|flavor|error|warning|info|guile)</string>
-			<key>name</key>
-			<string>support.function.builtin.makefile</string>
+			<key>begin</key>
+			<string>(\()\b(subst|patsubst|strip|findstring|filter|filter-out|sort|word|wordlist|words|firstword|lastword|dir|notdir|suffix|basename|addsuffix|addprefix|join|wildcard|realpath|abspath|if|or|and|foreach|file|call|value|eval|origin|flavor|error|warning|info|guile) </string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.variable.begin.makefile</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.builtin.makefile</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>()</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.variable.end.makefile</string>
+				</dict>
+			</dict>
 		</dict>
 	</array>
 	<key>repository</key>
