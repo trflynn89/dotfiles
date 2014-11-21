@@ -17,12 +17,6 @@
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>match</key>
-			<string>(subst|patsubst|strip|findstring|filter|filter-out|sort|word|wordlist|words|firstword|lastword|dir|notdir|suffix|basename|addsuffix|addprefix|join|wildcard|realpath|abspath|if|or|and|foreach|file|call|value|eval|origin|flavor|error|warning|info|guile)</string>
-			<key>name</key>
-			<string>support.function.builtin.makefile</string>
-		</dict>
-		<dict>
 			<key>include</key>
 			<string>#comment</string>
 		</dict>
@@ -180,6 +174,12 @@
 			<string>(include|ifeq|ifneq|ifdef|ifndef|else|endif|vpath|export|unexport|define|endef|override)</string>
 			<key>name</key>
 			<string>keyword.control.makefile</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(subst|patsubst|strip|findstring|filter|filter-out|sort|word|wordlist|words|firstword|lastword|dir|notdir|suffix|basename|addsuffix|addprefix|join|wildcard|realpath|abspath|if|or|and|foreach|file|call|value|eval|origin|flavor|error|warning|info|guile)</string>
+			<key>name</key>
+			<string>support.function.builtin.makefile</string>
 		</dict>
 	</array>
 	<key>repository</key>
