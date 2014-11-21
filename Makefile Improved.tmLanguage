@@ -17,6 +17,12 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>match</key>
+			<string>(subst|patsubst|strip|findstring|filter|filter-out|sort|word|wordlist|words|firstword|lastword|dir|notdir|suffix|basename|addsuffix|addprefix|join|wildcard|realpath|abspath|if|or|and|foreach|file|call|value|eval|origin|flavor|error|warning|info|guile)</string>
+			<key>name</key>
+			<string>support.function.builtin.makefile</string>
+		</dict>
+		<dict>
 			<key>include</key>
 			<string>#comment</string>
 		</dict>
@@ -367,7 +373,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?x) (\$\() (subst|patsubst|strip|findstring|filter|filter-out|sort|word|wordlist|words|firstword|lastword|dir|notdir|suffix|basename|addsuffix|addprefix|join|wildcard|realpath|abspath|if|or|and|foreach|file|call|value|eval|origin|flavor|error|warning|info|guile) \s</string>
+					<string>(?x) (\$?\() (subst|patsubst|strip|findstring|filter|filter-out|sort|word|wordlist|words|firstword|lastword|dir|notdir|suffix|basename|addsuffix|addprefix|join|wildcard|realpath|abspath|if|or|and|foreach|file|call|value|eval|origin|flavor|error|warning|info|guile) \s</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
