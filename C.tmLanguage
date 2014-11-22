@@ -375,7 +375,7 @@
 		<key>access</key>
 		<dict>
 			<key>match</key>
-			<string>(\.|\-&gt;)[a-zA-Z_][a-zA-Z_0-9]*\b(?!\s*(\(|&lt;))</string>
+			<string>(\.|\-&gt;)[a-zA-Z_][a-zA-Z_0-9]*\b(?!\s*(\(|&lt;[A-Za-z_\s]))</string>
 			<key>name</key>
 			<string>variable.other.dot-access.c</string>
 		</dict>
@@ -458,9 +458,9 @@
 					<key>match</key>
 					<string>(?x) (?: (?= \s )  (?:(?&lt;=else|new|return) | (?&lt;!\w)) (\s+))?
 			(\b
-				(?!(new|delete|while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\s*\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\b | :: )++                  # actual name
+				(::)?(?!(new|delete|while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\s*\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\b | :: )++                  # actual name
 			)
-			 \s*(\(|&lt;)</string>
+			 \s*(\(|&lt;[A-Za-z_\s])</string>
 					<key>name</key>
 					<string>meta.function-call.c</string>
 				</dict>
