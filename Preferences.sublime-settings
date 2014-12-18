@@ -9,6 +9,13 @@
     "ensure_newline_at_eof_on_save": true,
     //"trim_trailing_white_space_on_save": true,
 
+    // Highlight active indent guide
+    "indent_guide_options":
+    [
+        "draw_normal",
+        "draw_active"
+    ],
+
     // Ignore these files in the GoTo Anything feature
     "file_exclude_patterns":
     [
