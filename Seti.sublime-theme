@@ -780,10 +780,9 @@
     // Text input field item
     {
         "class": "text_line_control",
-        "layer0.tint": [21,23,24], // is the same color of BG in widget file
-        // "layer0.tint": [39,40,41],
+        "layer0.tint": [39,40,41],
         "layer0.opacity": 1,
-        "content_margin": [5,3] // control the search panel height , line padding also effects this
+        "content_margin": [5,7]
     },
     // Text input dropdown
     {
