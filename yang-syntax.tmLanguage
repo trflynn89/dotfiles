@@ -225,6 +225,22 @@
 				</dict>
 			</dict>
 			<key>comment</key>
+			<string>when keyword</string>
+			<key>match</key>
+			<string>(when)</string>
+			<key>name</key>
+			<string>statement.when.yang</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>constant.language</string>
+				</dict>
+			</dict>
+			<key>comment</key>
 			<string>units keyword</string>
 			<key>match</key>
 			<string>(units)</string>
