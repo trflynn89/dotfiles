@@ -6,11 +6,19 @@
     "enable_tab_scrolling": false,
 
     // Editing behavior
-    "ensure_newline_at_eof_on_save": true,
     //"trim_trailing_white_space_on_save": true,
+    "ensure_newline_at_eof_on_save": true,
     "translate_tabs_to_spaces": true,
     "spell_check": false,
     "font_size": 10,
+
+    // Auto-complete behavior
+    "auto_complete_commit_on_tab": true,
+    "auto_complete_cycle": true,
+
+    // Prevent folding text
+    "fold_buttons" : false,
+    "margin": 8,
 
     // Highlight active indent guide
     "indent_guide_options":
