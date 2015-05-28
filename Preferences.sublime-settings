@@ -8,7 +8,7 @@
     // Editing behavior
     "ensure_newline_at_eof_on_save": true,
     //"trim_trailing_white_space_on_save": true,
-	"translate_tabs_to_spaces": true,
+    "translate_tabs_to_spaces": true,
 
     // Highlight active indent guide
     "indent_guide_options":
