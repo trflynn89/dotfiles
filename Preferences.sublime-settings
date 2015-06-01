@@ -2,9 +2,6 @@
     "theme": "Seti.sublime-theme",
     "color_scheme": "Packages/User/Flynn.tmTheme",
 
-    // Don't let the tabs bunch up
-    "enable_tab_scrolling": false,
-
     // Editing behavior
     //"trim_trailing_white_space_on_save": true,
     "ensure_newline_at_eof_on_save": true,
