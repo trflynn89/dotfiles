@@ -3,13 +3,11 @@
 <plist version="1.0">
 <dict>
     <key>author</key>
-    <string>@itg</string>
+    <string>Flynn</string>
     <key>colorSpaceName</key>
     <string>sRGB</string>
     <key>name</key>
-    <string>itg.dark</string>
-    <key>semanticClass</key>
-    <string>theme.dark</string>
+    <string>Flynn</string>
     <key>settings</key>
     <array>
         <dict>
@@ -35,8 +33,6 @@
                 <string>#000000</string>
                 <key>foreground</key>
                 <string>#d6d7d9</string>
-                <key>inactiveSelection</key>
-                <string>#bbbbbb</string>
                 <key>inactiveSelectionForeground</key>
                 <string>#222222</string>
                 <key>invisibles</key>
@@ -47,8 +43,6 @@
                 <string>#41454e</string>
                 <key>selectionBorder</key>
                 <string>#1C1C1C00</string>
-                <key>selectionForeground</key>
-                <string>#d6d7d9</string>
                 <key>tagsOptions</key>
                 <string>stippled_underline</string>
             </dict>
@@ -251,7 +245,7 @@
                 <key>fontStyle</key>
                 <string></string>
                 <key>foreground</key>
-                <string>#76e9c2</string>
+                <string>#74def1</string>
             </dict>
         </dict>
         <dict>
