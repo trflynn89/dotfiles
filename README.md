@@ -13,10 +13,10 @@ To edit language/syntax settings, I use PackageResourceViewer. This sublime plug
 Install the Package Control plugin here:
 https://sublime.wbond.net/installation
 
-#####Seti Theme
+#####ITG Theme
 
-First install the Seti Theme from here:
-https://sublime.wbond.net/packages/Seti_UI
+Install the ITG Theme from here:
+https://github.com/itsthatguy/theme-itg-flat
 
 #####PackageResourceViewer
 
