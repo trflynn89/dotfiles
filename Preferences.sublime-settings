@@ -1,31 +1,32 @@
 {
-    "theme": "itg.flat.dark.blue.sublime-theme",
-    "color_scheme": "Packages/User/Flynn.tmTheme",
+    "theme" : "itg.flat.dark.blue.sublime-theme",
+    "color_scheme" : "Packages/User/Flynn.tmTheme",
+    "itg_scrollbar_medium" : true,
 
     // Editing behavior
-    "trim_trailing_white_space_on_save": true,
-    "ensure_newline_at_eof_on_save": true,
-    "translate_tabs_to_spaces": true,
-    "spell_check": false,
-    "font_size": 10,
+    "trim_trailing_white_space_on_save" : true,
+    "ensure_newline_at_eof_on_save" : true,
+    "translate_tabs_to_spaces" : true,
+    "spell_check" : false,
+    "font_size" : 10,
 
     // Auto-complete behavior
-    "auto_complete_commit_on_tab": true,
-    "auto_complete_cycle": true,
+    "auto_complete_commit_on_tab" : true,
+    "auto_complete_cycle" : true,
 
     // Prevent folding text
     "fold_buttons" : false,
-    "margin": 8,
+    "margin" : 8,
 
     // Highlight active indent guide
-    "indent_guide_options":
+    "indent_guide_options" :
     [
         "draw_normal",
         "draw_active"
     ],
 
     // Ignore these files in the GoTo Anything feature
-    "file_exclude_patterns":
+    "file_exclude_patterns" :
     [
         "*/MIB/*",
         "*.d",
@@ -52,7 +53,7 @@
     ],
 
     // Ignore these packages
-    "ignored_packages":
+    "ignored_packages" :
     [
         "Vintage",
         "Makefile"
