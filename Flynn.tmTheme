@@ -106,11 +106,11 @@
             <key>name</key>
             <string>Variable</string>
             <key>scope</key>
-            <string>variable</string>
+            <string>variable, support.other.variable</string>
             <key>settings</key>
             <dict>
-                <key>fontStyle</key>
-                <string></string>
+                <key>foreground</key>
+                <string>#e8b490</string>
             </dict>
         </dict>
         <dict>
@@ -120,8 +120,6 @@
             <string>variable.language</string>
             <key>settings</key>
             <dict>
-                <key>fontStyle</key>
-                <string></string>
                 <key>foreground</key>
                 <string>#f18b77</string>
             </dict>
@@ -133,8 +131,6 @@
             <string>entity</string>
             <key>settings</key>
             <dict>
-                <key>fontStyle</key>
-                <string></string>
                 <key>foreground</key>
                 <string>#f68686</string>
             </dict>
@@ -157,8 +153,6 @@
             <string>storage</string>
             <key>settings</key>
             <dict>
-                <key>fontStyle</key>
-                <string></string>
                 <key>foreground</key>
                 <string>#f68686</string>
             </dict>
@@ -205,8 +199,6 @@
             <string>entity.name.function</string>
             <key>settings</key>
             <dict>
-                <key>fontStyle</key>
-                <string></string>
                 <key>foreground</key>
                 <string>#a7e450</string>
             </dict>
@@ -229,8 +221,6 @@
             <string>variable.other.readwrite</string>
             <key>settings</key>
             <dict>
-                <key>fontStyle</key>
-                <string></string>
                 <key>foreground</key>
                 <string>#e8b490</string>
             </dict>
@@ -242,8 +232,6 @@
             <string>entity.name.tag</string>
             <key>settings</key>
             <dict>
-                <key>fontStyle</key>
-                <string></string>
                 <key>foreground</key>
                 <string>#f68686</string>
             </dict>
@@ -255,8 +243,6 @@
             <string>entity.other.attribute-name</string>
             <key>settings</key>
             <dict>
-                <key>fontStyle</key>
-                <string></string>
                 <key>foreground</key>
                 <string>#74def1</string>
             </dict>
@@ -268,8 +254,6 @@
             <string>support.function</string>
             <key>settings</key>
             <dict>
-                <key>fontStyle</key>
-                <string></string>
                 <key>foreground</key>
                 <string>#74def1</string>
             </dict>
@@ -281,8 +265,6 @@
             <string>support.constant</string>
             <key>settings</key>
             <dict>
-                <key>fontStyle</key>
-                <string></string>
                 <key>foreground</key>
                 <string>#74def1</string>
             </dict>
@@ -296,17 +278,6 @@
             <dict>
                 <key>foreground</key>
                 <string>#74def1</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>name</key>
-            <string>Library variable</string>
-            <key>scope</key>
-            <string>support.other.variable</string>
-            <key>settings</key>
-            <dict>
-                <key>fontStyle</key>
-                <string></string>
             </dict>
         </dict>
         <dict>
@@ -339,7 +310,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#FFFFFF</string>
+                <string>#e8b490</string>
             </dict>
         </dict>
         <dict>
@@ -349,8 +320,6 @@
             <string>support.function</string>
             <key>settings</key>
             <dict>
-                <key>fontStyle</key>
-                <string></string>
                 <key>foreground</key>
                 <string>#74def1</string>
             </dict>
@@ -509,8 +478,6 @@
             <dict>
                 <key>background</key>
                 <string>#f35656</string>
-                <key>fontStyle</key>
-                <string></string>
                 <key>foreground</key>
                 <string>#F8F8F0</string>
             </dict>
@@ -634,8 +601,6 @@
             <string>Markdown.heading, markup.heading | markup.heading entity.name, markup.heading.markdown punctuation.definition.heading.markdown</string>
             <key>settings</key>
             <dict>
-                <key>fontStyle</key>
-                <string></string>
                 <key>foreground</key>
                 <string>#f3a056</string>
             </dict>
