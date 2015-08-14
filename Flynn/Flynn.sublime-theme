@@ -996,7 +996,7 @@
 	{
 		"class": "auto_complete_label",
 		"fg": [255,255,255],
-		"match_fg": [104,81,49],
+		"match_fg": [79,153,211],
 		"selected_fg": [255,255,255],
 		"selected_match_fg": [255,223,0]
 	},
