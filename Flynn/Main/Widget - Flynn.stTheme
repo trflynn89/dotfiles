@@ -12,13 +12,13 @@
 		        <key>caret</key>
 		        <string>#F8F8F0</string>
 		        <key>foreground</key>
-		        <string>#F8F8F2</string>
+		        <string>#d6d7d9</string>
 		        <key>invisibles</key>
 		        <string>#3B3A32</string>
 		        <key>selection</key>
 		        <string>#31383e</string>
 		        <key>selectionForeground</key>
-                <string>#F8F8F2</string>
+                <string>#d6d7d9</string>
 			</dict>
 		</dict>
 	</array>
