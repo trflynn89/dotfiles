@@ -664,7 +664,7 @@
     						(\.((-?\d+)|\*(-?\d+\$)?)?)?         # precision
     						(hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)? # length modifier
     						(I64|I32)?                           # Windows length modifier
-    						[diouxXDOUeEfFgGaACcSspnNT%]         # conversion type
+    						[diouxXDOUeEfFgGaACcSspnNTb%]        # conversion type
     					</string>
 					<key>name</key>
 					<string>constant.other.placeholder.c</string>
