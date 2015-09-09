@@ -652,7 +652,7 @@
     						(\.((-?\d+)|\*(-?\d+\$)?)?)?         # precision
     						(hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)? # length modifier
     						(I64|I32)?                           # Windows length modifier
-    						[diouxXDOUeEfFgGaACcSspnNTb%]        # conversion type
+    						[diouxXDOUeEfFgGaACcSspnNmYHM%]      # conversion type
     					</string>
 					<key>name</key>
 					<string>constant.other.placeholder.c</string>
@@ -672,3 +672,4 @@
 	<string>25066DC2-6B1D-11D9-9D5B-000D93589AF6</string>
 </dict>
 </plist>
+
