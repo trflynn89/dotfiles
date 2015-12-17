@@ -8,6 +8,7 @@
     "translate_tabs_to_spaces" : true,
     "spell_check" : false,
     "font_size" : 10,
+    "rulers": [80, 90],
 
     // Auto-complete behavior
     "auto_complete_commit_on_tab" : true,
@@ -27,7 +28,6 @@
     // Ignore these files in the GoTo Anything feature
     "file_exclude_patterns" :
     [
-        "*/MIB/*",
         "*.d",
         "*.pyc",
         "*.pyo",
