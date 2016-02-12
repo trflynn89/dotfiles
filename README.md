@@ -1,7 +1,7 @@
 sublime
 =======
 
-My sublime language / theme settings. Provides simplified language settings for C/C++ and slightly personalized syntax highlighting. Also provides MIB and YANG syntax highlighting with tailf support.
+My sublime language / theme settings. Also provides MIB and YANG syntax highlighting with tailf support.
 
 Package Control
 ------
@@ -28,19 +28,13 @@ Then, go to "Preferences >  Settings - User" and replace the file contents with 
 Editing language resources
 ------
 
-We can now edit any language file with PackageResourceViewer. Open the Command Palatte and start typing Open Resource. You can then select any language you want to edit, e.g. C++. Replace the C.tmLanguage, C++.tmLanguage, and JavaScript.tmLanguage files with the files in this repository.
+We can now edit any language file with PackageResourceViewer. Open the Command Palatte and start typing Open Resource. You can then select any language you want to edit, e.g. C++.
 
 #####YANG syntax highlighting
 
 Open the Command Palette, start typing "instpkg" and select the Install Package option. Start typing YANG, and select "YANG Syntax Highlighting".
 
 The yang-syntax.tmLanguage file in this repository fixes some issues with this package and adds support for the "tailf:" statements used in ConfD. Open the Command Palette, start typing Open Resource, and open the YANG > yang-syntax.tmLanguage file. Replace its contents with the file in this repository.
-
-#####Makefile syntax highlighting
-
-Open the Command Palette, start typing "instpkg" and select the Install Package option. Start typing Make, and select "Makefile improved".
-
-Open the Command Palette again, start typing Open Resource, and open the "Makefile Improved > Makefile Improved.tmLanguage" file. Replace its contents with the file in this repository.
 
 #####MIB syntax highlighting
 
