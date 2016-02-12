@@ -54,7 +54,6 @@
     // Ignore these packages
     "ignored_packages" :
     [
-        "Vintage",
-        "Makefile"
+        "Vintage"
     ],
 }
