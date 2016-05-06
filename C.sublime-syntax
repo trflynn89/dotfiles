@@ -437,8 +437,8 @@ contexts:
           [,;:_]?                              # separator character (AltiVec)
           ((-?\d+)|\*(-?\d+\$)?)?              # minimum field width
           (\.((-?\d+)|\*(-?\d+\$)?)?)?         # precision
-          (hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)? # length modifier
-          [diouxXDOUeEfFgGaACcSspn%]           # conversion type
+          (hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl|p)? # length modifier
+          [diouxXDOUeEfFgGaABCcSspnNmYHMT%]           # conversion type
       scope: constant.other.placeholder.c
     - match: "%"
       scope: invalid.illegal.placeholder.c
