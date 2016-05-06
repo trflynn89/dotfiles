@@ -174,7 +174,7 @@ contexts:
           scope: storage.modifier.c
         - include: block
   access:
-    - match: '(\.|->)[a-zA-Z_][a-zA-Z_0-9]*\b(?!\s*\()'
+    - match: '(\.|->)[a-zA-Z_][a-zA-Z_0-9]*\b(?!\s*(\(|<[A-Za-z_0-9\s]))'
       scope: variable.other.dot-access.c
   block:
     - match: '\{'
@@ -198,7 +198,7 @@ contexts:
         (\b
           (?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\s*\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\b | :: )++                  # actual name
         )
-         \s*(\()
+         \s*(\(|<[A-Za-z_0-9\s])
       scope: meta.function-call.c
       captures:
         1: punctuation.whitespace.function-call.leading.c
