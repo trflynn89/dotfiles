@@ -46,6 +46,13 @@ git clone https://github.com/trflynn89/sublime.git
 ln -s ./sublime/Flynn ~/.config/sublime-text-3/Packages/Flynn
 ```
 
+### OSX installation
+
+```
+git clone https://github.com/trflynn89/sublime.git
+ln -s ./sublime/Flynn ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+```
+
 ### Apply installation
 
 Go to "Preferences >  Settings - User" and replace the file contents with Preferences.sublime-settings file from this repository. This will use the Flynn theme.s
