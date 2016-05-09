@@ -43,14 +43,14 @@ cmd /c mklink /J "$env:APPDATA/Sublime Text 3/Packages/Flynn" (convert-path ./su
 
 ```
 git clone https://github.com/trflynn89/sublime.git
-ln -s ./sublime/Flynn ~/.config/sublime-text-3/Packages/Flynn
+ln -s `pwd`/sublime/Flynn ~/.config/sublime-text-3/Packages/Flynn
 ```
 
 ### OSX installation
 
 ```
 git clone https://github.com/trflynn89/sublime.git
-ln -s ./sublime/Flynn ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Flynn
+ln -s `pwd`/sublime/Flynn ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Flynn
 ```
 
 ### Apply installation
