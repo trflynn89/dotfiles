@@ -50,7 +50,7 @@ ln -s ./sublime/Flynn ~/.config/sublime-text-3/Packages/Flynn
 
 ```
 git clone https://github.com/trflynn89/sublime.git
-ln -s ./sublime/Flynn ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+ln -s ./sublime/Flynn ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Flynn
 ```
 
 ### Apply installation
