@@ -28,6 +28,15 @@ The yang-syntax.tmLanguage file in this repository fixes some issues with this p
 
 Create a directory called MIB in the same directory as the C++, YANG, User, etc. directories. Place MIB.tmLanguage from this repository in the MIB directory.
 
+###GNU Global
+
+To use GNU Global tags with sublime, install the SublimeGtags package. It is not available through package control, but may be installed as follows:
+
+```
+git clone https://github.com/koko1000ban/SublimeGtags.git
+ln -s `pwd`/SublimeGtags ~/.config/sublime-text-3/Packages
+```
+
 ##Flynn Theme
 
 This theme was forked from Seti, available here: https://packagecontrol.io/packages/Seti_UI
