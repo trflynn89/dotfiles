@@ -1,6 +1,6 @@
 #sublime
 
-My sublime language / theme settings. Also provides MIB and YANG syntax highlighting with tailf support. Intended to be used with [forked Seti theme](https://github.com/trflynn89/Seti_ST3).
+My sublime language / theme settings. Also provides MIB and YANG syntax highlighting with tailf support. Intended to be used with [forked Seti theme](https://github.com/trflynn89/Seti_UI).
 
 ##Package Control
 
@@ -34,20 +34,20 @@ Create a directory called MIB in the same directory as the C++, YANG, User, etc.
 
 ```
 git clone https://github.com/trflynn89/sublime.git
-git clone https://github.com/trflynn89/Seti_ST3.git
+git clone https://github.com/trflynn89/Seti_UI.git
 
 cmd /c mklink /J "$env:APPDATA/Sublime Text 3/Packages/Flynn.tmTheme" (convert-path ./sublime/Flynn.tmTheme)
-cmd /c mklink /J "$env:APPDATA/Sublime Text 3/Packages/Seti_ST3" (convert-path ./Seti_ST3)
+cmd /c mklink /J "$env:APPDATA/Sublime Text 3/Packages/Seti_UI" (convert-path ./Seti_UI)
 ```
 
 ### Linux installation
 
 ```
 git clone https://github.com/trflynn89/sublime.git
-git clone https://github.com/trflynn89/Seti_ST3.git
+git clone https://github.com/trflynn89/Seti_UI.git
 
 ln -s `pwd`/sublime/Flynn.tmTheme ~/.config/sublime-text-3/Packages/Flynn.tmTheme
-ln -s `pwd`/Seti_ST3 ~/.config/sublime-text-3/Packages/Seti_ST3
+ln -s `pwd`/Seti_UI ~/.config/sublime-text-3/Packages/Seti_UI
 ```
 
 ####GNU Global
@@ -63,10 +63,10 @@ ln -s `pwd`/SublimeGtags ~/.config/sublime-text-3/Packages
 
 ```
 git clone https://github.com/trflynn89/sublime.git
-git clone https://github.com/trflynn89/Seti_ST3.git
+git clone https://github.com/trflynn89/Seti_UI.git
 
 ln -s `pwd`/sublime/Flynn.tmTheme ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Flynn.tmTheme
-ln -s `pwd`/Seti_ST3 ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Seti_ST3
+ln -s `pwd`/Seti_UI ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Seti_UI
 ```
 
 ### Apply installation
