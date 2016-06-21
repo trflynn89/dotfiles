@@ -52,7 +52,7 @@ ln -s `pwd`/Seti_UI ~/.config/sublime-text-3/Packages/Seti_UI
 
 ####GNU Global
 
-To use GNU Global tags with sublime, install the SublimeGtags package. It is not available through package control, but may be installed as follows:
+To use GNU Global tags with sublime, install the [SublimeGtags](https://github.com/koko1000ban/SublimeGtags) package. It is not available through package control, but may be installed as follows:
 
 ```
 git clone https://github.com/koko1000ban/SublimeGtags.git
