@@ -36,7 +36,7 @@ Create a directory called MIB in the same directory as the C++, YANG, User, etc.
 git clone https://github.com/trflynn89/sublime.git
 git clone https://github.com/trflynn89/Seti_UI.git
 
-cmd /c mklink /J "$env:APPDATA/Sublime Text 3/Packages/Flynn.tmTheme" (convert-path ./sublime/Flynn.tmTheme)
+cmd /c mklink /J "$env:APPDATA/Sublime Text 3/Packages/Flynn" (convert-path ./sublime/Flynn)
 cmd /c mklink /J "$env:APPDATA/Sublime Text 3/Packages/Seti_UI" (convert-path ./Seti_UI)
 ```
 
@@ -46,7 +46,7 @@ cmd /c mklink /J "$env:APPDATA/Sublime Text 3/Packages/Seti_UI" (convert-path ./
 git clone https://github.com/trflynn89/sublime.git
 git clone https://github.com/trflynn89/Seti_UI.git
 
-ln -s `pwd`/sublime/Flynn.tmTheme ~/.config/sublime-text-3/Packages/Flynn.tmTheme
+ln -s `pwd`/sublime/Flynn ~/.config/sublime-text-3/Packages/Flynn
 ln -s `pwd`/Seti_UI ~/.config/sublime-text-3/Packages/Seti_UI
 ```
 
@@ -65,7 +65,7 @@ ln -s `pwd`/SublimeGtags ~/.config/sublime-text-3/Packages
 git clone https://github.com/trflynn89/sublime.git
 git clone https://github.com/trflynn89/Seti_UI.git
 
-ln -s `pwd`/sublime/Flynn.tmTheme ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Flynn.tmTheme
+ln -s `pwd`/sublime/Flynn ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Flynn
 ln -s `pwd`/Seti_UI ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Seti_UI
 ```
 
