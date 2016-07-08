@@ -3,9 +3,9 @@
     "color_scheme" : "Packages/Flynn/Flynn.tmTheme",
 
     // Reset OSX overrides
-    "show_full_path": true,
-    "find_selected_text": true,
-    "move_to_limit_on_up_down": false,
+    "show_full_path" : true,
+    "find_selected_text" : true,
+    "move_to_limit_on_up_down" : false,
 
     // Editing behavior
     "trim_trailing_white_space_on_save" : true,
@@ -13,7 +13,10 @@
     "open_files_in_new_window" : false,
     "translate_tabs_to_spaces" : true,
     "default_line_ending": "unix",
+    "highlight_line" : true,
     "spell_check" : false,
+    "wide_caret" : true,
+    "word_wrap" : false,
     "font_size" : 10,
     "rulers": [80, 90],
 
