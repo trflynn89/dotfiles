@@ -13,6 +13,7 @@
     "open_files_in_new_window" : false,
     "translate_tabs_to_spaces" : true,
     "default_line_ending": "unix",
+    "show_line_endings": true,
     "highlight_line" : true,
     "spell_check" : false,
     "wide_caret" : true,
