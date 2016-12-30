@@ -1,4 +1,4 @@
-;; C:\Users\Flynn\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+;; %appdata%\Microsoft\Windows\Start Menu\Programs\Startup
 
 ;;;;; INIT ;;;;;
 #SingleInstance force
