@@ -26,7 +26,7 @@ The yang-syntax.tmLanguage file in this repository fixes some issues with this p
 
 ### MIB syntax highlighting
 
-Create a directory called MIB in the same directory as the C++, YANG, User, etc. directories. Place MIB.tmLanguage from this repository in the MIB directory.
+Install the MIB syntax as a symbolic link in Sublime Text's Packages folder. Instructions included below.
 
 ## Installation
 
@@ -37,6 +37,7 @@ git clone https://github.com/trflynn89/dotfiles.git
 git clone https://github.com/trflynn89/Seti_UI.git
 
 cmd /c mklink /J "$env:APPDATA/Sublime Text 3/Packages/Flynn" (convert-path ./dotfiles/sublime/Flynn)
+cmd /c mklink /J "$env:APPDATA/Sublime Text 3/Packages/MIB" (convert-path ./dotfiles/sublime/MIB)
 cmd /c mklink /J "$env:APPDATA/Sublime Text 3/Packages/Seti_UI" (convert-path ./Seti_UI)
 ```
 
@@ -47,6 +48,7 @@ git clone https://github.com/trflynn89/dotfiles.git
 git clone https://github.com/trflynn89/Seti_UI.git
 
 ln -s `pwd`/dotfiles/sublime/Flynn ~/.config/sublime-text-3/Packages/Flynn
+ln -s `pwd`/dotfiles/sublime/MIB ~/.config/sublime-text-3/Packages/MIB
 ln -s `pwd`/Seti_UI ~/.config/sublime-text-3/Packages/Seti_UI
 ```
 
@@ -57,6 +59,7 @@ git clone https://github.com/trflynn89/dotfiles.git
 git clone https://github.com/trflynn89/Seti_UI.git
 
 ln -s `pwd`/dotfiles/sublime/Flynn ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Flynn
+ln -s `pwd`/dotfiles/sublime/MIB ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/MIB
 ln -s `pwd`/Seti_UI ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Seti_UI
 ```
 
