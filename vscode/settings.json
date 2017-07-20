@@ -1,0 +1,64 @@
+// Extensions to install:
+//  1. C/C++
+//  2. Seti-theme
+{
+    // Display settings
+    "editor.rulers": [ 80 ],
+    "explorer.autoReveal": false,
+    "workbench.colorTheme": "Seti",
+
+    // Editor behavior
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+
+    // Disable extension recommendations
+    "extensions.ignoreRecommendations": true,
+
+    // Enable newer intellisense provider
+    "C_Cpp.intelliSenseEngine": "Default",
+
+    // Ignore these files in the explorer
+    "files.exclude":
+    {
+        "**/*.vscode": true,
+
+        // Ignore python object files
+        "**/*.pyc": true,
+        "**/*.pyo": true,
+
+        // Ignore C/C++ object files (Linux)
+        "**/*.d": true,
+        "**/*.o": true,
+        "**/*.a": true,
+        "**/*.so": true,
+        "**/*.gcov": true,
+        "**/*.gcda": true,
+        "**/*.gcno": true,
+
+        // Ignore C/C++ object files (Windows)
+        "**/.vs": true,
+        "**/*.exe": true,
+        "**/*.dll": true,
+        "**/*.obj": true,
+        "**/*.iobj": true,
+        "**/*.lib": true,
+        "**/*.dylib": true,
+        "**/*.ncb": true,
+        "**/*.sdf": true,
+        "**/*.suo": true,
+        "**/*.pdb": true,
+        "**/*.ipdb": true,
+        "**/*.idb": true,
+        "**/.tlog": true,
+        "**/*.tlog": true,
+        "**/*.ilk": true,
+        "**/*.cache": true,
+
+        // Ignore Java object files
+        "**/*.class": true,
+
+        // Ignore annoying OS files
+        "**/*.db": true,
+        "**/.DS_Store": true
+    }
+}
