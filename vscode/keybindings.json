@@ -1,8 +1,11 @@
 [
     {
-        "mac": "cmd+shift+l",
-        "win": "ctrl+shift+l",
-        "key": "ctrl+shift+l",
+        "key": "ctrl+shift+i",
+        "command": "editor.action.insertCursorAtEndOfEachLineSelected",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+shift+i",
         "command": "editor.action.insertCursorAtEndOfEachLineSelected",
         "when": "editorTextFocus"
     },
