@@ -6,6 +6,7 @@
     "editor.rulers": [ 80 ],
     "explorer.autoReveal": false,
     "workbench.colorTheme": "Seti",
+    "window.title": "${activeEditorLong}",
 
     // Editor behavior
     "files.trimTrailingWhitespace": true,
