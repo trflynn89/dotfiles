@@ -5,6 +5,7 @@
     // Display settings
     "editor.rulers": [ 80 ],
     "explorer.autoReveal": false,
+    "explorer.openEditors.visible": 0,
     "workbench.colorTheme": "Seti",
     "workbench.editor.enablePreview": false,
     "window.title": "${activeEditorLong}",
