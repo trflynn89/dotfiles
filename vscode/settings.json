@@ -1,6 +1,3 @@
-// Extensions to install:
-//  1. C/C++
-//  2. Seti-theme
 {
     // Display settings
     "editor.rulers": [ 80 ],
