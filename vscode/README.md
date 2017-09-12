@@ -1,6 +1,6 @@
 # vscode
 
-My sublime language / theme settings.
+My Visual Studio Code language / theme settings.
 
 ## Packages
 
