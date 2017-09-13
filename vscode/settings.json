@@ -13,6 +13,7 @@
 
     // Disable extension recommendations
     "extensions.ignoreRecommendations": true,
+    "git.ignoreLegacyWarning": true,
 
     // Enable newer intellisense provider
     "C_Cpp.intelliSenseEngine": "Default",
