@@ -18,15 +18,9 @@ In the popup box, start typing "instpkg", which sublime will auto-complete to "P
 
 We can now edit any language file with PackageResourceViewer. Open the Command Palatte and start typing Open Resource. You can then select any language you want to edit, e.g. C++.
 
-### YANG syntax highlighting
+### YANG and MIB syntax highlighting
 
-Open the Command Palette, start typing "instpkg" and select the Install Package option. Start typing YANG, and select "YANG Syntax Highlighting".
-
-The yang-syntax.tmLanguage file in this repository fixes some issues with this package and adds support for the "tailf:" statements used in ConfD. Open the Command Palette, start typing Open Resource, and open the YANG > yang-syntax.tmLanguage file. Replace its contents with the file in this repository.
-
-### MIB syntax highlighting
-
-Install the MIB syntax as a symbolic link in Sublime Text's Packages folder. Instructions included below.
+Install the YANG and MIB syntax as a symbolic link in Sublime Text's Packages folder. Instructions included below.
 
 ## Installation
 
@@ -38,6 +32,7 @@ git clone https://github.com/trflynn89/Seti_UI.git
 
 cmd /c mklink /J "$env:APPDATA/Sublime Text 3/Packages/Flynn" (convert-path ./dotfiles/sublime/Flynn)
 cmd /c mklink /J "$env:APPDATA/Sublime Text 3/Packages/MIB" (convert-path ./dotfiles/sublime/MIB)
+cmd /c mklink /J "$env:APPDATA/Sublime Text 3/Packages/YANG" (convert-path ./dotfiles/sublime/YANG)
 cmd /c mklink /J "$env:APPDATA/Sublime Text 3/Packages/Seti_UI" (convert-path ./Seti_UI)
 ```
 
@@ -49,6 +44,7 @@ git clone https://github.com/trflynn89/Seti_UI.git
 
 ln -s `pwd`/dotfiles/sublime/Flynn ~/.config/sublime-text-3/Packages/Flynn
 ln -s `pwd`/dotfiles/sublime/MIB ~/.config/sublime-text-3/Packages/MIB
+ln -s `pwd`/dotfiles/sublime/YANG ~/.config/sublime-text-3/Packages/YANG
 ln -s `pwd`/Seti_UI ~/.config/sublime-text-3/Packages/Seti_UI
 ```
 
@@ -60,6 +56,7 @@ git clone https://github.com/trflynn89/Seti_UI.git
 
 ln -s `pwd`/dotfiles/sublime/Flynn ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Flynn
 ln -s `pwd`/dotfiles/sublime/MIB ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/MIB
+ln -s `pwd`/dotfiles/sublime/YANG ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/YANG
 ln -s `pwd`/Seti_UI ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Seti_UI
 ```
 
