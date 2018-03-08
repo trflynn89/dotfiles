@@ -15,6 +15,10 @@
     "extensions.ignoreRecommendations": true,
     "git.ignoreLegacyWarning": true,
 
+    // Disable all drag and drop
+    "editor.dragAndDrop": false,
+    "explorer.enableDragAndDrop": false,
+
     // Enable newer intellisense provider
     "C_Cpp.intelliSenseEngine": "Default",
 
