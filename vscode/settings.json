@@ -3,6 +3,7 @@
     "editor.rulers": [ 80 ],
     "explorer.autoReveal": false,
     "explorer.openEditors.visible": 0,
+    "problems.decorations.enabled": false,
     "workbench.colorTheme": "Seti",
     "workbench.editor.enablePreview": false,
     "window.title": "${activeEditorLong}",
