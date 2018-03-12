@@ -30,18 +30,18 @@
         "strings": "#66D9EF",
 
         "textMateRules": [
-		{
-			"scope": [
+        {
+            "scope": [
                 "constant.character",
                 "constant.language",
                 "constant.numeric",
                 "constant.other",
                 "functions"
             ],
-			"settings": {
-				"foreground": "#a2e9f6"
-			}
-		}]
+            "settings": {
+                "foreground": "#a2e9f6"
+            }
+        }]
     },
 
     "workbench.colorCustomizations": {
@@ -74,8 +74,8 @@
         "statusBar.noFolderBackground": "#1e2326",
         "tab.inactiveBackground": "#1e2326",
 
-		"peekView.border": "#31383e",
-		"peekViewResult.matchHighlightBackground": "#31383e",
+        "peekView.border": "#31383e",
+        "peekViewResult.matchHighlightBackground": "#31383e",
         "editor.lineHighlightBackground": "#31383e",
         "editor.selectionBackground": "#31383e",
         "editor.selectionHighlightBackground": "#31383e",
