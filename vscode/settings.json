@@ -4,7 +4,6 @@
     "explorer.autoReveal": false,
     "explorer.openEditors.visible": 0,
     "problems.decorations.enabled": false,
-    "workbench.colorTheme": "Seti",
     "workbench.editor.enablePreview": false,
     "window.title": "${activeEditorLong}",
 
@@ -23,11 +22,73 @@
     // Enable newer intellisense provider
     "C_Cpp.intelliSenseEngine": "Default",
 
+    // Color customizations
+    "editor.tokenColorCustomizations": {
+        "comments": "#969896",
+        "keywords": "#f68686",
+        "functions": "#44c8e2",
+        "strings": "#66D9EF",
+
+        "textMateRules": [
+		{
+			"scope": [
+                "constant.character",
+                "constant.language",
+                "constant.numeric",
+                "constant.other",
+                "functions"
+            ],
+			"settings": {
+				"foreground": "#a2e9f6"
+			}
+		}]
+    },
+
+    "workbench.colorCustomizations": {
+        "editor.background": "#151718",
+        "editorSuggestWidget.background": "#151718",
+        "list.hoverBackground": "#151718",
+        "peekViewEditor.background": "#151718",
+        "sideBarSectionHeader.background": "#151718",
+        "tab.border": "#151718",
+
+        "activityBar.dropBackground": "#1e2326",
+        "debugToolBar.background": "#1e2326",
+        "dropdown.background": "#1e2326",
+        "dropdown.listBackground": "#1e2326",
+        "editorGroup.border": "#1e2326",
+        "editorGroup.dropBackground": "#1e232680",
+        "editorGroupHeader.tabsBackground": "#1e2326",
+        "editorHoverWidget.background": "#1e2326",
+        "editorWidget.background": "#1e2326",
+        "input.background": "#1e2326",
+        "list.activeSelectionBackground": "#1e2326",
+        "list.dropBackground": "#1e2326",
+        "list.focusBackground": "#1e2326",
+        "list.inactiveSelectionBackground": "#1e2326",
+        "panel.border": "#1e2326",
+        "peekViewResult.background": "#1e2326",
+        "peekViewResult.selectionBackground": "#1e2326",
+        "peekViewTitle.background": "#1e2326",
+        "statusBar.background": "#1e2326",
+        "statusBar.noFolderBackground": "#1e2326",
+        "tab.inactiveBackground": "#1e2326",
+
+		"peekView.border": "#31383e",
+		"peekViewResult.matchHighlightBackground": "#31383e",
+        "editor.lineHighlightBackground": "#31383e",
+        "editor.selectionBackground": "#31383e",
+        "editor.selectionHighlightBackground": "#31383e",
+        "peekViewEditor.matchHighlightBackground": "#31383e",
+
+        "activityBar.background": "#101112",
+        "sideBar.background": "#101112",
+        "titleBar.activeBackground": "#101112",
+    },
+
     // Ignore these files in the explorer
     "files.exclude":
     {
-        "**/*.vscode": true,
-
         // Ignore python object files
         "**/*.pyc": true,
         "**/*.pyo": true,
