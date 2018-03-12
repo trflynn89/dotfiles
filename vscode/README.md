@@ -6,4 +6,3 @@ My Visual Studio Code language / theme settings.
 
 * C/C++
 * Python
-* Seti-theme
