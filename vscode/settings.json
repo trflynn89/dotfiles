@@ -5,11 +5,13 @@
     "explorer.openEditors.visible": 0,
     "problems.decorations.enabled": false,
     "workbench.editor.enablePreview": false,
+    "whiteviz.expandedTabIndicator": true,
+    "whiteviz.expandedTabMargin": 1,
     "window.title": "${activeEditorLong}",
 
     // Editor behavior
-    "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
 
     // Disable extension recommendations
     "extensions.ignoreRecommendations": true,
@@ -22,67 +24,114 @@
     // Enable newer intellisense provider
     "C_Cpp.intelliSenseEngine": "Default",
 
-    // Color customizations
+    // Editor color customizations
     "editor.tokenColorCustomizations": {
         "comments": "#969896",
-        "keywords": "#f68686",
         "functions": "#44c8e2",
-        "strings": "#66D9EF",
+        "keywords": "#f68686",
+        "strings": "#ce9178",
 
         "textMateRules": [
         {
             "scope": [
+                "constant.character.escape",
                 "constant.character",
                 "constant.language",
                 "constant.numeric",
                 "constant.other",
-                "functions"
+                "entity.name.class",
+                "entity.name.type",
+                "storage.type",
+                "storage",
+                "support.type",
             ],
             "settings": {
                 "foreground": "#a2e9f6"
             }
-        }]
+        },
+        {
+            "scope": [
+                "entity.name.class",
+                "entity.name.type",
+            ],
+            "settings": {
+                "foreground": "#44c8e2"
+            }
+        },
+        {
+            "scope": [
+                "keyword.operator.logical.python",
+                "storage.modifier",
+                "storage.type.modifier",
+                "variable.language.special.cls",
+                "variable.language.special.self",
+                "variable.language.this",
+            ],
+            "settings": {
+                "foreground": "#f68686"
+            }
+        },
+        {
+            "scope": [
+                "string.quoted.docstring.multi.python",
+            ],
+            "settings": {
+                "foreground": "#969896"
+            }
+        },
+    ]
     },
 
+    // Window color customizations
     "workbench.colorCustomizations": {
-        "editor.background": "#151718",
-        "editorSuggestWidget.background": "#151718",
-        "list.hoverBackground": "#151718",
-        "peekViewEditor.background": "#151718",
-        "sideBarSectionHeader.background": "#151718",
-        "tab.border": "#151718",
-
+        "activityBar.background": "#101112",
         "activityBar.dropBackground": "#1e2326",
+
         "debugToolBar.background": "#1e2326",
+
         "dropdown.background": "#1e2326",
         "dropdown.listBackground": "#1e2326",
+
+        "editor.background": "#151718",
+        "editor.lineHighlightBackground": "#31383e",
+        "editor.selectionBackground": "#31383e",
+        "editor.selectionHighlightBackground": "#31383e",
         "editorGroup.border": "#1e2326",
         "editorGroup.dropBackground": "#1e232680",
         "editorGroupHeader.tabsBackground": "#1e2326",
         "editorHoverWidget.background": "#1e2326",
+        "editorSuggestWidget.background": "#151718",
         "editorWidget.background": "#1e2326",
+
+        "focusBorder": "#101112",
+
         "input.background": "#1e2326",
+
         "list.activeSelectionBackground": "#1e2326",
         "list.dropBackground": "#1e2326",
         "list.focusBackground": "#1e2326",
+        "list.hoverBackground": "#151718",
         "list.inactiveSelectionBackground": "#1e2326",
+
         "panel.border": "#1e2326",
-        "peekViewResult.background": "#1e2326",
-        "peekViewResult.selectionBackground": "#1e2326",
-        "peekViewTitle.background": "#1e2326",
-        "statusBar.background": "#1e2326",
-        "statusBar.noFolderBackground": "#1e2326",
-        "tab.inactiveBackground": "#1e2326",
 
         "peekView.border": "#31383e",
-        "peekViewResult.matchHighlightBackground": "#31383e",
-        "editor.lineHighlightBackground": "#31383e",
-        "editor.selectionBackground": "#31383e",
-        "editor.selectionHighlightBackground": "#31383e",
+        "peekViewEditor.background": "#151718",
         "peekViewEditor.matchHighlightBackground": "#31383e",
+        "peekViewResult.background": "#1e2326",
+        "peekViewResult.matchHighlightBackground": "#31383e",
+        "peekViewResult.selectionBackground": "#1e2326",
+        "peekViewTitle.background": "#1e2326",
 
-        "activityBar.background": "#101112",
         "sideBar.background": "#101112",
+        "sideBarSectionHeader.background": "#151718",
+
+        "statusBar.background": "#1e2326",
+        "statusBar.noFolderBackground": "#1e2326",
+
+        "tab.border": "#151718",
+        "tab.inactiveBackground": "#1e2326",
+
         "titleBar.activeBackground": "#101112",
     },
 
@@ -94,38 +143,38 @@
         "**/*.pyo": true,
 
         // Ignore C/C++ object files (Linux)
-        "**/*.d": true,
-        "**/*.o": true,
         "**/*.a": true,
-        "**/*.so": true,
-        "**/*.gcov": true,
+        "**/*.d": true,
         "**/*.gcda": true,
         "**/*.gcno": true,
+        "**/*.gcov": true,
+        "**/*.o": true,
+        "**/*.so": true,
 
         // Ignore C/C++ object files (Windows)
+        "**/.tlog": true,
         "**/.vs": true,
-        "**/*.exe": true,
+        "**/*.cache": true,
         "**/*.dll": true,
-        "**/*.obj": true,
-        "**/*.iobj": true,
-        "**/*.lib": true,
         "**/*.dylib": true,
+        "**/*.exe": true,
+        "**/*.idb": true,
+        "**/*.ilk": true,
+        "**/*.iobj": true,
+        "**/*.ipdb": true,
+        "**/*.lib": true,
         "**/*.ncb": true,
+        "**/*.obj": true,
+        "**/*.pdb": true,
         "**/*.sdf": true,
         "**/*.suo": true,
-        "**/*.pdb": true,
-        "**/*.ipdb": true,
-        "**/*.idb": true,
-        "**/.tlog": true,
         "**/*.tlog": true,
-        "**/*.ilk": true,
-        "**/*.cache": true,
 
         // Ignore Java object files
         "**/*.class": true,
 
         // Ignore annoying OS files
+        "**/.DS_Store": true,
         "**/*.db": true,
-        "**/.DS_Store": true
     }
 }
