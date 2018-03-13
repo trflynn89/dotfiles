@@ -59,6 +59,7 @@
             "scope": [
                 "keyword.operator.logical.python",
                 "storage.modifier",
+                "storage.type.function",
                 "storage.type.modifier",
                 "variable.language.special.cls",
                 "variable.language.special.self",
