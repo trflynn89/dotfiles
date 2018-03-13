@@ -1,4 +1,5 @@
 [
+    // ctrl/cmd + i = insert multi-line cursor
     {
         "key": "ctrl+shift+i",
         "command": "editor.action.insertCursorAtEndOfEachLineSelected",
@@ -8,5 +9,38 @@
         "key": "cmd+shift+i",
         "command": "editor.action.insertCursorAtEndOfEachLineSelected",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+i",
+        "command": "-editor.action.insertCursorAtEndOfEachLineSelected",
+        "when": "editorTextFocus"
+    },
+
+    // ctrl/cmd + r = goto symbol
+    {
+        "key": "ctrl+r",
+        "command": "workbench.action.gotoSymbol"
+    },
+    {
+        "key": "cmd+r",
+        "command": "workbench.action.gotoSymbol"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "-workbench.action.gotoSymbol"
+    },
+
+    // ctrl/cmd + shift + o = goto symbol
+    {
+        "key": "ctrl+shift+o",
+        "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "cmd+shift+o",
+        "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
     },
 ]
