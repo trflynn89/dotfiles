@@ -91,6 +91,8 @@
         "dropdown.listBackground": "#1e2326",
 
         "editor.background": "#151718",
+        "editor.findMatchBackground": "#5b6872",
+        "editor.findMatchHighlightBackground": "#31383e",
         "editor.lineHighlightBackground": "#31383e",
         "editor.selectionBackground": "#31383e",
         "editor.selectionHighlightBackground": "#31383e",
