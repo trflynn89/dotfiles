@@ -121,14 +121,24 @@
         "peekViewResult.selectionBackground": "#1e2326",
         "peekViewTitle.background": "#1e2326",
 
+        "scrollbarSlider.activeBackground": "#4f99d328",
+        "scrollbarSlider.background": "#4f99d31e",
+        "scrollbarSlider.hoverBackground": "#4f99d31e",
+
         "sideBar.background": "#101112",
         "sideBarSectionHeader.background": "#151718",
 
         "statusBar.background": "#1e2326",
         "statusBar.noFolderBackground": "#1e2326",
 
+        "tab.activeBackground": "#101112",
+        "tab.activeBorder": "#529ad1",
+        "tab.activeForeground": "#ffffff",
         "tab.border": "#151718",
+        "tab.hoverBackground": "#171A1C",
+        "tab.hoverBorder": "#529ad1",
         "tab.inactiveBackground": "#1e2326",
+        "tab.inactiveForeground": "#aaaaaa",
 
         "titleBar.activeBackground": "#101112",
     },
