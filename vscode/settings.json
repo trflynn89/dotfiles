@@ -10,22 +10,19 @@
     "window.title": "${activeEditorLong}",
 
     // Editor behavior
+    "editor.multiCursorModifier": "ctrlCmd",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
 
-    // Disable extension recommendations
+    // Disable annoying stuff
+    "editor.dragAndDrop": false,
+    "explorer.enableDragAndDrop": false,
     "extensions.ignoreRecommendations": true,
     "git.ignoreLegacyWarning": true,
 
-    // Disable all drag and drop
-    "editor.dragAndDrop": false,
-    "explorer.enableDragAndDrop": false,
-
-    // Enable newer intellisense provider
-    "C_Cpp.intelliSenseEngine": "Default",
-
     // Editor color customizations
-    "editor.tokenColorCustomizations": {
+    "editor.tokenColorCustomizations":
+    {
         "comments": "#969896",
         "functions": "#44c8e2",
         "keywords": "#f68686",
@@ -78,12 +75,12 @@
             "settings": {
                 "foreground": "#969896"
             }
-        },
-    ]
+        }]
     },
 
     // Window color customizations
-    "workbench.colorCustomizations": {
+    "workbench.colorCustomizations":
+    {
         "activityBar.background": "#101112",
         "activityBar.dropBackground": "#1e2326",
 
