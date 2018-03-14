@@ -4,6 +4,7 @@
     "explorer.autoReveal": false,
     "explorer.openEditors.visible": 0,
     "problems.decorations.enabled": false,
+    "search.location": "panel",
     "workbench.editor.enablePreview": false,
     "whiteviz.expandedTabIndicator": true,
     "whiteviz.expandedTabMargin": 1,
@@ -19,6 +20,14 @@
     "explorer.enableDragAndDrop": false,
     "extensions.ignoreRecommendations": true,
     "git.ignoreLegacyWarning": true,
+
+    // Macros
+    "macros": {
+        "close_all": [
+            "closeFindWidget",
+            "workbench.action.closePanel",
+        ]
+    },
 
     // Editor color customizations
     "editor.tokenColorCustomizations":
