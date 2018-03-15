@@ -11,5 +11,4 @@ My Visual Studio Code language / theme settings.
 
 ### Tools
 
-* macros
 * WhiteViz
