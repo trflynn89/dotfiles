@@ -43,10 +43,4 @@
         "key": "ctrl+r",
         "command": "-workbench.action.openRecent"
     },
-
-    // escape = close everything
-    {
-        "key": "escape",
-        "command": "macros.close_all",
-    },
 ]
