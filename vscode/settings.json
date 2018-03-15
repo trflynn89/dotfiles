@@ -5,7 +5,6 @@
     "explorer.openEditors.visible": 0,
     "problems.decorations.enabled": false,
     "search.location": "panel",
-    "workbench.editor.enablePreview": false,
     "whiteviz.expandedTabIndicator": true,
     "whiteviz.expandedTabMargin": 1,
     "window.title": "${activeEditorLong}",
@@ -14,20 +13,14 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.list.openMode": "doubleClick",
 
     // Disable annoying stuff
     "editor.dragAndDrop": false,
     "explorer.enableDragAndDrop": false,
     "extensions.ignoreRecommendations": true,
     "git.ignoreLegacyWarning": true,
-
-    // Macros
-    "macros": {
-        "close_all": [
-            "closeFindWidget",
-            "workbench.action.closePanel",
-        ]
-    },
 
     // Editor color customizations
     "editor.tokenColorCustomizations":
@@ -195,5 +188,5 @@
         // Ignore annoying OS files
         "**/.DS_Store": true,
         "**/*.db": true,
-    }
+    },
 }
