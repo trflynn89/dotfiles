@@ -21,6 +21,7 @@
     "explorer.enableDragAndDrop": false,
     "extensions.ignoreRecommendations": true,
     "git.ignoreLegacyWarning": true,
+    "python.disableInstallationCheck": true,
 
     // Editor color customizations
     "editor.tokenColorCustomizations":
