@@ -11,7 +11,9 @@
 
     // Editor behavior
     "editor.multiCursorModifier": "ctrlCmd",
+    "files.hotExit": "onExitAndWindowClose",
     "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "workbench.editor.enablePreview": false,
     "workbench.list.openMode": "doubleClick",
