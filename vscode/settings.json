@@ -17,6 +17,7 @@
     "files.trimTrailingWhitespace": true,
     "workbench.editor.enablePreview": false,
     "workbench.list.openMode": "doubleClick",
+    "workbench.startupEditor": "none",
 
     // Disable annoying stuff
     "editor.dragAndDrop": false,
