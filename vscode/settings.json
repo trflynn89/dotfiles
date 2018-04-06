@@ -26,6 +26,10 @@
     "git.ignoreLegacyWarning": true,
     "python.disableInstallationCheck": true,
 
+    // Disable telemetry
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+
     // Editor color customizations
     "editor.tokenColorCustomizations":
     {
