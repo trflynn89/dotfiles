@@ -19,7 +19,7 @@
     "wide_caret" : true,
     "word_wrap" : false,
     "font_size" : 10,
-    "rulers": [80, 90],
+    "rulers": [80],
 
     // Auto-complete behavior
     "auto_complete_commit_on_tab" : true,
