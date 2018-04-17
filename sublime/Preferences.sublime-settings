@@ -7,11 +7,6 @@
     "find_selected_text" : true,
     "move_to_limit_on_up_down" : false,
 
-    // Font settings
-    "font_size" : 12,
-    "font_face": "Menlo, Monaco, 'Courier New', monospace",
-    "font_options": "no_italic",
-
     // Editing behavior
     "trim_trailing_white_space_on_save" : true,
     "ensure_newline_at_eof_on_save" : true,
