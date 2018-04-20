@@ -101,7 +101,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#f18b77</string>
+                <string>#e06464</string>
             </dict>
         </dict>
         <dict>
@@ -130,7 +130,7 @@
             <key>name</key>
             <string>Storage</string>
             <key>scope</key>
-            <string>storage</string>
+            <string>storage,storage.type.function</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
