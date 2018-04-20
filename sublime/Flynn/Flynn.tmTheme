@@ -46,7 +46,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#cc7a57</string>
+                <string>#db7e55</string>
             </dict>
         </dict>
         <dict>
@@ -90,7 +90,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#e8b490</string>
+                <string>#d18d70</string>
             </dict>
         </dict>
         <dict>
@@ -191,18 +191,18 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#ce9178</string>
+                <string>#d18d70</string>
             </dict>
         </dict>
         <dict>
             <key>name</key>
             <string>Common Variable</string>
             <key>scope</key>
-            <string>variable.other.readwrite</string>
+            <string>variable.other.readwrite, constant.other.variable</string>
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#e8b490</string>
+                <string>#d18d70</string>
             </dict>
         </dict>
         <dict>
@@ -290,7 +290,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#e8b490</string>
+                <string>#d18d70</string>
             </dict>
         </dict>
         <dict>
