@@ -17,18 +17,13 @@ clone_or_update()
 
     if [[ -d "$SUBLIME_DIR/$project" ]] ; then
         git -C "$SUBLIME_DIR/$project" pull
-
-        if [[ $? -ne 0 ]] ; then
-            echo "Could not update $project"
-            exit 1
-        fi
     else
         git clone $github/$project.git "$SUBLIME_DIR/$project"
+    fi
 
-        if [[ $? -ne 0 ]] ; then
-            echo "Could not clone $project"
-            exit 1
-        fi
+    if [[ $? -ne 0 ]] ; then
+        echo "Could not fetch $project"
+        exit 1
     fi
 }
 

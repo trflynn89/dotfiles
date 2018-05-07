@@ -8,22 +8,16 @@ function clone_or_update($project)
     if (Test-Path -Path $SUBLIME_DIR\$project)
     {
         git -C $SUBLIME_DIR\$project pull
-
-        if ($LASTEXITCODE)
-        {
-            echo "Could not update $project"
-            exit 1
-        }
     }
     else
     {
         git clone $github/$project.git $SUBLIME_DIR\$project
+    }
 
-        if ($LASTEXITCODE)
-        {
-            echo "Could not clone $project"
-            exit 1
-        }
+    if ($LASTEXITCODE)
+    {
+        echo "Could not fetch $project"
+        exit 1
     }
 }
 
