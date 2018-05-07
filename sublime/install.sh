@@ -43,13 +43,13 @@ clone_or_update dotfiles
 clone_or_update Packages
 clone_or_update Seti_UI
 
-ln -sf $(SUBLIME_DIR)/dotfiles/sublime/Preferences.sublime-settings $dst_dir/User
+ln -sf $SUBLIME_DIR/dotfiles/sublime/Preferences.sublime-settings $dst_dir/User
 
-ln -sf $(SUBLIME_DIR)/dotfiles/sublime/Flynn $dst_dir
-ln -sf $(SUBLIME_DIR)/dotfiles/sublime/MIB $dst_dir
-ln -sf $(SUBLIME_DIR)/dotfiles/sublime/YANG $dst_dir
+ln -sf $SUBLIME_DIR/dotfiles/sublime/Flynn $dst_dir
+ln -sf $SUBLIME_DIR/dotfiles/sublime/MIB $dst_dir
+ln -sf $SUBLIME_DIR/dotfiles/sublime/YANG $dst_dir
 
-ln -sf $(SUBLIME_DIR)/Packages/C++ $dst_dir
-ln -sf $(SUBLIME_DIR)/Packages/Makefile2 $dst_dir/Makefile
+ln -sf $SUBLIME_DIR/Packages/C++ $dst_dir
+ln -sf $SUBLIME_DIR/Packages/Makefile2 $dst_dir/Makefile
 
-ln -sf $(SUBLIME_DIR)/Seti_UI $dst_dir/Seti_UI
+ln -sf $SUBLIME_DIR/Seti_UI $dst_dir/Seti_UI
