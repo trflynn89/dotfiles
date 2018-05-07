@@ -24,5 +24,5 @@ cmd /c mklink /J "$env:APPDATA/Sublime Text 3/Packages/Seti_UI" (convert-path ./
 ## Linux and OS X installation
 
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/trflynn89/dotfiles/master/sublime/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/trflynn89/dotfiles/master/sublime/install.sh)"
 ```
