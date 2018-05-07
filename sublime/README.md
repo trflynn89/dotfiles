@@ -13,6 +13,8 @@ called "Sublime" in the user/home directory. If the projects already exist, they
 are updated instead. Then, symbolic links are created to the Sublime Packages
 directory to apply the settings.
 
+**Close Sublime Text before installing.**
+
 ### Windows (PowerShell)
 
 On Windows 8 and earlier, PowerShell must be run as an administrator to be able
