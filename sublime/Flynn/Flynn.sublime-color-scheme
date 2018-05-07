@@ -1,0 +1,236 @@
+{
+    "name": "Flynn",
+    "author": "trflynn89@gmail.com",
+
+    "variables":
+    {
+        "background": "#151718",
+        "foreground": "#d6d7d9",
+        "highlight": "#31383e",
+        "invisibles": "#565656",
+
+        "comment": "#969896",
+        "json": "#9cdcfe",
+        "keyword": "#e06464",
+        "number": "#a2e9f6",
+        "parameters": "#d18d70",
+        "string": "#db7e55",
+        "types": "#44c8e2",
+
+        "error": "#ad1a00",
+        "warning": "#a58900"
+    },
+
+    "globals":
+    {
+        "background": "var(background)",
+        "caret": "var(foreground)",
+        "foreground": "var(foreground)",
+        "invisibles": "var(invisibles)",
+        "line_highlight": "var(highlight)",
+        "selection": "var(highlight)"
+    },
+
+    "rules":
+    [
+        // Generic
+        {
+            "name": "Comment",
+            "scope": "comment",
+            "foreground": "var(comment)"
+        },
+        {
+            "name": "String",
+            "scope": "string",
+            "foreground": "var(string)"
+        },
+        {
+            "name": "Number",
+            "scope": "constant.numeric",
+            "foreground": "var(number)"
+        },
+        {
+            "name": "Built-in constant",
+            "scope": "constant.language",
+            "foreground": "var(number)"
+        },
+        {
+            "name": "User-defined constant",
+            "scope": "constant.character, constant.other",
+            "foreground": "var(types)"
+        },
+        {
+            "name": "Variable",
+            "scope": "variable, support.other.variable",
+            "foreground": "var(parameters)"
+        },
+        {
+            "name": "Language Variable",
+            "scope": "variable.language",
+            "foreground": "var(keyword)"
+        },
+        {
+            "name": "Entity",
+            "scope": "entity",
+            "foreground": "var(keyword)"
+        },
+        {
+            "name": "Keyword",
+            "scope": "keyword.control, keyword.operator.logical, keyword.operator.word",
+            "foreground": "var(keyword)"
+        },
+        {
+            "name": "Storage",
+            "scope": "storage, storage.type.function",
+            "foreground": "var(keyword)"
+        },
+        {
+            "name": "Storage type",
+            "scope": "storage.type",
+            "foreground": "var(types)"
+        },
+        {
+            "name": "Class name",
+            "scope": "entity.name.class",
+            "foreground": "var(types)"
+        },
+        {
+            "name": "Inherited class",
+            "scope": "entity.other.inherited-class",
+            "foreground": "var(types)"
+        },
+        {
+            "name": "Function name",
+            "scope": "entity.name.function",
+            "foreground": "var(types)"
+        },
+        {
+            "name": "Function argument",
+            "scope": "variable.parameter",
+            "foreground": "var(parameters)"
+        },
+        {
+            "name": "Common Variable",
+            "scope": "variable.other.readwrite, constant.other.variable",
+            "foreground": "var(parameters)"
+        },
+        {
+            "name": "Tag name",
+            "scope": "entity.name.tag",
+            "foreground": "var(keyword)"
+        },
+        {
+            "name": "Tag attribute",
+            "scope": "entity.other.attribute-name",
+            "foreground": "var(types)"
+        },
+        {
+            "name": "Library function",
+            "scope": "support.function",
+            "foreground": "var(types)"
+        },
+        {
+            "name": "Library constant",
+            "scope": "support.constant",
+            "foreground": "var(types)"
+        },
+        {
+            "name": "Library class/type",
+            "scope": "support.type, support.class",
+            "foreground": "var(types)"
+        },
+        {
+            "name": "String constant",
+            "scope": "string constant",
+            "foreground": "var(types)"
+        },
+        {
+            "name": "String.regexp",
+            "scope": "string.regexp",
+            "foreground": "var(types)"
+        },
+        {
+            "name": "String variable",
+            "scope": "string variable",
+            "foreground": "var(parameters)"
+        },
+        {
+            "name": "Support.function",
+            "scope": "support.function, variable.function, keyword.other",
+            "foreground": "var(types)"
+        },
+        {
+            "name": "Invalid",
+            "scope": "invalid",
+            "background": "var(error)"
+        },
+        {
+            "name": "Deprecated",
+            "scope": "invalid.deprecated",
+            "background": "var(warning)"
+        },
+        {
+            "name": "Fenced Code Block",
+            "scope": "punctuation.definition.fenced, variable.language.fenced",
+            "foreground": "var(comment)"
+        },
+
+        // Find-In-Files
+        {
+            "name": "Find-In-Files: File",
+            "scope": "entity.name.filename.find-in-files",
+            "foreground": "var(string)"
+        },
+        {
+            "name": "Find-In-Files: Line",
+            "scope": "constant.numeric.line-number.find-in-files - match",
+            "foreground": "color(var(number) alpha(0.63))"
+        },
+
+        // Markdown
+        {
+            "name": "Markdown: Heading",
+            "scope": "markdown.heading, markup.heading | markup.heading entity.name, markup.heading.markdown punctuation.definition.heading.markdown",
+            "foreground": "var(keyword)"
+        },
+        {
+            "name": "Markdown: Italic",
+            "scope": "markup.italic",
+            "foreground": "color(var(keyword) alpha(0.87))",
+            "font_style": "italic"
+        },
+        {
+            "name": "Markdown: Bold",
+            "scope": "markup.bold",
+            "foreground": "var(keyword)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown: Underline",
+            "scope": "markup.underline",
+            "foreground": "var(types)",
+            "font_style": "underline"
+        },
+        {
+            "name": "Markdown: Quote",
+            "scope": "markup.quote, punctuation.definition.blockquote.markdown",
+            "foreground": "var(string)"
+        },
+        {
+            "name": "Markdown: Link",
+            "scope": "string.other.link.title.markdown",
+            "foreground": "var(types)",
+            "font_style": "underline"
+        },
+        {
+            "name": "Markdown: List Items",
+            "scope": "punctuation.definition.list_item.markdown",
+            "foreground": "var(comment)"
+        },
+        {
+            "name": "Markdown: Separator",
+            "scope": "meta.separator",
+            "foreground": "var(comment)"
+        },
+    ]
+}
