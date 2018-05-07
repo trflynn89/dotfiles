@@ -18,12 +18,12 @@ directory to apply the settings.
 On Windows 8 and earlier, PowerShell must be run as an administrator to be able
 to create the symbolic links. PowerShell can be launched normally on Windows 10.
 
-```
+```PowerShell
 Invoke-Command -ScriptBlock ([Scriptblock]::Create((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/trflynn89/dotfiles/master/sublime/install.ps1')))
 ```
 
 ### Linux and OS X
 
-```
+```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/trflynn89/dotfiles/master/sublime/install.sh)"
 ```
