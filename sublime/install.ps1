@@ -27,17 +27,44 @@ function clone_or_update($project)
     }
 }
 
+function make_link($source, $dest, $is_file)
+{
+    $source = "$SUBLIME_DIR\$source"
+    $dest = "$PACKAGES_DIR\$dest"
+
+    if (Test-Path -Path $dest)
+    {
+        if ($is_file)
+        {
+            cmd /c del $dest
+        }
+        else
+        {
+            cmd /c rmdir $dest
+        }
+    }
+
+    if ($is_file)
+    {
+        cmd /c mklink $dest $source
+    }
+    else
+    {
+        cmd /c mklink /J $dest $source
+    }
+}
+
 clone_or_update dotfiles
 clone_or_update Packages
 clone_or_update Seti_UI
 
-cmd /c mklink "$PACKAGES_DIR\User\Preferences.sublime-settings" $SUBLIME_DIR\dotfiles\sublime\Preferences.sublime-settings
+make_link "dotfiles\sublime\Preferences.sublime-settings" "User\Preferences.sublime-settings" 1
 
-cmd /c mklink /D "$PACKAGES_DIR\Flynn" $SUBLIME_DIR\dotfiles\sublime\Flynn
-cmd /c mklink /D "$PACKAGES_DIR\MIB" $SUBLIME_DIR\dotfiles\sublime\MIB
-cmd /c mklink /D "$PACKAGES_DIR\YANG" $SUBLIME_DIR\dotfiles\sublime\YANG
+make_link "dotfiles\sublime\Flynn" "Flynn" 0
+make_link "dotfiles\sublime\MIB" "MIB" 0
+make_link "dotfiles\sublime\YANG" "YANG" 0
 
-cmd /c mklink /D "$PACKAGES_DIR\C++" $SUBLIME_DIR\Packages\C++
-cmd /c mklink /D "$PACKAGES_DIR\Makefile" $SUBLIME_DIR\Packages\Makefile2
+make_link "Packages\C++" "C++" 0
+make_link "Packages\Makefile2" "Makefile" 0
 
-cmd /c mklink /D "$PACKAGES_DIR\Seti_UI" $SUBLIME_DIR\Seti_UI
+make_link "Seti_UI" "Seti_UI" 0
