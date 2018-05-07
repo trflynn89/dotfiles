@@ -4,7 +4,7 @@ My Sublime Text language / theme settings. Requires Sublime Text 3.1 build 3170.
 
 Intended to be used with the following forked projects:
 * [Sublime Packages](https://github.com/trflynn89/Packages)
-* [Seti Theme](https://github.com/trflynn89/Seti_UI).
+* [Seti Theme](https://github.com/trflynn89/Seti_UI)
 
 ## Installation
 
