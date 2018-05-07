@@ -162,11 +162,13 @@
         {
             "name": "Invalid",
             "scope": "invalid",
+            "foreground": "var(foreground)",
             "background": "var(error)"
         },
         {
             "name": "Deprecated",
             "scope": "invalid.deprecated",
+            "foreground": "var(foreground)",
             "background": "var(warning)"
         },
         {
