@@ -32,11 +32,11 @@ clone_or_update()
 
 make_link()
 {
-    local source=$SUBLIME_DIR/$1
-    local dest=$PACKAGES_DIR/$2
+    local source="$SUBLIME_DIR/$1"
+    local dest="$PACKAGES_DIR/$2"
 
-    rm -rf $dest
-    ln -sf $source $dest
+    rm -rf "$dest"
+    ln -sf "$source" "$dest"
 }
 
 clone_or_update dotfiles
