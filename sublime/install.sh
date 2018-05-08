@@ -27,17 +27,26 @@ clone_or_update()
     fi
 }
 
+make_link()
+{
+    local source=$SUBLIME_DIR/$1
+    local dest=$PACKAGES_DIR/$2
+
+    rm -rf $dest
+    ln -sf $source $dest
+}
+
 clone_or_update dotfiles
 clone_or_update Packages
 clone_or_update Seti_UI
 
-ln -sf "$SUBLIME_DIR/dotfiles/sublime/Preferences.sublime-settings" "$PACKAGES_DIR/User"
+make_link "dotfiles/sublime/Preferences.sublime-settings" "User/Preferences.sublime-settings"
 
-ln -sf "$SUBLIME_DIR/dotfiles/sublime/Flynn" "$PACKAGES_DIR"
-ln -sf "$SUBLIME_DIR/dotfiles/sublime/MIB" "$PACKAGES_DIR"
-ln -sf "$SUBLIME_DIR/dotfiles/sublime/YANG" "$PACKAGES_DIR"
+make_link "dotfiles/sublime/Flynn" "Flynn"
+make_link "dotfiles/sublime/MIB" "MIB"
+make_link "dotfiles/sublime/YANG" "YANG"
 
-ln -sf "$SUBLIME_DIR/Packages/C++" "$PACKAGES_DIR"
-ln -sf "$SUBLIME_DIR/Packages/Makefile2" "$PACKAGES_DIR/Makefile"
+make_link "Packages/C++" "C++"
+make_link "Packages/Makefile2" "Makefile"
 
-ln -sf "$SUBLIME_DIR/Seti_UI" "$PACKAGES_DIR"
+make_link "Seti_UI" "Seti_UI"
