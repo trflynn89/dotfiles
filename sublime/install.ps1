@@ -5,13 +5,17 @@ function clone_or_update($project)
 {
     $github = "https://github.com/trflynn89"
 
-    if (Test-Path -Path $SUBLIME_DIR\$project)
+    git -C $SUBLIME_DIR\$project rev-parse --git-dir 2>&1 | out-null
+
+    if ($LASTEXITCODE)
     {
-        git -C $SUBLIME_DIR\$project pull
+        cmd /c rmdir /S /Q $SUBLIME_DIR\$project
+        git clone $github/$project.git $SUBLIME_DIR\$project
     }
     else
     {
-        git clone $github/$project.git $SUBLIME_DIR\$project
+        git -C $SUBLIME_DIR\$project reset --hard
+        git -C $SUBLIME_DIR\$project pull
     }
 
     if ($LASTEXITCODE)

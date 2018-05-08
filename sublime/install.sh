@@ -15,9 +15,12 @@ clone_or_update()
     local github="https://github.com/trflynn89"
     local project="$1"
 
-    if [[ -d "$SUBLIME_DIR/$project" ]] ; then
+    if git -C "$SUBLIME_DIR/$project" rev-parse --git-dir > /dev/null 2>&1
+    then
+        git -C "$SUBLIME_DIR/$project" reset --hard
         git -C "$SUBLIME_DIR/$project" pull
     else
+        rm -rf "$SUBLIME_DIR/$project"
         git clone $github/$project.git "$SUBLIME_DIR/$project"
     fi
 
