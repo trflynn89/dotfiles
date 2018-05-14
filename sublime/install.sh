@@ -3,8 +3,10 @@ HOST_OS="$(uname -s)"
 
 if [[ $HOST_OS == "Darwin" ]] ; then
     PACKAGES_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages"
+    PREFERENCES="Preferences (OSX).sublime-settings"
 elif [[ $HOST_OS == "Linux" ]] ; then
     PACKAGES_DIR="$HOME/.config/sublime-text-3/Packages"
+    PREFERENCES="Preferences (Linux).sublime-settings"
 else
     echo "Unknown host: $(HOST_OS)"
     exit 1
@@ -44,6 +46,7 @@ clone_or_update Packages
 clone_or_update Seti_UI
 
 make_link "dotfiles/sublime/Preferences.sublime-settings" "User/Preferences.sublime-settings"
+make_link "dotfiles/sublime/$PREFERENCES" "$PREFERENCES"
 
 make_link "dotfiles/sublime/Flynn" "Flynn"
 make_link "dotfiles/sublime/MIB" "MIB"

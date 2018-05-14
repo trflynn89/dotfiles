@@ -57,6 +57,7 @@ clone_or_update Packages
 clone_or_update Seti_UI
 
 make_link "dotfiles\sublime\Preferences.sublime-settings" "User\Preferences.sublime-settings" 1
+make_link "dotfiles\sublime\Preferences (Windows).sublime-settings" "Preferences (Windows).sublime-settings" 1
 
 make_link "dotfiles\sublime\Flynn" "Flynn" 0
 make_link "dotfiles\sublime\MIB" "MIB" 0
