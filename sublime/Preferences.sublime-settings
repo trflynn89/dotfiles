@@ -2,11 +2,6 @@
     "theme" : "Seti_orig.sublime-theme",
     "color_scheme" : "Packages/Flynn/Flynn.sublime-color-scheme",
 
-    // Reset OSX overrides
-    "show_full_path" : true,
-    "find_selected_text" : true,
-    "move_to_limit_on_up_down" : false,
-
     // Editing behavior
     "trim_trailing_white_space_on_save" : true,
     "ensure_newline_at_eof_on_save" : true,
