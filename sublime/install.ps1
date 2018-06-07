@@ -65,5 +65,6 @@ make_link "dotfiles\sublime\YANG" "YANG" 0
 
 make_link "Packages\C++" "C++" 0
 make_link "Packages\Makefile2" "Makefile" 0
+make_link "Packages\Objective-C" "Objective-C" 0
 
 make_link "Seti_UI" "Seti_UI" 0
