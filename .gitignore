@@ -1,2 +1,3 @@
-# Compiled Chrome theme
+# Compiled Chrome theme / private key
 *.pak
+*.pem
