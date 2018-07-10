@@ -10,12 +10,12 @@
         "invisibles": "#565656",
 
         "comment": "#969896",
-        "json": "#9cdcfe",
+        "function": "#44bbe2",
         "keyword": "#e06464",
         "number": "#a2e9f6",
-        "parameters": "#d18d70",
+        "parameters": "#db7e55",
         "string": "#db7e55",
-        "types": "#44c8e2",
+        "types": "#44d5e2",
 
         "error": "#ad1a00",
         "warning": "#a58900"
@@ -102,7 +102,7 @@
         {
             "name": "Function name",
             "scope": "entity.name.function",
-            "foreground": "var(types)"
+            "foreground": "var(function)"
         },
         {
             "name": "Function argument",
@@ -127,7 +127,7 @@
         {
             "name": "Library function",
             "scope": "support.function",
-            "foreground": "var(types)"
+            "foreground": "var(function)"
         },
         {
             "name": "Library constant",
@@ -157,7 +157,7 @@
         {
             "name": "Support.function",
             "scope": "support.function, variable.function, keyword.other",
-            "foreground": "var(types)"
+            "foreground": "var(function)"
         },
         {
             "name": "Invalid",
