@@ -15,7 +15,7 @@
         "number": "#a2e9f6",
         "parameters": "#db7e55",
         "string": "#db7e55",
-        "types": "#44d5e2",
+        "types": "#66d9ef",
 
         "error": "#ad1a00",
         "warning": "#a58900"
@@ -92,7 +92,7 @@
         {
             "name": "Class name",
             "scope": "entity.name.class",
-            "foreground": "var(types)"
+            "foreground": "var(function)"
         },
         {
             "name": "Inherited class",
