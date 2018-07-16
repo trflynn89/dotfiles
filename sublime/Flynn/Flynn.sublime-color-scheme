@@ -97,7 +97,7 @@
         {
             "name": "Inherited class",
             "scope": "entity.other.inherited-class",
-            "foreground": "var(types)"
+            "foreground": "var(function)"
         },
         {
             "name": "Function name",
