@@ -189,6 +189,13 @@
             "foreground": "color(var(number) alpha(0.63))"
         },
 
+        // C++
+        {
+            "name": "Initializer List",
+            "scope": "meta.method.constructor.initializer-list variable.other.readwrite",
+            "foreground": "var(function)"
+        },
+
         // Markdown
         {
             "name": "Markdown: Heading",
