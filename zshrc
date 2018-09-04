@@ -70,6 +70,7 @@ init_shell()
     alias guf='git ls-files --others --exclude-standard'
     alias gno='git --no-pager diff --name-only'
     alias gfp='git fetch origin --prune'
+    alias gfm='git fetch origin master:master'
 
     # zsh options
     unsetopt share_history
