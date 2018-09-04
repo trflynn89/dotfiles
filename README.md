@@ -1,5 +1,11 @@
 # dotfiles
 
+[sublime](sublime) - My Sublime Text language / theme settings.
+
+[vscode](vscode) - My Visual Studio Code language / theme settings.
+
+[chrome](chrome) - Simple theme to only change the Chrome frame to a dark blue.
+
 [zshrc](zshrc) - In conjunction with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
 
 ```bash
@@ -11,3 +17,8 @@ ln -sf $(pwd)/zshrc ~/.zshrc
 ```bash
 ln -sf $(pwd)/vimrc ~/.vimrc
 ```
+
+[keyboard_shortcuts.ahk](keyboard_shortcuts.ahk) - AutoHotkey script for:
+* Controlling volume with a mouse
+* Putting monitors to sleep
+* Switching audio devices
