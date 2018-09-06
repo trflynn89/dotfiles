@@ -71,6 +71,7 @@ init_shell()
     alias gno='git --no-pager diff --name-only'
     alias gfp='git fetch origin --prune'
     alias gfm='git fetch origin master:master'
+    alias gch='git checkout HEAD'
 
     # zsh options
     unsetopt share_history
