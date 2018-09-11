@@ -62,8 +62,10 @@ init_shell()
 
     if [[ -x $(which rg) ]] ; then
         alias cgrep='rg -n -tcpp -tobjcpp'
+        alias jgrep='rg -n -tjava'
     else
         alias cgrep='grep -Irn --include=\*.{cc,cpp,h,hpp,mm}'
+        alias jgrep='grep -Irn --include=\*.{java,jsp}'
     fi
 
     # Git aliases
