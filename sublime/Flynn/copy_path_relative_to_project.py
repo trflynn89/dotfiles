@@ -3,13 +3,13 @@ import os
 import sublime
 import sublime_plugin
 
-class CopyPathFromProjectFolderCommand(sublime_plugin.TextCommand):
+class CopyPathRelativeToProject(sublime_plugin.TextCommand):
     """
     Command to copy the path of the current file relative to the project's root
     directory.
     """
     def __init__(self, *args, **kwargs):
-        super(CopyPathFromProjectFolderCommand, self).__init__(*args, **kwargs)
+        super(CopyPathRelativeToProject, self).__init__(*args, **kwargs)
         self.relative_file_path = None
 
     def run(self, edit):
