@@ -1,7 +1,7 @@
 [
     { "caption": "-", "id": "file" },
     {
-        "caption": "Copy File Path Relative to Project Folder",
+        "caption": "Copy File Path Relative to Project",
         "command": "copy_path_from_project_folder",
     },
 ]

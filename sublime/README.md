@@ -1,6 +1,7 @@
 # sublime
 
-My Sublime Text language / theme settings. Requires Sublime Text 3.1 build 3170.
+My Sublime Text language settings, theme settings, and plugins. Requires Sublime
+Text 3.1 build 3170.
 
 Intended to be used with the following forked projects:
 * [Sublime Packages](https://github.com/trflynn89/Packages)
@@ -29,3 +30,11 @@ Invoke-Command -ScriptBlock ([Scriptblock]::Create((New-Object Net.WebClient).Do
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/trflynn89/dotfiles/master/sublime/install.sh)"
 ```
+
+## Plugins
+
+The above installation includes the following plugins:
+
+* [copy_path_from_project_folder](Flynn/copy_path_from_project_folder.py) - Adds
+an option to the Command Palette and right-click context menu to copy the path
+of the current file relative to the project's root directory.
