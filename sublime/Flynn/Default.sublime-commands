@@ -1,0 +1,6 @@
+[
+    {
+        "caption": "Copy File Path Relative to Project Folder",
+        "command": "copy_path_from_project_folder",
+    },
+]
