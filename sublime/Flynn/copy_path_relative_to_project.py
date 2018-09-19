@@ -10,20 +10,21 @@ class CopyPathRelativeToProject(sublime_plugin.TextCommand):
     """
     def __init__(self, *args, **kwargs):
         super(CopyPathRelativeToProject, self).__init__(*args, **kwargs)
-        self.relative_file_path = None
+        self.relative_path = None
 
     def run(self, edit):
-        sublime.set_clipboard(self.relative_file_path)
+        sublime.set_clipboard(self.relative_path)
         sublime.status_message("Copied file path")
 
     def is_enabled(self):
-        if not self.relative_file_path:
-            window_variables = self.view.window().extract_variables()
+        if not self.relative_path:
+            project_paths = self.view.window().folders()
+            file_path = self.view.file_name() or str()
 
-            project_path = window_variables['folder']
-            file_path = self.view.file_name()
+            candidates = [p for p in project_paths if file_path.startswith(p)]
 
-            if project_path and file_path and file_path.startswith(project_path):
-                self.relative_file_path = os.path.relpath(file_path, project_path)
+            if candidates:
+                project_path = min(candidates, key=len)
+                self.relative_path = os.path.relpath(file_path, project_path)
 
-        return bool(self.relative_file_path)
+        return bool(self.relative_path)
