@@ -35,6 +35,8 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/trflynn89/dotfiles/maste
 
 The above installation includes the following plugins:
 
-* [copy_path_relative_to_project](Flynn/copy_path_relative_to_project.py) - Adds
-an option to the Command Palette and right-click context menu to copy the path
-of the current file relative to the project's root directory.
+* [copy_file_name](Flynn/copy_path.py) - Adds an option to the Command Palette
+and right-click context menu to copy the name of the current file.
+* [copy_path_relative_to_project](Flynn/copy_path.py) - Adds an option to the
+Command Palette and right-click context menu to copy the path of the current
+file relative to the project's root directory.

@@ -3,18 +3,29 @@ import os
 import sublime
 import sublime_plugin
 
-class CopyPathRelativeToProject(sublime_plugin.TextCommand):
+class CopyFileNameCommand(sublime_plugin.TextCommand):
+    """
+    Command to copy only the file name of the current file.
+    """
+    def run(self, edit):
+        sublime.set_clipboard(os.path.basename(self.view.file_name()))
+        sublime.status_message('Copied file name')
+
+    def is_enabled(self):
+        return bool(self.view.file_name())
+
+class CopyPathRelativeToProjectCommand(sublime_plugin.TextCommand):
     """
     Command to copy the path of the current file relative to the project's root
     directory.
     """
     def __init__(self, *args, **kwargs):
-        super(CopyPathRelativeToProject, self).__init__(*args, **kwargs)
+        super(CopyPathRelativeToProjectCommand, self).__init__(*args, **kwargs)
         self.relative_path = None
 
     def run(self, edit):
         sublime.set_clipboard(self.relative_path)
-        sublime.status_message("Copied file path")
+        sublime.status_message('Copied relative path')
 
     def is_enabled(self):
         if not self.relative_path:
