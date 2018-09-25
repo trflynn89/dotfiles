@@ -51,6 +51,7 @@ make_link "dotfiles/sublime/$PREFERENCES" "$PREFERENCES"
 make_link "dotfiles/sublime/Flynn" "Flynn"
 make_link "dotfiles/sublime/MIB" "MIB"
 make_link "dotfiles/sublime/YANG" "YANG"
+make_link "dotfiles/sublime/GN" "GN"
 
 make_link "Packages/C++" "C++"
 make_link "Packages/Makefile2" "Makefile"

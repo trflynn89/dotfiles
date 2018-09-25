@@ -62,6 +62,7 @@ make_link "dotfiles\sublime\Preferences (Windows).sublime-settings" "Preferences
 make_link "dotfiles\sublime\Flynn" "Flynn" 0
 make_link "dotfiles\sublime\MIB" "MIB" 0
 make_link "dotfiles\sublime\YANG" "YANG" 0
+make_link "dotfiles\sublime\GN" "GN" 0
 
 make_link "Packages\C++" "C++" 0
 make_link "Packages\Makefile2" "Makefile" 0
