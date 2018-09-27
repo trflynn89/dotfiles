@@ -3,9 +3,33 @@ import os
 import sublime
 import sublime_plugin
 
+class RelativePath(object):
+    """
+    Class to determine and store the path of the current file relative to its
+    project's root directory.
+    """
+    def __init__(self):
+        self.relative_path = None
+
+    def __call__(self, view):
+        if not self.relative_path:
+            project_paths = view.window().folders()
+            file_path = view.file_name() or str()
+
+            # This file may appear under multiple projects (e.g. if a subpath of
+            # an existing project was added as a folder). Pick the project with
+            # the shortest path length to get the top-most project path.
+            candidates = [p for p in project_paths if file_path.startswith(p)]
+
+            if candidates:
+                project_path = min(candidates, key=len)
+                self.relative_path = os.path.relpath(file_path, project_path)
+
+        return self.relative_path
+
 class CopyFileNameCommand(sublime_plugin.TextCommand):
     """
-    Command to copy only the file name of the current file.
+    Command to copy the name of the current file.
     """
     def run(self, edit):
         sublime.set_clipboard(os.path.basename(self.view.file_name()))
@@ -14,28 +38,47 @@ class CopyFileNameCommand(sublime_plugin.TextCommand):
     def is_enabled(self):
         return bool(self.view.file_name())
 
-class CopyPathRelativeToProjectCommand(sublime_plugin.TextCommand):
+class CopyFileDirectoryCommand(sublime_plugin.TextCommand):
     """
-    Command to copy the path of the current file relative to the project's root
+    Command to copy the directory of the current file.
+    """
+    def run(self, edit):
+        sublime.set_clipboard(os.path.dirname(self.view.file_name()))
+        sublime.status_message('Copied file directory')
+
+    def is_enabled(self):
+        return bool(self.view.file_name())
+
+class CopyFilePathRelativeToProjectCommand(sublime_plugin.TextCommand):
+    """
+    Command to copy the path of the current file relative to its project's root
     directory.
     """
     def __init__(self, *args, **kwargs):
-        super(CopyPathRelativeToProjectCommand, self).__init__(*args, **kwargs)
-        self.relative_path = None
+        super(CopyFilePathRelativeToProjectCommand, self).__init__(
+            *args, **kwargs)
+        self.relative_path = RelativePath()
 
     def run(self, edit):
-        sublime.set_clipboard(self.relative_path)
-        sublime.status_message('Copied relative path')
+        sublime.set_clipboard(self.relative_path(self.view))
+        sublime.status_message('Copied relative file')
 
     def is_enabled(self):
-        if not self.relative_path:
-            project_paths = self.view.window().folders()
-            file_path = self.view.file_name() or str()
+        return bool(self.relative_path(self.view))
 
-            candidates = [p for p in project_paths if file_path.startswith(p)]
+class CopyFileDirectoryRelativeToProjectCommand(sublime_plugin.TextCommand):
+    """
+    Command to copy the directory of the current file relative to its project's
+    root directory.
+    """
+    def __init__(self, *args, **kwargs):
+        super(CopyFileDirectoryRelativeToProjectCommand, self).__init__(
+            *args, **kwargs)
+        self.relative_path = RelativePath()
 
-            if candidates:
-                project_path = min(candidates, key=len)
-                self.relative_path = os.path.relpath(file_path, project_path)
+    def run(self, edit):
+        sublime.set_clipboard(os.path.dirname(self.relative_path(self.view)))
+        sublime.status_message('Copied relative directory')
 
-        return bool(self.relative_path)
+    def is_enabled(self):
+        return bool(self.relative_path(self.view))

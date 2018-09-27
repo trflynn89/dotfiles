@@ -37,6 +37,11 @@ The above installation includes the following plugins:
 
 * [copy_file_name](Flynn/copy_path.py) - Adds an option to the Command Palette
 and right-click context menu to copy the name of the current file.
-* [copy_path_relative_to_project](Flynn/copy_path.py) - Adds an option to the
-Command Palette and right-click context menu to copy the path of the current
-file relative to the project's root directory.
+* [copy_file_directory](Flynn/copy_path.py) - Adds an option to the Command
+Palette and right-click context menu to copy the directory of the current file.
+* [copy_file_path_relative_to_project](Flynn/copy_path.py) - Adds an option to
+the Command Palette and right-click context menu to copy the path of the current
+file relative to its project's root directory.
+* [copy_file_directory_relative_to_project](Flynn/copy_path.py) - Adds an option
+to the Command Palette and right-click context menu to copy the directory of the
+current file relative to its project's root directory.

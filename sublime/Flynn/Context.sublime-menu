@@ -1,11 +1,19 @@
 [
-    { "caption": "-", "id": "file" },
+    { "caption": "-", "id": "copy" },
     {
         "caption": "Copy File Name",
         "command": "copy_file_name",
     },
     {
+        "caption": "Copy File Directory",
+        "command": "copy_file_directory",
+    },
+    {
         "caption": "Copy File Path Relative to Project",
-        "command": "copy_path_relative_to_project",
+        "command": "copy_file_path_relative_to_project",
+    },
+    {
+        "caption": "Copy File Directory Relative to Project",
+        "command": "copy_file_directory_relative_to_project",
     },
 ]
