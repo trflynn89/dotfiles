@@ -28,7 +28,7 @@ source $ZSH/oh-my-zsh.sh
 path_add()
 {
     if [[ -d "$1" ]] && [[ ":$PATH:" != *":$1:"* ]] ; then
-        export PATH="${PATH:+"$PATH:"}$1"
+        export PATH="$1:$PATH"
     fi
 }
 
