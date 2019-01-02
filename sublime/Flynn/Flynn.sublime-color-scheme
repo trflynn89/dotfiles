@@ -76,7 +76,7 @@
         },
         {
             "name": "Keyword",
-            "scope": "keyword.control, keyword.operator.logical, keyword.operator.word",
+            "scope": "keyword.control, keyword.operator.logical, keyword.operator.module, keyword.operator.word",
             "foreground": "var(keyword)"
         },
         {
