@@ -64,6 +64,8 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
     * Night Light Slider
         * Show always
 
+    * Volume Scroll
+
 ## Keyboard & Mouse
 
 ### Keyboard
