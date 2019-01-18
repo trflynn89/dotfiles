@@ -30,7 +30,7 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 1. Uncheck 'Trash'
 2. Uncheck 'Mounted Volumes'
 
-## Extensions (<https://extensions.gnome.org>)
+## Extensions
 
 1. Preparation:
 
@@ -42,6 +42,8 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
     Then log out & back in
 
 2. Extension installation steps:
+
+    Download extension package <https://extensions.gnome.org>
 
     ```bash
     unzip [package name].[version].shell-extension.zip -d [package name]
