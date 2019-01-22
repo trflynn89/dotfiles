@@ -56,6 +56,9 @@ init_shell()
         bindkey -s "^[On" "."  # .
         bindkey -s "^[OM" "^M" # Enter
     fi
+    
+    # PATH changes
+    path_add "$HOME/.local/bin"    
 
     # Utility aliases
     alias cdiff='cdiff -s -w0 --ignore-space-at-eol'
