@@ -1,4 +1,5 @@
 import os
+import re
 
 import sublime
 import sublime_plugin
@@ -79,6 +80,28 @@ class CopyFileDirectoryRelativeToProjectCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         sublime.set_clipboard(os.path.dirname(self.relative_path(self.view)))
         sublime.status_message('Copied relative directory')
+
+    def is_enabled(self):
+        return bool(self.relative_path(self.view))
+
+class CopyFilePathAsIncludeGuardCommand(sublime_plugin.TextCommand):
+    """
+    Command to copy the path of the current file relative to its project's root
+    directory as a C/C++ #include guard.
+    """
+    def __init__(self, *args, **kwargs):
+        super(CopyFilePathAsIncludeGuardCommand, self).__init__(
+            *args, **kwargs)
+        self.relative_path = RelativePath()
+
+    def run(self, edit):
+        relative_path = self.relative_path(self.view)
+
+        relative_path = relative_path.upper() + '_'
+        relative_path = re.sub('[^0-9A-Z]+', '_', relative_path)
+
+        sublime.set_clipboard(relative_path)
+        sublime.status_message('Copied relative file')
 
     def is_enabled(self):
         return bool(self.relative_path(self.view))

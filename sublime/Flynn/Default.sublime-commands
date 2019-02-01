@@ -15,4 +15,8 @@
         "caption": "Copy File Directory Relative to Project",
         "command": "copy_file_directory_relative_to_project",
     },
+    {
+        "caption": "Copy File Path as C/C++ Include Guard",
+        "command": "copy_file_path_as_include_guard",
+    },
 ]
