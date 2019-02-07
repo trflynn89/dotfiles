@@ -101,7 +101,7 @@ class CopyFilePathAsIncludeGuardCommand(sublime_plugin.TextCommand):
         relative_path = re.sub('[^0-9A-Z]+', '_', relative_path)
 
         sublime.set_clipboard(relative_path)
-        sublime.status_message('Copied relative file')
+        sublime.status_message('Copied include guard')
 
     def is_enabled(self):
         return bool(self.relative_path(self.view))
