@@ -20,4 +20,10 @@
         "caption": "Copy File Path as C/C++ Include Guard",
         "command": "copy_file_path_as_include_guard",
     },
+
+    { "caption": "-", "id": "format" },
+    {
+        "caption": "Format File",
+        "command": "format_file",
+    },
 ]

@@ -48,3 +48,6 @@ current file relative to its project's root directory.
 * [copy_file_path_as_include_guard](Flynn/copy_path.py) - Adds an option to the
 Command Palette and right-click context menu to copy the path of the current
 file relative to its project's root directory as a C/C++ #include guard.
+* [format_file](Flynn/format.py) - Adds an option to the Command Palette and
+right-click context menu to run clang-format on the current file. If any
+selections are active, only those selections are formatted.
