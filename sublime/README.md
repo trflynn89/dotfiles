@@ -33,21 +33,17 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/trflynn89/dotfiles/maste
 
 ## Plugins
 
-The above installation includes the following plugins:
+The above installation adds the following plugins to the Command Palette and
+right-click context menu:
 
-* [copy_file_name](Flynn/copy_path.py) - Adds an option to the Command Palette
-and right-click context menu to copy the name of the current file.
-* [copy_file_directory](Flynn/copy_path.py) - Adds an option to the Command
-Palette and right-click context menu to copy the directory of the current file.
-* [copy_file_path_relative_to_project](Flynn/copy_path.py) - Adds an option to
-the Command Palette and right-click context menu to copy the path of the current
-file relative to its project's root directory.
-* [copy_file_directory_relative_to_project](Flynn/copy_path.py) - Adds an option
-to the Command Palette and right-click context menu to copy the directory of the
-current file relative to its project's root directory.
-* [copy_file_path_as_include_guard](Flynn/copy_path.py) - Adds an option to the
-Command Palette and right-click context menu to copy the path of the current
-file relative to its project's root directory as a C/C++ #include guard.
-* [format_file](Flynn/format.py) - Adds an option to the Command Palette and
-right-click context menu to run clang-format on the current file. If any
+* [copy_file_name](Flynn/copy_path.py) - Copy the name of the current file.
+* [copy_file_directory](Flynn/copy_path.py) - Copy the directory of the current
+file.
+* [copy_file_path_relative_to_project](Flynn/copy_path.py) - Copy the path of
+the current file relative to its project's root directory.
+* [copy_file_directory_relative_to_project](Flynn/copy_path.py) - Copy the
+directory of the current file relative to its project's root directory.
+* [copy_file_path_as_include_guard](Flynn/copy_path.py) - Copy the path of the
+current file relative to its project's root directory as a C/C++ #include guard.
+* [format_file](Flynn/format.py) - Run clang-format on the current file. If any
 selections are active, only those selections are formatted.
