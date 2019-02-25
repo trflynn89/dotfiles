@@ -5,7 +5,10 @@ import subprocess
 import sublime
 import sublime_plugin
 
-FORMATTER = 'clang-format.exe' if (os.name == 'nt') else 'clang-format'
+FORMATTERS = ['clang-format']
+if os.name == 'nt':
+    FORMATTERS.extend(['clang-format.bat', 'clang-format.exe'])
+
 LANGUAGES = ('C', 'C++', 'Objective-C', 'Objective-C++', 'Java')
 ENCODING = 'utf-8'
 
@@ -16,7 +19,11 @@ class FormatFileCommand(sublime_plugin.TextCommand):
     """
     def __init__(self, *args, **kwargs):
         super(FormatFileCommand, self).__init__(*args, **kwargs)
-        self.formatter = shutil.which(FORMATTER)
+
+        for formatter in FORMATTERS:
+            self.formatter = shutil.which(formatter)
+            if self.formatter:
+                break
 
     def run(self, edit):
         command = [self.formatter, '-assume-filename', self.view.file_name()]
@@ -32,11 +39,17 @@ class FormatFileCommand(sublime_plugin.TextCommand):
         contents = self.view.substr(region)
 
         try:
+            startupinfo = None
+            if os.name == 'nt':
+                startupinfo = subprocess.STARTUPINFO()
+                startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+
             process = subprocess.Popen(
                 command,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 stdin=subprocess.PIPE,
+                startupinfo=startupinfo,
                 cwd=os.path.dirname(self.view.file_name()))
 
             (formatted, error) = process.communicate(contents.encode(ENCODING))
