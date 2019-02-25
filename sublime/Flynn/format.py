@@ -31,6 +31,19 @@ class FormatFileCommand(sublime_plugin.TextCommand):
     """
     Command to run clang-format on a file. If any selections are active, only
     those selections are formatted.
+
+    This plugin by default loads clang-format from the system PATH. But because
+    Sublime doesn't source ~/.zshrc or ~/.bashrc, any PATH changes made there
+    will not be noticed. So, users may set "clang_format_directory" in their
+    project's settings, and that directory is used instead of PATH. Any known
+    environment variables in the setting's value will be expanded. For example:
+
+        {
+            "folders": [],
+            "settings": {
+                "clang_format_directory": "$HOME/workspace/depot_tools",
+            }
+        }
     """
     def __init__(self, *args, **kwargs):
         super(FormatFileCommand, self).__init__(*args, **kwargs)
