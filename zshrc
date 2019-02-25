@@ -82,11 +82,6 @@ init_shell()
     unsetopt share_history
     unsetopt nomatch
     setopt rm_star_silent
-
-    # Import machine specific zshrc
-    for zshrc in $(ls ~/.zshrc.* 2>/dev/null) ; do
-        source $zshrc
-    done
 }
 
 init_shell
