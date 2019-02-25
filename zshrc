@@ -56,9 +56,9 @@ init_shell()
         bindkey -s "^[On" "."  # .
         bindkey -s "^[OM" "^M" # Enter
     fi
-    
+
     # PATH changes
-    path_add "$HOME/.local/bin"    
+    path_add "$HOME/.local/bin"
 
     # Utility aliases
     alias cdiff='cdiff -s -w0 --ignore-space-at-eol'
@@ -83,9 +83,9 @@ init_shell()
     unsetopt nomatch
     setopt rm_star_silent
 
-    # Import machine specific zshrc    
-    for zshrc in $(ls ~/.zshrc.* 2>/dev/null) ; do 
-        source $zshrc  
+    # Import machine specific zshrc
+    for zshrc in $(ls ~/.zshrc.* 2>/dev/null) ; do
+        source $zshrc
     done
 }
 
