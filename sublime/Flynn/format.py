@@ -36,7 +36,8 @@ class FormatFileCommand(sublime_plugin.TextCommand):
                 command,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
-                stdin=subprocess.PIPE)
+                stdin=subprocess.PIPE,
+                cwd=os.path.dirname(self.view.file_name()))
 
             (formatted, error) = process.communicate(contents.encode(ENCODING))
         except Exception as ex:
