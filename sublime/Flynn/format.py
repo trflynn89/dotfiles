@@ -109,8 +109,14 @@ class FormatFileCommand(sublime_plugin.TextCommand):
 
     Any known environment variables in the setting's value will be expanded.
     """
+    def __init__(self, *args, **kwargs):
+        super(FormatFileCommand, self).__init__(*args, **kwargs)
+
+        self.format_directory = get_project_setting('clang_format_directory')
+        self.format = find_binary(self.format_directory, FORMATTERS)
+
     def run(self, edit):
-        command = [self.formatter, '-assume-filename', self.view.file_name()]
+        command = [self.format, '-assume-filename', self.view.file_name()]
 
         for region in self.view.sel():
             if not region.empty():
@@ -134,7 +140,10 @@ class FormatFileCommand(sublime_plugin.TextCommand):
         return supported and bool(self.view.file_name())
 
     def is_visible(self):
-        clang_format_directory = get_project_setting('clang_format_directory')
-        self.formatter = find_binary(clang_format_directory, FORMATTERS)
+        format_directory = get_project_setting('clang_format_directory')
 
-        return bool(self.formatter)
+        if format_directory != self.format_directory:
+            self.format_directory = format_directory
+            self.format = find_binary(format_directory, FORMATTERS)
+
+        return bool(self.format)
