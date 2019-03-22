@@ -16,8 +16,12 @@
         "command": "copy_file_directory_relative_to_project",
     },
     {
-        "caption": "Copy File Path as C/C++ Include Guard",
-        "command": "copy_file_path_as_include_guard",
+        "caption": "Copy File Path as C/C++ #include Macro",
+        "command": "copy_file_path_as_include_macro",
+    },
+    {
+        "caption": "Copy File Path as C/C++ Header Guard",
+        "command": "copy_file_path_as_header_guard",
     },
     {
         "caption": "Format File",

@@ -84,13 +84,35 @@ class CopyFileDirectoryRelativeToProjectCommand(sublime_plugin.TextCommand):
     def is_enabled(self):
         return bool(self.relative_path(self.view))
 
-class CopyFilePathAsIncludeGuardCommand(sublime_plugin.TextCommand):
+class CopyFilePathAsIncludeMacroCommand(sublime_plugin.TextCommand):
     """
     Command to copy the path of the current file relative to its project's root
-    directory as a C/C++ #include guard.
+    directory as a C/C++ #include macro.
     """
     def __init__(self, *args, **kwargs):
-        super(CopyFilePathAsIncludeGuardCommand, self).__init__(
+        super(CopyFilePathAsIncludeMacroCommand, self).__init__(
+            *args, **kwargs)
+        self.relative_path = RelativePath()
+
+    def run(self, edit):
+        relative_path = self.relative_path(self.view)
+        relative_path = relative_path.replace(os.path.sep, '/')
+
+        include = '#include "%s"' % (relative_path)
+
+        sublime.set_clipboard(include)
+        sublime.status_message('Copied include guard')
+
+    def is_enabled(self):
+        return bool(self.relative_path(self.view))
+
+class CopyFilePathAsHeaderGuardCommand(sublime_plugin.TextCommand):
+    """
+    Command to copy the path of the current file relative to its project's root
+    directory as a C/C++ header guard.
+    """
+    def __init__(self, *args, **kwargs):
+        super(CopyFilePathAsHeaderGuardCommand, self).__init__(
             *args, **kwargs)
         self.relative_path = RelativePath()
 
