@@ -61,8 +61,6 @@ init_shell()
     path_add "$HOME/.local/bin"
 
     # Utility aliases
-    alias cdiff='cdiff -s -w0 --ignore-space-at-eol'
-
     if [[ -x $(which rg) ]] ; then
         alias cgrep='rg -n -tcpp -tobjcpp'
         alias jgrep='rg -n -tjava'
@@ -72,6 +70,7 @@ init_shell()
     fi
 
     # Git aliases
+    alias gd='ydiff -s -w0 --ignore-space-at-eol'
     alias guf='git ls-files --others --exclude-standard'
     alias gno='git --no-pager diff --name-only'
     alias gfp='git fetch origin --prune'
