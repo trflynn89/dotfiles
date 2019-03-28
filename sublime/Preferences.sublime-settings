@@ -23,6 +23,9 @@
     "fold_buttons" : false,
     "margin" : 8,
 
+    // Disable git integration
+    "show_git_status": false,
+
     // Highlight active indent guide
     "indent_guide_options" :
     [
