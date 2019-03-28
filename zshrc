@@ -70,7 +70,9 @@ init_shell()
     fi
 
     # Git aliases
-    alias gd='ydiff -s -w0 --ignore-space-at-eol'
+    if [[ -x $(which ydiff) ]] ; then
+        alias gd='ydiff -s -w0 --ignore-space-at-eol'
+    fi
     alias guf='git ls-files --others --exclude-standard'
     alias gno='git --no-pager diff --name-only'
     alias gfp='git fetch origin --prune'
