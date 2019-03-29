@@ -6,9 +6,10 @@ import sublime
 import sublime_plugin
 
 # List of possible names the clang-format binary may have
-FORMATTERS = ['clang-format']
 if os.name == 'nt':
-    FORMATTERS.extend(['clang-format.bat', 'clang-format.exe'])
+    FORMATTERS = ['clang-format.bat', 'clang-format.exe']
+else:
+    FORMATTERS = ['clang-format']
 
 # List of languages supported for use with clang-format
 LANGUAGES = ('C', 'C++', 'Objective-C', 'Objective-C++', 'Java', 'JavaScript')
