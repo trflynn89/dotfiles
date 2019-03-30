@@ -23,14 +23,9 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
     sudo apt update && sudo apt install -y papirus-icon-theme
     ```
 
-## Desktop
-
-### Icons on Desktop
-
-1. Uncheck 'Trash'
-2. Uncheck 'Mounted Volumes'
-
 ## Extensions
+
+### Install
 
 1. Preparation:
 
@@ -54,17 +49,18 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
 3. Extensions to install:
 
-    * Dynamic Panel Transparency
-        * Background
-            * Enable custom opacity
-                * Maximized Opacity: 70%
-                * Unmaximized Opacity: 15%
-            * Remove excess panel styling
-
     * Night Light Slider
         * Show always
 
     * Volume Scroll
+
+### Enable
+
+1. Applications menu
+
+2. Desktop icons
+    * Uncheck personal folder and trash icon
+    * Uncheck 'Mounted Volumes'
 
 ## Keyboard & Mouse
 
@@ -82,11 +78,12 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 1. Date: on
 1. Seconds: on
 
-## Windows
+## Window Titlebars
 
 ### Titlebar Actions
 
 1. Double-Click: Toggle Maximize
+2. Middle-Click: None
 
 ### Titlebar Buttons
 
@@ -116,14 +113,9 @@ Go to Edit > Preferences > Material
 1. Color Palette Color 12: #6fb4ff
 2. Color Palette Color 14: #34e2e2
 
-# GCC 8
+# GCC 9
 
 ```bash
-sudo apt-get install -y gcc-8 g++-8
-
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
-
-sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-7 700
-sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-8 800
+sudo apt-get install -y gcc-9 g++-9
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 900 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
 ```
