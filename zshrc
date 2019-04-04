@@ -62,10 +62,10 @@ init_shell()
 
     # Utility aliases
     if [[ -x $(which rg) ]] ; then
-        alias cgrep='rg -n -tcpp -tobjcpp'
+        alias cgrep='rg -n -tc -tcpp -tobjc -tobjcpp'
         alias jgrep='rg -n -tjava'
     else
-        alias cgrep='grep -Irn --include=\*.{cc,cpp,h,hpp,mm}'
+        alias cgrep='grep -Irn --include=\*.{c,cc,cpp,h,hh,hpp,m,mm}'
         alias jgrep='grep -Irn --include=\*.{java,jsp}'
     fi
 
