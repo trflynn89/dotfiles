@@ -25,6 +25,7 @@
 
     // Disable git integration
     "show_git_status": false,
+    "mini_diff": false,
 
     // Highlight active indent guide
     "indent_guide_options" :
