@@ -44,6 +44,9 @@ the current file relative to its project's root directory.
 directory of the current file relative to its project's root directory.
 * [copy_file_path_as_include_macro](Flynn/copy_path.py) - Copy the path of the
 current file relative to its project's root directory as a C/C++ #include macro.
+* [copy_file_path_as_import_macro](Flynn/copy_path.py) - Copy the path of the
+current file relative to its project's root directory as an Objective-C #import
+macro.
 * [copy_file_path_as_header_guard](Flynn/copy_path.py) - Copy the path of the
 current file relative to its project's root directory as a C/C++ header guard.
 * [format_file](Flynn/format.py) - Run clang-format on the current file. If any

@@ -23,6 +23,10 @@
         "command": "copy_file_path_as_include_macro",
     },
     {
+        "caption": "Copy File Path as Objective-C #import Macro",
+        "command": "copy_file_path_as_import_macro",
+    },
+    {
         "caption": "Copy File Path as C/C++ Header Guard",
         "command": "copy_file_path_as_header_guard",
     },

@@ -122,6 +122,18 @@ class CopyFilePathAsIncludeMacroCommand(CFamilyCommand):
         sublime.set_clipboard(include)
         sublime.status_message('Copied include guard')
 
+class CopyFilePathAsImportMacroCommand(CFamilyCommand):
+    """
+    Command to copy the path of the current file relative to its project's root
+    directory as an Objective-C #import macro.
+    """
+    def run(self, edit):
+        header_file = self.to_header_file().replace(os.path.sep, '/')
+        include = '#import "%s"' % (header_file)
+
+        sublime.set_clipboard(include)
+        sublime.status_message('Copied include guard')
+
 class CopyFilePathAsHeaderGuardCommand(CFamilyCommand):
     """
     Command to copy the path of the current file relative to its project's root
