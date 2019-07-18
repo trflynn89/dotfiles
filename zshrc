@@ -80,8 +80,9 @@ init_shell()
     alias gch='git checkout HEAD'
 
     # zsh options
-    unsetopt share_history
+    unsetopt auto_cd
     unsetopt nomatch
+    unsetopt share_history
     setopt rm_star_silent
 
     # Import machine specific zshrc
