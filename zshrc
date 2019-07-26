@@ -79,6 +79,9 @@ init_shell()
     alias gfm='git fetch origin master:master'
     alias gch='git checkout HEAD'
 
+    # Disable gcov error reporting. GCC 9 is particularly verbose.
+    export GCOV_ERROR_FILE="/dev/null"
+
     # zsh options
     unsetopt auto_cd
     unsetopt nomatch
