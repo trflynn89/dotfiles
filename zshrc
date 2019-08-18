@@ -62,11 +62,15 @@ init_shell()
 
     # Utility aliases
     if [[ -x $(which rg) ]] ; then
-        alias cgrep='rg -n -tc -tcpp -tobjc -tobjcpp'
-        alias jgrep='rg -n -tjava'
+        alias cgr='rg -n -tc -tcpp -tobjc -tobjcpp'
+        alias jgr='rg -n -tjava'
+        alias pgr='rg -n -tpy'
+        alias wgr='rg -n -thtml -tcss -tjs'
     else
-        alias cgrep='grep -Irn --include=\*.{c,cc,cpp,h,hh,hpp,m,mm}'
-        alias jgrep='grep -Irn --include=\*.{java,jsp}'
+        alias cgr='grep -Irn --include=\*.{c,cc,cpp,h,hh,hpp,m,mm}'
+        alias jgr='grep -Irn --include=\*.{java,jsp}'
+        alias pgr='grep -Irn --include=\*.{py}'
+        alias wgr='grep -Irn --include=\*.{html,css,js}'
     fi
 
     # Git aliases
