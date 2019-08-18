@@ -1,28 +1,20 @@
 $SUBLIME_DIR = "$ENV:UserProfile\Sublime"
 $PACKAGES_DIR = "$ENV:AppData\Sublime Text 3\Packages"
 
-function clone_or_update($project)
+function clone($project)
 {
     $github = "https://github.com/trflynn89"
 
-    git -C $SUBLIME_DIR\$project rev-parse --git-dir 2>&1 | out-null
-
-    if ($LASTEXITCODE)
-    {
-        cmd /c rmdir /S /Q $SUBLIME_DIR\$project
-        git clone $github/$project.git $SUBLIME_DIR\$project
-    }
-    else
-    {
-        git -C $SUBLIME_DIR\$project reset --hard
-        git -C $SUBLIME_DIR\$project pull
-    }
+    git clone $github/$project.git $SUBLIME_DIR\$project.tmp
 
     if ($LASTEXITCODE)
     {
         echo "Could not fetch $project"
         exit 1
     }
+
+    Get-ChildItem $SUBLIME_DIR\$project -Recurse | Remove-Item -Force
+    Move-Item -Path $SUBLIME_DIR\$project.tmp -Destination $SUBLIME_DIR\$project
 }
 
 function make_link($source, $dest, $is_file)
@@ -52,9 +44,9 @@ function make_link($source, $dest, $is_file)
     }
 }
 
-clone_or_update dotfiles
-clone_or_update Packages
-clone_or_update Seti_UI
+clone dotfiles
+clone Packages
+clone Seti_UI
 
 make_link "dotfiles\sublime\Preferences.sublime-settings" "User\Preferences.sublime-settings" 1
 make_link "dotfiles\sublime\Preferences (Windows).sublime-settings" "Preferences (Windows).sublime-settings" 1

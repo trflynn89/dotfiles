@@ -12,24 +12,20 @@ else
     exit 1
 fi
 
-clone_or_update()
+clone()
 {
     local github="https://github.com/trflynn89"
     local project="$1"
 
-    if git -C "$SUBLIME_DIR/$project" rev-parse --git-dir > /dev/null 2>&1
-    then
-        git -C "$SUBLIME_DIR/$project" reset --hard
-        git -C "$SUBLIME_DIR/$project" pull
-    else
-        rm -rf "$SUBLIME_DIR/$project"
-        git clone $github/$project.git "$SUBLIME_DIR/$project"
-    fi
+    git clone $github/$project.git "$SUBLIME_DIR/$project.tmp"
 
     if [[ $? -ne 0 ]] ; then
         echo "Could not fetch $project"
         exit 1
     fi
+
+    rm -rf "$SUBLIME_DIR/$project"
+    mv "$SUBLIME_DIR/$project.tmp" "$SUBLIME_DIR/$project"
 }
 
 make_link()
@@ -41,9 +37,9 @@ make_link()
     ln -sf "$source" "$dest"
 }
 
-clone_or_update dotfiles
-clone_or_update Packages
-clone_or_update Seti_UI
+clone dotfiles
+clone Packages
+clone Seti_UI
 
 make_link "dotfiles/sublime/Preferences.sublime-settings" "User/Preferences.sublime-settings"
 make_link "dotfiles/sublime/$PREFERENCES" "$PREFERENCES"
