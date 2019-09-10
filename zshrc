@@ -82,6 +82,7 @@ init_shell()
     alias gfp='git fetch origin --prune'
     alias gfm='git fetch origin master:master'
     alias gch='git checkout HEAD'
+    alias gbd='git branch -D'
 
     # Disable gcov error reporting. GCC 9 is particularly verbose.
     export GCOV_ERROR_FILE="/dev/null"
