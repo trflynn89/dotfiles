@@ -1,11 +1,32 @@
 $SUBLIME_DIR = "$ENV:UserProfile\Sublime"
 $PACKAGES_DIR = "$ENV:AppData\Sublime Text 3\Packages"
 
-function clone($project)
+function Remove-Path($path)
+{
+    if (Test-Path -Path $path -PathType Container)
+    {
+        if ((Get-Item -Path $path -Force).LinkType -ne 'Junction')
+        {
+            Get-ChildItem $path -Force -Recurse | Remove-Item -Force -Recurse
+        }
+
+        Remove-Item -Force -Recurse $path
+    }
+    elseif (Test-Path -Path $path -PathType Leaf)
+    {
+        Remove-Item -Force $path
+    }
+}
+
+function Clone($project)
 {
     $github = "https://github.com/trflynn89"
 
-    git clone $github/$project.git $SUBLIME_DIR\$project.tmp
+    $project_directory = "$SUBLIME_DIR\$project"
+    $clone_directory = "$project_directory.tmp"
+
+    Remove-Path $clone_directory
+    git clone $github/$project.git $clone_directory
 
     if ($LASTEXITCODE)
     {
@@ -13,51 +34,41 @@ function clone($project)
         exit 1
     }
 
-    Get-ChildItem $SUBLIME_DIR\$project -Recurse | Remove-Item -Force
-    Move-Item -Path $SUBLIME_DIR\$project.tmp -Destination $SUBLIME_DIR\$project
+    Remove-Path $project_directory
+    Move-Item -Path $clone_directory -Destination $project_directory
 }
 
-function make_link($source, $dest, $is_file)
+function Make-Link($source, $dest)
 {
     $source = "$SUBLIME_DIR\$source"
     $dest = "$PACKAGES_DIR\$dest"
 
-    if (Test-Path -Path $dest)
-    {
-        if ($is_file)
-        {
-            cmd /c del $dest
-        }
-        else
-        {
-            cmd /c rmdir $dest
-        }
-    }
+    Remove-Path $dest
 
-    if ($is_file)
+    if (Test-Path -Path $source -PathType Leaf)
     {
-        cmd /c mklink $dest $source
+        New-Item -ItemType SymbolicLink -Path $dest -Target $source
     }
     else
     {
-        cmd /c mklink /J $dest $source
+        New-Item -ItemType Junction -Path $dest -Target $source
     }
 }
 
-clone dotfiles
-clone Packages
-clone Seti_UI
+Clone dotfiles
+Clone Packages
+Clone Seti_UI
 
-make_link "dotfiles\sublime\Preferences.sublime-settings" "User\Preferences.sublime-settings" 1
-make_link "dotfiles\sublime\Preferences (Windows).sublime-settings" "Preferences (Windows).sublime-settings" 1
+Make-Link "dotfiles\sublime\Preferences.sublime-settings" "User\Preferences.sublime-settings"
+Make-Link "dotfiles\sublime\Preferences (Windows).sublime-settings" "Preferences (Windows).sublime-settings"
 
-make_link "dotfiles\sublime\Flynn" "Flynn" 0
-make_link "dotfiles\sublime\MIB" "MIB" 0
-make_link "dotfiles\sublime\YANG" "YANG" 0
-make_link "dotfiles\sublime\GN" "GN" 0
+Make-Link "dotfiles\sublime\Flynn" "Flynn"
+Make-Link "dotfiles\sublime\MIB" "MIB"
+Make-Link "dotfiles\sublime\YANG" "YANG"
+Make-Link "dotfiles\sublime\GN" "GN"
 
-make_link "Packages\C++" "C++" 0
-make_link "Packages\Makefile2" "Makefile" 0
-make_link "Packages\Objective-C" "Objective-C" 0
+Make-Link "Packages\C++" "C++"
+Make-Link "Packages\Makefile2" "Makefile"
+Make-Link "Packages\Objective-C" "Objective-C"
 
-make_link "Seti_UI" "Seti_UI" 0
+Make-Link "Seti_UI" "Seti_UI"
