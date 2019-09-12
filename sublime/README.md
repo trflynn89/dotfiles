@@ -10,9 +10,8 @@ Intended to be used with the following forked projects:
 ## Installation
 
 These commands will clone this project and the above forked projects in a folder
-called "Sublime" in the user/home directory. If the projects already exist, they
-are updated instead. Then, symbolic links are created to the Sublime Packages
-directory to apply the settings.
+called "Sublime" in the user/home directory. Then, symbolic links are created to
+the Sublime Packages directory to apply the settings.
 
 **Close Sublime Text before installing.**
 
