@@ -77,12 +77,11 @@ init_shell()
     if [[ -x $(which ydiff) ]] ; then
         alias gd='ydiff -s -w0 --ignore-space-at-eol'
     fi
-    alias guf='git ls-files --others --exclude-standard'
-    alias gno='git --no-pager diff --name-only'
     alias gfp='git fetch origin --prune'
     alias gfm='git fetch origin master:master'
     alias gch='git checkout HEAD'
     alias gbd='git branch -D'
+    alias gds='gd --staged'
 
     # Disable gcov error reporting. GCC 9 is particularly verbose.
     export GCOV_ERROR_FILE="/dev/null"
