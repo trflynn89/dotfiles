@@ -61,7 +61,7 @@ init_shell()
     path_add "$HOME/.local/bin"
 
     # Utility aliases
-    if [[ -x $(which rg) ]] ; then
+    if [[ -x $(which rg 2>/dev/null) ]] ; then
         alias cgr='rg -n -tc -tcpp -tobjc -tobjcpp'
         alias jgr='rg -n -tjava'
         alias pgr='rg -n -tpy'
@@ -74,7 +74,7 @@ init_shell()
     fi
 
     # Git aliases
-    if [[ -x $(which ydiff) ]] ; then
+    if [[ -x $(which ydiff 2>/dev/null) ]] ; then
         alias gd='ydiff -s -w0 --ignore-space-at-eol'
     fi
     alias gfp='git fetch origin --prune'
