@@ -37,8 +37,11 @@ class RelativePathCommand(sublime_plugin.TextCommand):
         super(RelativePathCommand, self).__init__(*args, **kwargs)
         self.relative_path = RelativePath()
 
-    def is_enabled(self):
-        return all(self.relative_path(self.view))
+    def is_enabled_for_languages(self, languages):
+        (syntax, _) = os.path.splitext(self.view.settings().get('syntax'))
+        supported = any(syntax.endswith(lang) for lang in languages)
+
+        return supported and all(self.relative_path(self.view))
 
 class CFamilyCommand(RelativePathCommand):
     """
@@ -56,15 +59,35 @@ class CFamilyCommand(RelativePathCommand):
                 new_path = path + header
 
                 if os.path.isfile(os.path.join(project_path, new_path)):
-                    return new_path
+                    relative_path = new_path
+                    break
 
-        return relative_path
+        return relative_path.replace(os.path.sep, '/')
 
     def is_enabled(self):
-        (syntax, _) = os.path.splitext(self.view.settings().get('syntax'))
-        supported = any(syntax.endswith(lang) for lang in self.LANGUAGES)
+        return self.is_enabled_for_languages(self.LANGUAGES)
 
-        return supported and super(CFamilyCommand, self).is_enabled()
+class JavaFamilyCommand(RelativePathCommand):
+    """
+    Base class for commands specific to the Java family of languages.
+    """
+    LANGUAGES = ('Java', )
+
+    def to_java_path(self):
+        (relative_path, _) = self.relative_path(self.view)
+
+        java_path = os.path.splitext(relative_path)[0]
+        java_path = java_path.replace(os.path.sep, '.')
+
+        if '.com.' in java_path:
+            java_path = java_path[java_path.index('.com.') + 1 : ]
+        elif '.org.' in java_path:
+            java_path = java_path[java_path.index('.org.') + 1 : ]
+
+        return java_path
+
+    def is_enabled(self):
+        return self.is_enabled_for_languages(self.LANGUAGES)
 
 class CopyFileNameCommand(sublime_plugin.TextCommand):
     """
@@ -116,11 +139,11 @@ class CopyFilePathAsIncludeMacroCommand(CFamilyCommand):
     directory as a C/C++ #include macro.
     """
     def run(self, edit):
-        header_file = self.to_header_file().replace(os.path.sep, '/')
+        header_file = self.to_header_file()
         include = '#include "%s"' % (header_file)
 
         sublime.set_clipboard(include)
-        sublime.status_message('Copied include guard')
+        sublime.status_message('Copied include')
 
 class CopyFilePathAsImportMacroCommand(CFamilyCommand):
     """
@@ -128,11 +151,11 @@ class CopyFilePathAsImportMacroCommand(CFamilyCommand):
     directory as an Objective-C #import macro.
     """
     def run(self, edit):
-        header_file = self.to_header_file().replace(os.path.sep, '/')
+        header_file = self.to_header_file()
         include = '#import "%s"' % (header_file)
 
         sublime.set_clipboard(include)
-        sublime.status_message('Copied include guard')
+        sublime.status_message('Copied import')
 
 class CopyFilePathAsHeaderGuardCommand(CFamilyCommand):
     """
@@ -145,3 +168,15 @@ class CopyFilePathAsHeaderGuardCommand(CFamilyCommand):
 
         sublime.set_clipboard(header_file)
         sublime.status_message('Copied include guard')
+
+class CopyFilePathAsImportStatementCommand(JavaFamilyCommand):
+    """
+    Command to copy the path of the current file relative to its project's root
+    directory as a Java import statement.
+    """
+    def run(self, edit):
+        java_path = self.to_java_path()
+        include = 'import %s;' % (java_path)
+
+        sublime.set_clipboard(include)
+        sublime.status_message('Copied import')

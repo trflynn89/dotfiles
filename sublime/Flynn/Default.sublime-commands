@@ -28,6 +28,10 @@
         "command": "copy_file_path_as_header_guard",
     },
     {
+        "caption": "Copy File Path as Java import Statement",
+        "command": "copy_file_path_as_import_statement",
+    },
+    {
         "caption": "Format File",
         "command": "format_file",
     },
