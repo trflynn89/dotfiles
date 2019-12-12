@@ -180,3 +180,15 @@ class CopyFilePathAsImportStatementCommand(JavaFamilyCommand):
 
         sublime.set_clipboard(include)
         sublime.status_message('Copied import')
+
+class CopyFileDirectoryAsPackageStatementCommand(JavaFamilyCommand):
+    """
+    Command to copy the directory of the current file relative to its project's
+    root directory as a Java package statement.
+    """
+    def run(self, edit):
+        java_path = '.'.join(self.to_java_path().split('.')[ : -1])
+        include = 'package %s;' % (java_path)
+
+        sublime.set_clipboard(include)
+        sublime.status_message('Copied package')
