@@ -62,6 +62,18 @@
         "*.db",
         "*.sublime-*"
     ],
+    "binary_file_patterns":
+    [
+        "*.gif",
+        "*.tga",
+        "*.dds",
+        "*.ico",
+        "*.eot",
+        "*.pdf",
+        "*.swf",
+        "*.jar",
+        "*.zip"
+    ],
 
     // Ignore these packages
     "ignored_packages" :
