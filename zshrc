@@ -83,6 +83,12 @@ init_shell()
     alias gbd='git branch -D'
     alias gds='gd --staged'
 
+    # Set vim as the default system editor
+    if [[ -x $(which vim 2>/dev/null) ]] ; then
+        export VISUAL=vim
+        export EDITOR="$VISUAL"
+    fi
+
     # Disable gcov error reporting. GCC 9 is particularly verbose.
     export GCOV_ERROR_FILE="/dev/null"
 
