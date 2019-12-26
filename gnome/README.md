@@ -8,7 +8,7 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
 ### Themes
 
-1. Applications: Matcha-azul <https://www.gnome-look.org/p/1187179/>
+1. Applications: Matcha-dark-azul <https://www.gnome-look.org/p/1187179/>
 
     ```bash
     tar -xvf Matcha-azul.tar.xz
@@ -16,12 +16,16 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
     mv Matcha-azul ~/.themes/
     ```
 
-2. Icons: Papirus-Light <https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/>
+2. Icons: Papirus-Dark <https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/>
 
     ```bash
     sudo add-apt-repository ppa:papirus/papirus
     sudo apt update && sudo apt install -y papirus-icon-theme
     ```
+
+3. Shell: Matcha-dark-azul
+
+    Must first enable "User themes" extensions (see Extensions > Enable).
 
 ## Extensions
 
@@ -30,7 +34,7 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 1. Preparation:
 
     ```bash
-    sudo apt-get install -y gnome-shell-extensions
+    sudo apt install -y gnome-shell-extensions
     mkdir ~/.local/share/gnome-shell/extensions
     ```
 
@@ -49,8 +53,10 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
 3. Extensions to install:
 
-    * Night Light Slider
+    * Night Light Slider `night-light-slider.timur@linux.com`
         * Show always
+
+    * Hide Activities Button `Hide_Activities@shay.shayel.org`
 
     * Volume Scroll
 
@@ -62,6 +68,8 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
     * Uncheck personal folder and trash icon
     * Uncheck 'Mounted Volumes'
 
+3. User themes
+
 ## Keyboard & Mouse
 
 ### Keyboard
@@ -70,8 +78,7 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
 ## Top Bar
 
-1. Application Menu: off
-2. Activities Overview Hot Corner: on
+1. Activities Overview Hot Corner: on
 
 ### Clock
 
@@ -98,24 +105,29 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
 Install Material profile <https://mayccoll.github.io/Gogh/>
 
-Go to Edit > Preferences > Material
+## Global
 
-## Profiles
+### General
+
+1. Theme variant: Dark
+
+## Profiles > Material
 
 1. Set Material as default
 
-## Text
+### Text
 
 1. Terminal bell: off
 
-## Colors
+### Colors
 
+1. Color Palette Color 4: #a2e9f6
 1. Color Palette Color 12: #6fb4ff
 2. Color Palette Color 14: #34e2e2
 
 # GCC 9
 
 ```bash
-sudo apt-get install -y gcc-9 g++-9
+sudo apt install -y gcc-9 g++-9
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 900 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
 ```
