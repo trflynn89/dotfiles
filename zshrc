@@ -59,6 +59,7 @@ init_shell()
 
     # PATH changes
     path_add "$HOME/.local/bin"
+    path_add "$HOME/.cargo/bin"
 
     # Utility aliases
     if [[ -x $(which rg 2>/dev/null) ]] ; then
