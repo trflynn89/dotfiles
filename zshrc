@@ -90,8 +90,9 @@ init_shell()
         export EDITOR="$VISUAL"
     fi
 
-    # Disable gcov error reporting. GCC 9 is particularly verbose.
+    # Disable gcov/llvm error reporting. GCC 9 is particularly verbose.
     export GCOV_ERROR_FILE="/dev/null"
+    export LLVM_PROFILE_FILE="/dev/null"
 
     # zsh options
     unsetopt auto_cd
