@@ -24,7 +24,7 @@
     "margin" : 8,
 
     // Disable git integration
-    "show_git_status": false,
+    "show_git_status" : false,
     "mini_diff": false,
 
     // Highlight active indent guide
@@ -62,7 +62,18 @@
         "*.db",
         "*.sublime-*"
     ],
-    "binary_file_patterns":
+    "folder_exclude_patterns" :
+    [
+        ".git",
+        ".hg",
+        ".svn",
+        ".venv",
+        "__pycache__",
+        "CVS",
+        "node_modules",
+        "venv"
+    ],
+    "binary_file_patterns" :
     [
         "*.gif",
         "*.tga",
