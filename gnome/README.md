@@ -13,7 +13,7 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
     ```bash
     tar -xvf Matcha-azul.tar.xz
     mkdir ~/.themes
-    mv Matcha-azul ~/.themes/
+    mv Matcha-dark-azul ~/.themes/
     ```
 
 2. Icons: Papirus-Dark <https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/>
@@ -56,9 +56,9 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
     * Night Light Slider `night-light-slider.timur@linux.com`
         * Show always
 
-    * Hide Activities Button `Hide_Activities@shay.shayel.org`
+    * Hide Activities Button `hide-activities-button@gnome-shell-extensions.bookmarkd.xyz`
 
-    * Volume Scroll
+    * Volume Scroll `volume_scroll@qord.si`
 
 ### Enable
 
@@ -121,13 +121,10 @@ Install Material profile <https://mayccoll.github.io/Gogh/>
 
 ### Colors
 
-1. Color Palette Color 4: #a2e9f6
-1. Color Palette Color 12: #6fb4ff
-2. Color Palette Color 14: #34e2e2
+1. Palette entry 4: #a2e9f6
+2. Palette entry 12: #6fb4ff
+3. Palette entry 14: #34e2e2
 
-# GCC 9
+### Scrolling
 
-```bash
-sudo apt install -y gcc-9 g++-9
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 900 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
-```
+1. Uncheck "Limit scrollback"
