@@ -128,3 +128,11 @@ Install Material profile <https://mayccoll.github.io/Gogh/>
 ### Scrolling
 
 1. Uncheck "Limit scrollback"
+
+
+# GCC 10
+
+```bash
+sudo apt install -y gcc-10 g++-10
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 1000 --slave /usr/bin/g++ g++ /usr/bin/g++-10 --slave /usr/bin/gcov gcov /usr/bin/gcov-10
+```
