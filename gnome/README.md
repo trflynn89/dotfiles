@@ -53,12 +53,18 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
 3. Extensions to install:
 
+    * Dash to Dock `dash-to-dock@micxgx.gmail.com`
+
     * Night Light Slider `night-light-slider.timur@linux.com`
         * Show always
 
     * Hide Activities Button `hide-activities-button@gnome-shell-extensions.bookmarkd.xyz`
 
-    * Volume Scroll `volume_scroll@qord.si`
+    * Volume Scroller `volume_scroller@trflynn89.pm.me`
+
+    ```bash
+    ln -sf $(pwd)/volume_scroller@trflynn89.pm.me ~/.local/share/gnome-shell/extensions
+    ```
 
 ### Enable
 
