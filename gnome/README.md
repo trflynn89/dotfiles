@@ -54,6 +54,13 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 3. Extensions to install:
 
     * Dash to Dock `dash-to-dock@micxgx.gmail.com`
+        * Position and size
+            * Icon size limit: 32px
+        * Launchers
+            * Show trash can: off
+            * Show mounted volumes and devices: off
+        * Behavior
+            * Click action: Focus or show previews
 
     * Night Light Slider `night-light-slider.timur@linux.com`
         * Show always
