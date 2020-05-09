@@ -16,12 +16,13 @@ class VolumeScroller
     constructor()
     {
        this.controller = Volume.getMixerControl();
+       this.panel = Main.panel;
+
+       this.enabled = false;
+       this.sink = null;
 
        this.volume_max = this.controller.get_vol_max_norm();
        this.volume_step = 0.05 * this.volume_max;
-
-       this.panel = Main.panel;
-       this.sink = null;
 
        this.scroll_binding = null;
        this.sink_binding = null;
@@ -29,16 +30,15 @@ class VolumeScroller
 
     enable()
     {
-        this.panel.reactive = true;
-
-        if (this.scroll_binding !== null)
+        if (this.enabled)
         {
             this.disable();
         }
 
+        this.enabled = true;
         this.sink = this.controller.get_default_sink();
 
-        this.scroll_binding = this.panel.actor.connect(
+        this.scroll_binding = this.panel.connect(
             'scroll-event',
             (actor, event) => this._handle_scroll(actor, event));
 
@@ -49,14 +49,15 @@ class VolumeScroller
 
     disable()
     {
-        if (this.scroll_binding !== null)
+        if (this.enabled)
         {
-            this.panel.actor.disconnect(this.scroll_binding);
-            this.controller.disconnect(this.sink_binding);
-
+            this.enabled = false;
             this.sink = null;
 
+            this.panel.disconnect(this.scroll_binding);
             this.scroll_binding = null;
+
+            this.controller.disconnect(this.sink_binding);
             this.sink_binding = null;
         }
     }
@@ -85,7 +86,8 @@ class VolumeScroller
         this.sink.volume = volume;
         this.sink.push_volume();
 
-        this._show_volume(volume / this.volume_max);
+        this._show_volume(volume);
+
         return Clutter.EVENT_STOP;
     }
 
@@ -94,11 +96,12 @@ class VolumeScroller
         this.sink = controller.lookup_stream_id(id);
     }
 
-    _show_volume(percentage)
+    _show_volume(volume)
     {
+        const percentage = volume / this.volume_max;
         let n;
 
-        if (percentage === 0)
+        if (volume === 0)
         {
             n = 0;
         }
@@ -109,7 +112,7 @@ class VolumeScroller
             n = Math.min(3, n);
         }
 
-        const monitor = -1; // Display volume on all panels.
+        const monitor = -1; // Display volume window on all monitors.
         const icon = Gio.Icon.new_for_string(VolumeScrollerIcons[n]);
         const label = this.sink.get_port().human_port;
 
@@ -117,19 +120,17 @@ class VolumeScroller
     }
 };
 
-let volume_scroller = null;
-
 function init()
 {
-    volume_scroller = new VolumeScroller();
+    global.volume_scroller = new VolumeScroller();
 }
 
 function enable()
 {
-    volume_scroller.enable();
+    global.volume_scroller.enable();
 }
 
 function disable()
 {
-    volume_scroller.disable();
+    global.volume_scroller.disable();
 }
