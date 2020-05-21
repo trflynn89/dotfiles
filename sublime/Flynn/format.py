@@ -12,12 +12,12 @@ else:
     FORMATTERS = ['clang-format']
 
 # List of languages supported for use with clang-format
-LANGUAGES = ('C', 'C++', 'Objective-C', 'Objective-C++', 'Java', 'JavaScript')
+LANGUAGES = ('C', 'C++', 'Objective-C', 'Objective-C++', 'Java')
 
 def get_project_setting(setting_key):
     """
     Load a project setting from the active window, with environment variable
-    expansion.
+    expansion for string settings.
     """
     project_data = sublime.active_window().project_data()
 
@@ -25,7 +25,12 @@ def get_project_setting(setting_key):
         settings = project_data['settings']
 
         if setting_key in settings:
-            return os.path.expandvars(settings[setting_key])
+            setting = settings[setting_key]
+
+            if isinstance(setting, str):
+                return os.path.expandvars(setting)
+
+            return setting
 
     return None
 
@@ -116,11 +121,11 @@ class FormatFileCommand(sublime_plugin.TextCommand):
         self.format_directory = get_project_setting('clang_format_directory')
         self.format = find_binary(self.format_directory, FORMATTERS)
 
-    def run(self, edit):
+    def run(self, edit, ignore_selections=False):
         command = [self.format, '-assume-filename', self.view.file_name()]
 
-        for region in self.view.sel():
-            if not region.empty():
+        if not ignore_selections:
+            for region in [r for r in self.view.sel() if not r.empty()]:
                 command.extend(['-offset', str(region.begin())])
                 command.extend(['-length', str(region.size())])
 
@@ -148,3 +153,25 @@ class FormatFileCommand(sublime_plugin.TextCommand):
             self.format = find_binary(format_directory, FORMATTERS)
 
         return bool(self.format)
+
+class FormatFileListener(sublime_plugin.EventListener):
+    """
+    Command to run FormatFileCommand on a file when it is saved. This may be
+    disabled by setting "disable_format_on_save" in project settings. Example:
+
+        {
+            "folders": [],
+            "settings": {
+                "disable_format_on_save": true,
+            }
+        }
+    """
+    def on_pre_save(self, view):
+        if get_project_setting('disable_format_on_save'):
+            return
+
+        (syntax, _) = os.path.splitext(view.settings().get('syntax'))
+        supported = any(syntax.endswith(lang) for lang in LANGUAGES)
+
+        if supported:
+            view.run_command('format_file', {'ignore_selections': True})
