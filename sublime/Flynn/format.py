@@ -14,6 +14,15 @@ else:
 # List of languages supported for use with clang-format
 LANGUAGES = ('C', 'C++', 'Objective-C', 'Objective-C++', 'Java')
 
+def is_supported_language(view):
+    """
+    Check if the syntax of the given view is of a supported language.
+    """
+    (syntax, _) = os.path.splitext(view.settings().get('syntax'))
+    supported = any(syntax.endswith(lang) for lang in LANGUAGES)
+
+    return supported and bool(view.file_name())
+
 def get_project_setting(setting_key):
     """
     Load a project setting from the active window, with environment variable
@@ -140,10 +149,7 @@ class FormatFileCommand(sublime_plugin.TextCommand):
             self.view.replace(edit, region, contents)
 
     def is_enabled(self):
-        (syntax, _) = os.path.splitext(self.view.settings().get('syntax'))
-        supported = any(syntax.endswith(lang) for lang in LANGUAGES)
-
-        return supported and bool(self.view.file_name())
+        return is_supported_language(self.view)
 
     def is_visible(self):
         format_directory = get_project_setting('clang_format_directory')
@@ -156,22 +162,69 @@ class FormatFileCommand(sublime_plugin.TextCommand):
 
 class FormatFileListener(sublime_plugin.EventListener):
     """
-    Command to run FormatFileCommand on a file when it is saved. This may be
-    disabled by setting "disable_format_on_save" in project settings. Example:
+    Plugin to run FormatFileCommand on a file when it is saved. This plugin is
+    disabled by default. It may be enabled by setting "format_on_save" to true
+    in project settings. Example:
 
         {
             "folders": [],
             "settings": {
-                "disable_format_on_save": true,
+                "format_on_save": true,
+            }
+        }
+
+    Alternatively, setting "format_on_save" to a list of folder names allows
+    selectively enabling this plugin for those folders only. Example:
+
+        {
+            "folders": [
+                {
+                    "name": "MyFolder",
+                    "path": "path/to/folder"
+                }
+            ],
+            "settings": {
+                "format_on_save": [
+                    "MyFolder"
+                ],
             }
         }
     """
     def on_pre_save(self, view):
-        if get_project_setting('disable_format_on_save'):
+        if not is_supported_language(view):
+            return
+        elif not self._is_enabled(view):
             return
 
-        (syntax, _) = os.path.splitext(view.settings().get('syntax'))
-        supported = any(syntax.endswith(lang) for lang in LANGUAGES)
+        view.run_command('format_file', {'ignore_selections': True})
 
-        if supported:
-            view.run_command('format_file', {'ignore_selections': True})
+    def _is_enabled(self, view):
+        format_on_save = get_project_setting('format_on_save')
+
+        if isinstance(format_on_save, bool):
+            return format_on_save
+        elif not isinstance(format_on_save, list):
+            return False
+
+        folder_data = self._get_folder_data(view.window())
+        file_name = view.file_name()
+
+        return any(file_name.startswith(folder_data[f]) for f in format_on_save)
+
+    def _get_folder_data(self, window):
+        """
+        Get a dictionary of project folders mapping folder names to the full
+        path to the folder.
+        """
+        project_variables = window.extract_variables()
+        project_data = window.project_data()
+
+        project_path = project_variables['project_path']
+        folder_data = {}
+
+        for folder in project_data['folders']:
+            if ('name' in folder) and ('path' in folder):
+                path = os.path.join(project_path, folder['path'])
+                folder_data[folder['name']] = path
+
+        return folder_data
