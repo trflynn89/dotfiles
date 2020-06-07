@@ -13,7 +13,7 @@
     "spell_check" : false,
     "wide_caret" : true,
     "word_wrap" : false,
-    "rulers": [80],
+    "rulers": [100],
 
     // Auto-complete behavior
     "auto_complete_commit_on_tab" : true,
