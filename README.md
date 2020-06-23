@@ -6,10 +6,14 @@
 
 [gnome](gnome) - Instructions on how I've tweaked Gnome on Ubuntu.
 
-[zshrc](zshrc) - In conjunction with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
+[zshrc](zshrc) - In conjunction with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) and
+[Powerlevel10k](https://github.com/romkatv/powerlevel10k).
 
 ```bash
 ln -sf $(pwd)/zshrc ~/.zshrc
+ln -sf $(pwd)/zshrc.p10k ~/.zshrc.p10k
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
 ```
 
 [vimrc](vimrc) - Taken from [A Good Vimrc](https://dougblack.io/words/a-good-vimrc.html).
