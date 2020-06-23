@@ -134,9 +134,10 @@ Install Material profile <https://mayccoll.github.io/Gogh/>
 
 ### Colors
 
-1. Palette entry 4: #a2e9f6
-2. Palette entry 12: #6fb4ff
-3. Palette entry 14: #34e2e2
+1. Background color: #151718
+2. Palette entry 4: #a2e9f6
+3. Palette entry 12: #6fb4ff
+4. Palette entry 14: #34e2e2
 
 ### Scrolling
 
