@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 SUBLIME_DIR="$HOME/Sublime"
 HOST_OS="$(uname -s)"
 
@@ -31,7 +32,13 @@ clone()
 make_link()
 {
     local source="$SUBLIME_DIR/$1"
-    local dest="$PACKAGES_DIR/$2"
+    local dest
+
+    if [[ $# -eq 1 ]] ; then
+        dest="$PACKAGES_DIR/$(basename $1)"
+    else
+        dest="$PACKAGES_DIR/$2"
+    fi
 
     rm -rf "$dest"
     ln -sf "$source" "$dest"
@@ -42,15 +49,15 @@ clone Packages
 clone Seti_UI
 
 make_link "dotfiles/sublime/Preferences.sublime-settings" "User/Preferences.sublime-settings"
-make_link "dotfiles/sublime/$PREFERENCES" "$PREFERENCES"
+make_link "dotfiles/sublime/$PREFERENCES"
 
-make_link "dotfiles/sublime/Flynn" "Flynn"
-make_link "dotfiles/sublime/MIB" "MIB"
-make_link "dotfiles/sublime/YANG" "YANG"
-make_link "dotfiles/sublime/GN" "GN"
+make_link "dotfiles/sublime/Flynn"
+make_link "dotfiles/sublime/MIB"
+make_link "dotfiles/sublime/YANG"
+make_link "dotfiles/sublime/GN"
 
-make_link "Packages/C++" "C++"
-make_link "Packages/Makefile2" "Makefile"
-make_link "Packages/Objective-C" "Objective-C"
+make_link "Packages/C++"
+make_link "Packages/Makefile"
+make_link "Packages/Objective-C"
 
-make_link "Seti_UI" "Seti_UI"
+make_link "Seti_UI"

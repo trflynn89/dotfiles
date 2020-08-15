@@ -41,7 +41,16 @@ function Clone($project)
 function Make-Link($source, $dest)
 {
     $source = "$SUBLIME_DIR\$source"
-    $dest = "$PACKAGES_DIR\$dest"
+
+    if ($dest -ne $null)
+    {
+        $dest = "$PACKAGES_DIR\$dest"
+    }
+    else
+    {
+        $dest = Split-Path -Path $source -Leaf
+        $dest = "$PACKAGES_DIR\$dest"
+    }
 
     Remove-Path $dest
 
@@ -60,15 +69,15 @@ Clone Packages
 Clone Seti_UI
 
 Make-Link "dotfiles\sublime\Preferences.sublime-settings" "User\Preferences.sublime-settings"
-Make-Link "dotfiles\sublime\Preferences (Windows).sublime-settings" "Preferences (Windows).sublime-settings"
+Make-Link "dotfiles\sublime\Preferences (Windows).sublime-settings"
 
-Make-Link "dotfiles\sublime\Flynn" "Flynn"
-Make-Link "dotfiles\sublime\MIB" "MIB"
-Make-Link "dotfiles\sublime\YANG" "YANG"
-Make-Link "dotfiles\sublime\GN" "GN"
+Make-Link "dotfiles\sublime\Flynn"
+Make-Link "dotfiles\sublime\MIB"
+Make-Link "dotfiles\sublime\YANG"
+Make-Link "dotfiles\sublime\GN"
 
-Make-Link "Packages\C++" "C++"
-Make-Link "Packages\Makefile2" "Makefile"
-Make-Link "Packages\Objective-C" "Objective-C"
+Make-Link "Packages\C++"
+Make-Link "Packages\Makefile"
+Make-Link "Packages\Objective-C"
 
-Make-Link "Seti_UI" "Seti_UI"
+Make-Link "Seti_UI"
