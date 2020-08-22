@@ -57,7 +57,8 @@ make_link "dotfiles/sublime/YANG"
 make_link "dotfiles/sublime/GN"
 
 make_link "Packages/C++"
-make_link "Packages/Makefile"
 make_link "Packages/Objective-C"
+make_link "Packages/Makefile"
+make_link "Packages/Java"
 
 make_link "Seti_UI"

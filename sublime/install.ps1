@@ -77,7 +77,8 @@ Make-Link "dotfiles\sublime\YANG"
 Make-Link "dotfiles\sublime\GN"
 
 Make-Link "Packages\C++"
-Make-Link "Packages\Makefile"
 Make-Link "Packages\Objective-C"
+Make-Link "Packages\Makefile"
+Make-Link "Packages\Java"
 
 Make-Link "Seti_UI"
