@@ -13,7 +13,13 @@ These commands will clone this project and the above forked projects in a folder
 called "Sublime" in the user/home directory. Then, symbolic links are created to
 the Sublime Packages directory to apply the settings.
 
-**Close Sublime Text before installing.**
+Open Sublime Text once after installation - this will setup needed directories.
+Install package control from the command palette. Then install the following
+packages:
+
+* [LSP](https://github.com/sublimelsp/LSP)
+
+**Close Sublime Text before continuing.**
 
 ### Windows (PowerShell)
 

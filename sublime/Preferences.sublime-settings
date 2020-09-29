@@ -1,41 +1,41 @@
 {
-    "theme" : "Seti_orig.sublime-theme",
-    "color_scheme" : "Packages/Flynn/Flynn.sublime-color-scheme",
+    "theme": "Seti_orig.sublime-theme",
+    "color_scheme": "Packages/Flynn/Flynn.sublime-color-scheme",
 
     // Editing behavior
-    "trim_trailing_white_space_on_save" : true,
-    "ensure_newline_at_eof_on_save" : true,
-    "open_files_in_new_window" : false,
-    "translate_tabs_to_spaces" : true,
+    "trim_trailing_white_space_on_save": true,
+    "ensure_newline_at_eof_on_save": true,
+    "open_files_in_new_window": false,
+    "translate_tabs_to_spaces": true,
     "default_line_ending": "unix",
     "show_line_endings": true,
-    "highlight_line" : true,
-    "spell_check" : false,
-    "wide_caret" : true,
-    "word_wrap" : false,
+    "highlight_line": true,
+    "spell_check": false,
+    "wide_caret": true,
+    "word_wrap": false,
     "rulers": [100],
 
     // Auto-complete behavior
-    "auto_complete_commit_on_tab" : true,
-    "auto_complete_cycle" : true,
+    "auto_complete_commit_on_tab": true,
+    "auto_complete_cycle": true,
 
     // Prevent folding text
-    "fold_buttons" : false,
-    "margin" : 8,
+    "fold_buttons": false,
+    "margin": 8,
 
     // Disable git integration
-    "show_git_status" : false,
+    "show_git_status": false,
     "mini_diff": false,
 
     // Highlight active indent guide
-    "indent_guide_options" :
+    "indent_guide_options":
     [
         "draw_normal",
         "draw_active"
     ],
 
     // Ignore these files in the GoTo Anything feature
-    "file_exclude_patterns" :
+    "file_exclude_patterns":
     [
         "*.d",
         "*.pyc",
@@ -62,7 +62,7 @@
         "*.db",
         "*.sublime-*"
     ],
-    "folder_exclude_patterns" :
+    "folder_exclude_patterns":
     [
         ".git",
         ".hg",
@@ -73,7 +73,7 @@
         "node_modules",
         "venv"
     ],
-    "binary_file_patterns" :
+    "binary_file_patterns":
     [
         "*.gif",
         "*.tga",
@@ -87,7 +87,7 @@
     ],
 
     // Ignore these packages
-    "ignored_packages" :
+    "ignored_packages":
     [
         "Vintage"
     ],

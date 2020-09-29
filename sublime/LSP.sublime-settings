@@ -1,0 +1,11 @@
+{
+    "only_show_lsp_completions": true,
+    "clients":
+    {
+        "clangd":
+        {
+            "command": ["clangd", "--background-index"],
+            "enabled": true,
+        }
+    },
+}
