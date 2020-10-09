@@ -69,7 +69,6 @@ Clone Packages
 Clone Seti_UI
 
 Make-Link "dotfiles\sublime\Preferences.sublime-settings" "User\Preferences.sublime-settings"
-Make-Link "dotfiles\sublime\LSP.sublime-settings" "User\LSP.sublime-settings"
 Make-Link "dotfiles\sublime\Preferences (Windows).sublime-settings"
 
 Make-Link "dotfiles\sublime\Flynn"
