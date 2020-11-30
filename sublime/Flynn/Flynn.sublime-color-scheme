@@ -86,7 +86,7 @@
         },
         {
             "name": "Storage type",
-            "scope": "storage.type",
+            "scope": "storage.type, keyword.declaration",
             "foreground": "var(types)"
         },
         {
