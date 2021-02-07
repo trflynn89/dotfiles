@@ -89,7 +89,7 @@ init_shell()
         alias gd='ydiff -s -w0 --ignore-space-at-eol'
     fi
     alias gfp='git fetch origin --prune'
-    alias gfm='git fetch origin master:master'
+    alias gfm='git fetch origin $(git_main_branch):$(git_main_branch)'
     alias gch='git checkout HEAD'
     alias gbd='git branch -D'
     alias gds='gd --staged'
