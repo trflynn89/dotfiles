@@ -49,7 +49,7 @@ clone Packages
 clone Seti_UI
 
 make_link "dotfiles/sublime/Preferences.sublime-settings" "User/Preferences.sublime-settings"
-make_link "dotfiles/sublime/$PREFERENCES"
+make_link "dotfiles/sublime/$PREFERENCES" "Preferences.sublime-settings"
 
 make_link "dotfiles/sublime/Flynn"
 make_link "dotfiles/sublime/MIB"
