@@ -60,7 +60,6 @@
         "*.class",
         "*.psd",
         "*.db",
-        "*.sublime-*"
     ],
     "folder_exclude_patterns":
     [
