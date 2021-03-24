@@ -35,8 +35,4 @@
         "caption": "Copy File Directory as Java package Statement",
         "command": "copy_file_directory_as_package_statement",
     },
-    {
-        "caption": "Format File",
-        "command": "format_file",
-    },
 ]
