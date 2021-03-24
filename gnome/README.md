@@ -67,11 +67,7 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
     * Hide Activities Button `hide-activities-button@gnome-shell-extensions.bookmarkd.xyz`
 
-    * Volume Scroller `volume_scroller@trflynn89.pm.me`
-
-    ```bash
-    ln -sf $(pwd)/volume_scroller@trflynn89.pm.me ~/.local/share/gnome-shell/extensions
-    ```
+    * [Volume Scroller](https://github.com/trflynn89/gnome-shell-volume-scroller) `volume_scroller@trflynn89.pm.me`
 
 ### Enable
 
