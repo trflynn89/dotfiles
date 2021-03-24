@@ -68,6 +68,7 @@ Clone dotfiles
 Clone Packages
 Clone Seti_UI
 Clone sublime-clang-format
+Clone sublime-copy-paths
 
 Make-Link "dotfiles\sublime\Preferences.sublime-settings" "User\Preferences.sublime-settings"
 Make-Link "dotfiles\sublime\Preferences (Windows).sublime-settings" "Preferences.sublime-settings"
@@ -85,3 +86,4 @@ Make-Link "Packages\Java"
 Make-Link "Seti_UI"
 
 Make-Link "sublime-clang-format"
+Make-Link "sublime-copy-paths"

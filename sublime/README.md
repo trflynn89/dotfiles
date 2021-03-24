@@ -32,38 +32,10 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/trflynn89/dotfiles/main/
 
 ## Plugins
 
-The above installation adds the following plugins to the Command Palette and right-click context
-menu.
+The above installation also installs the following plugins:
 
-General files:
-
-* [copy_file_name](Flynn/copy_path.py) - Copy the name of the current file.
-* [copy_file_directory](Flynn/copy_path.py) - Copy the directory of the current file.
-* [copy_file_path_relative_to_project](Flynn/copy_path.py) - Copy the path of the current file
-relative to its project's root directory.
-* [copy_file_directory_relative_to_project](Flynn/copy_path.py) - Copy the directory of the current
-file relative to its project's root directory.
-
-C/C++ files:
-
-* [copy_file_path_as_include_macro](Flynn/copy_path.py) - Copy the path of the current file relative
-to its project's root directory as a C/C++ #include macro.
-* [copy_file_path_as_import_macro](Flynn/copy_path.py) - Copy the path of the current file relative
-to its project's root directory as an Objective-C #import macro.
-* [copy_file_path_as_header_guard](Flynn/copy_path.py) - Copy the path of the current file relative
-to its project's root directory as a C/C++ header guard.
-
-Java files:
-
-* [copy_file_path_as_import_statement](Flynn/copy_path.py) - Copy the path of the current file
-relative to its project's root directory as a Java import statement.
-* [copy_file_directory_as_package_statement](Flynn/copy_path.py) - Copy the directory of the current
-file relative to its project's root directory as a Java package statement.
-
-Formatting:
-
-* [format_file](Flynn/format.py) - Run clang-format on the current file. If any selections are
-active, only those selections are formatted.
+* [sublime-clang-format](https://github.com/trflynn89/sublime-clang-format)
+* [sublime-copy-paths](https://github.com/trflynn89/sublime-copy-paths)
 
 ## Language Servers
 
