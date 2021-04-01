@@ -90,6 +90,7 @@ init_shell()
     fi
     alias gfp='git fetch origin --prune'
     alias gfm='git fetch origin $(git_main_branch):$(git_main_branch)'
+    alias gfu='git fetch upstream $(git_main_branch):$(git_main_branch)'
     alias gch='git checkout HEAD'
     alias gbd='git branch -D'
     alias gds='gd --staged'
