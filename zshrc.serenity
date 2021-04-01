@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+# Utilities for working with SerenityOS - https://github.com/SerenityOS/serenity
+
+init_shell()
+{
+    export SERENITY_ROOT=$HOME/workspace/serenity
+
+    alias sb='ninja -C $SERENITY_ROOT/Build/i686'
+    alias sr='ninja -C $SERENITY_ROOT/Build/i686 install && ninja -C $SERENITY_ROOT/Build/i686 image && ninja -C $SERENITY_ROOT/Build/i686 run'
+}
+
+init_shell
