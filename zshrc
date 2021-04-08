@@ -42,6 +42,12 @@ term_colors()
     done
 }
 
+# Clear the terminal including scrollback history.
+cls()
+{
+    printf '\033[2J\033[3J\033[1;1H'
+}
+
 # Initialize everything needed on the shell
 init_shell()
 {
