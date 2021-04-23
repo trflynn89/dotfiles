@@ -53,7 +53,11 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
 3. Extensions to install:
 
-    * Dash to Dock `dash-to-dock@micxgx.gmail.com`
+    * [User Themes](https://extensions.gnome.org/extension/19/user-themes/) `user-theme@gnome-shell-extensions.gcampax.github.com`
+
+    * [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/) `apps-menu@gnome-shell-extensions.gcampax.github.com`
+
+    * [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/) `dash-to-dock@micxgx.gmail.com`
         * Position and size
             * Icon size limit: 32px
         * Launchers
@@ -62,22 +66,18 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
         * Behavior
             * Click action: Focus or show previews
 
-    * Night Light Slider `night-light-slider.timur@linux.com`
+    * [Night Light Slider](https://extensions.gnome.org/extension/1276/night-light-slider/) `night-light-slider.timur@linux.com`
         * Show always
 
-    * Hide Activities Button `hide-activities-button@gnome-shell-extensions.bookmarkd.xyz`
+    * [Hide Activities Button](https://extensions.gnome.org/extension/1128/hide-activities-button/) `hide-activities-button@gnome-shell-extensions.bookmarkd.xyz`
 
-    * [Volume Scroller](https://github.com/trflynn89/gnome-shell-volume-scroller) `volume_scroller@trflynn89.pm.me`
+    * [Volume Scroller](https://extensions.gnome.org/extension/4109/volume-scroller/) `volume_scroller@trflynn89.pm.me`
 
 ### Enable
 
-1. Applications menu
-
-2. Desktop icons
+1. Desktop icons
     * Uncheck personal folder and trash icon
     * Uncheck 'Mounted Volumes'
-
-3. User themes
 
 ## Keyboard & Mouse
 
