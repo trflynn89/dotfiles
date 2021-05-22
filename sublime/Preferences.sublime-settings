@@ -2,7 +2,7 @@
     "theme": "Seti_orig.sublime-theme",
     "color_scheme": "Packages/Flynn/Flynn.sublime-color-scheme",
 
-    // Editing behavior
+    // Editing behavior.
     "trim_trailing_white_space_on_save": true,
     "ensure_newline_at_eof_on_save": true,
     "open_files_in_new_window": false,
@@ -11,32 +11,34 @@
     "show_line_endings": true,
     "highlight_line": true,
     "spell_check": false,
+    "caret_style": "smooth",
     "wide_caret": true,
     "word_wrap": false,
     "rulers": [100],
 
-    // Auto-complete behavior
+    // Enable GPU acceleration.
+    "hardware_acceleration": true,
+
+    // Auto-complete behavior.
     "auto_complete_commit_on_tab": true,
     "auto_complete_cycle": true,
 
-    // Prevent folding text
+    // Prevent folding text.
     "fold_buttons": false,
     "margin": 8,
 
-    // Disable git integration
+    // Disable git integration.
     "show_git_status": false,
     "mini_diff": false,
 
-    // Highlight active indent guide
-    "indent_guide_options":
-    [
+    // Highlight active indent guide.
+    "indent_guide_options": [
         "draw_normal",
         "draw_active"
     ],
 
-    // Ignore these files in the GoTo Anything feature
-    "file_exclude_patterns":
-    [
+    // Ignore these files in the GoTo Anything feature.
+    "file_exclude_patterns": [
         "*.d",
         "*.pyc",
         "*.pyo",
@@ -61,8 +63,7 @@
         "*.psd",
         "*.db",
     ],
-    "folder_exclude_patterns":
-    [
+    "folder_exclude_patterns": [
         ".git",
         ".hg",
         ".svn",
@@ -72,8 +73,7 @@
         "node_modules",
         "venv"
     ],
-    "binary_file_patterns":
-    [
+    "binary_file_patterns": [
         "*.gif",
         "*.tga",
         "*.dds",
@@ -85,9 +85,8 @@
         "*.zip"
     ],
 
-    // Ignore these packages
-    "ignored_packages":
-    [
+    // Ignore these packages.
+    "ignored_packages": [
         "Vintage"
     ],
 }
