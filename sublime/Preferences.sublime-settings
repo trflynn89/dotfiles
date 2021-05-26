@@ -1,20 +1,21 @@
 {
-    "theme": "Seti_orig.sublime-theme",
     "color_scheme": "Packages/Flynn/Flynn.sublime-color-scheme",
+    "theme": "Seti_orig.sublime-theme",
 
     // Editing behavior.
-    "trim_trailing_white_space_on_save": true,
-    "ensure_newline_at_eof_on_save": true,
-    "open_files_in_new_window": false,
-    "translate_tabs_to_spaces": true,
-    "default_line_ending": "unix",
-    "show_line_endings": true,
-    "highlight_line": true,
-    "spell_check": false,
     "caret_style": "smooth",
+    "default_line_ending": "unix",
+    "ensure_newline_at_eof_on_save": true,
+    "highlight_line": true,
+    "open_files_in_new_window": false,
+    "rulers": [100],
+    "show_line_endings": true,
+    "spell_check": false,
+    "translate_tabs_to_spaces": true,
+    "trim_only_modified_white_space": false,
+    "trim_trailing_white_space_on_save": "all",
     "wide_caret": true,
     "word_wrap": false,
-    "rulers": [100],
 
     // Enable GPU acceleration.
     "hardware_acceleration": true,
@@ -28,40 +29,40 @@
     "margin": 8,
 
     // Disable git integration.
-    "show_git_status": false,
     "mini_diff": false,
+    "show_git_status": false,
 
     // Highlight active indent guide.
     "indent_guide_options": [
+        "draw_active",
         "draw_normal",
-        "draw_active"
     ],
 
     // Ignore these files in the GoTo Anything feature.
     "file_exclude_patterns": [
+        "*.a",
+        "*.class",
         "*.d",
-        "*.pyc",
-        "*.pyo",
-        "*.exe",
+        "*.db",
         "*.dll",
-        "*.obj",
-        "*.gcov",
+        "*.dylib",
+        "*.exe",
         "*.gcda",
         "*.gcno",
-        "*.o",
-        "*.a",
-        "*.lib",
-        "*.so",
-        "*.dylib",
-        "*.ncb",
-        "*.sdf",
-        "*.suo",
-        "*.pdb",
+        "*.gcov",
         "*.idb",
-        ".DS_Store",
-        "*.class",
+        "*.lib",
+        "*.ncb",
+        "*.o",
+        "*.obj",
+        "*.pdb",
         "*.psd",
-        "*.db",
+        "*.pyc",
+        "*.pyo",
+        "*.sdf",
+        "*.so",
+        "*.suo",
+        ".DS_Store",
     ],
     "folder_exclude_patterns": [
         ".git",
@@ -71,18 +72,18 @@
         "__pycache__",
         "CVS",
         "node_modules",
-        "venv"
+        "venv",
     ],
     "binary_file_patterns": [
-        "*.gif",
-        "*.tga",
         "*.dds",
-        "*.ico",
         "*.eot",
+        "*.gif",
+        "*.ico",
+        "*.jar",
         "*.pdf",
         "*.swf",
-        "*.jar",
-        "*.zip"
+        "*.tga",
+        "*.zip",
     ],
 
     // Ignore these packages.
