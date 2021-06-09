@@ -38,6 +38,8 @@
         "draw_normal",
     ],
 
+    "remember_workspace": false,
+
     // Ignore these files in the GoTo Anything feature.
     "file_exclude_patterns": [
         "*.a",
