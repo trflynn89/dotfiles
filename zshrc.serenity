@@ -4,11 +4,11 @@
 
 create_serenity_sync_local()
 {
-    if [[ ! -d $SERENITY_ROOT ]] ; then
+    if [[ ! -d $SERENITY_SOURCE_DIR ]] ; then
         return
     fi
 
-    cat <<EOF > $SERENITY_ROOT/sync-local.sh
+    cat <<EOF > $SERENITY_SOURCE_DIR/sync-local.sh
 #!/bin/sh
 
 sed -i "s/Width=1024/Width=1600/" mnt/etc/WindowServer.ini
@@ -21,13 +21,15 @@ EOF
 
 init_shell()
 {
-    export SERENITY_ROOT=$HOME/workspace/serenity
+    local serenity_source_dir=$HOME/workspace/serenity
 
-    if [[ -d $SERENITY_ROOT ]] ; then
+    if [[ -d $serenity_source_dir ]] ; then
+        export SERENITY_SOURCE_DIR=$serenity_source_dir
+
         alias si=create_serenity_sync_local
-        alias sc='pushd >/dev/null $SERENITY_ROOT/Build/i686 && cmake ../../ -G Ninja -DBUILD_LAGOM=ON && popd >/dev/null'
-        alias sb='ninja -C $SERENITY_ROOT/Build/i686'
-        alias sr='ninja -C $SERENITY_ROOT/Build/i686 install && ninja -C $SERENITY_ROOT/Build/i686 image && ninja -C $SERENITY_ROOT/Build/i686 run'
+        alias sc='pushd >/dev/null $SERENITY_SOURCE_DIR/Build/i686 && cmake ../../ -G Ninja -DBUILD_LAGOM=ON && popd >/dev/null'
+        alias sb='ninja -C $SERENITY_SOURCE_DIR/Build/i686'
+        alias sr='ninja -C $SERENITY_SOURCE_DIR/Build/i686 install && ninja -C $SERENITY_SOURCE_DIR/Build/i686 image && ninja -C $SERENITY_SOURCE_DIR/Build/i686 run'
     fi
 }
 
