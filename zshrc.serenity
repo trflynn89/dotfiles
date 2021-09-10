@@ -2,12 +2,29 @@
 
 # Utilities for working with SerenityOS - https://github.com/SerenityOS/serenity
 
+create_serenity_sync_local()
+{
+    if [[ ! -d $SERENITY_ROOT ]] ; then
+        return
+    fi
+
+    cat <<EOF > $SERENITY_ROOT/sync-local.sh
+#!/bin/sh
+
+sed -i "s/Width=1024/Width=1600/" mnt/etc/WindowServer.ini
+sed -i "s/Height=768/Height=900/" mnt/etc/WindowServer.ini
+sed -i "s/Name=Default/Name=Redmond 2000/" mnt/etc/WindowServer.ini
+
+echo "\nfortune" >> mnt/home/anon/.shellrc
+EOF
+}
+
 init_shell()
 {
     export SERENITY_ROOT=$HOME/workspace/serenity
 
     if [[ -d $SERENITY_ROOT ]] ; then
-        alias si='echo -e "#!/bin/sh\nsed -i \"s/Width=1024/Width=1600/\" mnt/etc/WindowServer.ini\nsed -i \"s/Height=768/Height=900/\" mnt/etc/WindowServer.ini\nsed -i \"s/Name=Default/Name=Redmond 2000/\" mnt/etc/WindowServer.ini" > $SERENITY_ROOT/sync-local.sh'
+        alias si=create_serenity_sync_local
         alias sc='pushd >/dev/null $SERENITY_ROOT/Build/i686 && cmake ../../ -G Ninja -DBUILD_LAGOM=ON && popd >/dev/null'
         alias sb='ninja -C $SERENITY_ROOT/Build/i686'
         alias sr='ninja -C $SERENITY_ROOT/Build/i686 install && ninja -C $SERENITY_ROOT/Build/i686 image && ninja -C $SERENITY_ROOT/Build/i686 run'
