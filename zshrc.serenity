@@ -25,6 +25,7 @@ init_shell()
 
     if [[ -d $serenity_source_dir ]] ; then
         export SERENITY_SOURCE_DIR=$serenity_source_dir
+        export SERENITY_RAM_SIZE=1024M
 
         alias si=create_serenity_sync_local
         alias sc='pushd >/dev/null $SERENITY_SOURCE_DIR/Build/i686 && cmake ../../ -G Ninja -DBUILD_LAGOM=ON && popd >/dev/null'
