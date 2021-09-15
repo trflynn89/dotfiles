@@ -19,18 +19,33 @@ echo "\nfortune" >> mnt/home/anon/.shellrc
 EOF
 }
 
+serenity()
+{
+    if [[ ! -d $SERENITY_SOURCE_DIR ]] ; then
+        return
+    fi
+
+    if [[ $# -eq 1 ]] ; then
+        $SERENITY_SOURCE_DIR/Meta/serenity.sh $1
+    else
+        $SERENITY_SOURCE_DIR/Meta/serenity.sh $1 lagom ${@:2}
+    fi
+}
+
 init_shell()
 {
     local serenity_source_dir=$HOME/workspace/serenity
 
     if [[ -d $serenity_source_dir ]] ; then
         export SERENITY_SOURCE_DIR=$serenity_source_dir
-        export SERENITY_RAM_SIZE=1024M
+        export SERENITY_RAM_SIZE=2048M
+        export SERENITY_ARCH=x86_64
 
         alias si=create_serenity_sync_local
-        alias sc='pushd >/dev/null $SERENITY_SOURCE_DIR/Build/i686 && cmake ../../ -G Ninja -DBUILD_LAGOM=ON && popd >/dev/null'
-        alias sb='ninja -C $SERENITY_SOURCE_DIR/Build/i686'
-        alias sr='ninja -C $SERENITY_SOURCE_DIR/Build/i686 install && ninja -C $SERENITY_SOURCE_DIR/Build/i686 image && ninja -C $SERENITY_SOURCE_DIR/Build/i686 run'
+        alias sl='cmake -S $SERENITY_SOURCE_DIR/Meta/Lagom -B $SERENITY_SOURCE_DIR/Build/lagom -DBUILD_LAGOM=ON'
+
+        alias sb='serenity build'
+        alias sr='serenity run'
     fi
 }
 
