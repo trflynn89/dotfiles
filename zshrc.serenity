@@ -42,8 +42,6 @@ init_shell()
         export SERENITY_ARCH=x86_64
 
         alias si=create_serenity_sync_local
-        alias sl='cmake -S $SERENITY_SOURCE_DIR/Meta/Lagom -B $SERENITY_SOURCE_DIR/Build/lagom -DBUILD_LAGOM=ON'
-
         alias sb='serenity build'
         alias sr='serenity run'
     fi
