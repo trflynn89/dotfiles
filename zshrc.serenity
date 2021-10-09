@@ -26,9 +26,9 @@ serenity()
     fi
 
     if [[ $# -eq 1 ]] ; then
-        $SERENITY_SOURCE_DIR/Meta/serenity.sh $1
+        $SERENITY_SOURCE_DIR/Meta/serenity.sh $1 $SERENITY_ARCH GNU
     else
-        $SERENITY_SOURCE_DIR/Meta/serenity.sh $1 lagom ${@:2}
+        $SERENITY_SOURCE_DIR/Meta/serenity.sh $1 lagom GNU ${@:2}
     fi
 }
 
