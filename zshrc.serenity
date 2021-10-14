@@ -39,7 +39,7 @@ init_shell()
     if [[ -d $serenity_source_dir ]] ; then
         export SERENITY_SOURCE_DIR=$serenity_source_dir
         export SERENITY_RAM_SIZE=2048M
-        export SERENITY_ARCH=x86_64
+        export SERENITY_ARCH=i686
 
         alias si=create_serenity_sync_local
         alias sb='serenity build'
