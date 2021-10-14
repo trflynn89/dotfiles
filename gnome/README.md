@@ -73,6 +73,10 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
     * [Volume Scroller](https://extensions.gnome.org/extension/4109/volume-scroller/) `volume_scroller@trflynn89.pm.me`
 
+    * [Vertical Overview](https://extensions.gnome.org/extension/4144/vertical-overview/) `vertical-overview@RensAlthuis.github.com`
+        * Dash
+            * Enable dash overrides: off
+
 ### Enable
 
 1. Desktop icons
@@ -144,6 +148,11 @@ Install Material profile <https://mayccoll.github.io/Gogh/>
 
 ```bash
 sudo apt install -y gcc-11 g++-11
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 1100 --slave /usr/bin/g++ g++ /usr/bin/g++-11 --slave /usr/bin/gcov gcov /usr/bin/gcov-11
-sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc-11 1100 --slave /usr/bin/c++ c++ /usr/bin/g++-11
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 1100
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 1100
+sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-11 1100
+
+sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc-11 1100
+sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-11 1100
 ```
