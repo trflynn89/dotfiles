@@ -69,13 +69,9 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
     * [Night Light Slider](https://extensions.gnome.org/extension/1276/night-light-slider/) `night-light-slider.timur@linux.com`
         * Show always
 
-    * [Hide Activities Button](https://extensions.gnome.org/extension/1128/hide-activities-button/) `hide-activities-button@gnome-shell-extensions.bookmarkd.xyz`
+    * [Hide Activities Button](https://extensions.gnome.org/extension/4325/hide-activities-button/) `hide-activities-button@nmingori.gnome-shell-extensions.org`
 
     * [Volume Scroller](https://extensions.gnome.org/extension/4109/volume-scroller/) `volume_scroller@trflynn89.pm.me`
-
-    * [Vertical Overview](https://extensions.gnome.org/extension/4144/vertical-overview/) `vertical-overview@RensAlthuis.github.com`
-        * Dash
-            * Enable dash overrides: off
 
 ### Enable
 
