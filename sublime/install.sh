@@ -3,10 +3,18 @@ SUBLIME_DIR="$HOME/Sublime"
 HOST_OS="$(uname -s)"
 
 if [[ $HOST_OS == "Darwin" ]] ; then
-    PACKAGES_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages"
+    if [[ -d "$HOME/Library/Application Support/Sublime Text 3" ]] ; then
+        PACKAGES_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages"
+    else
+        PACKAGES_DIR="$HOME/Library/Application Support/Sublime Text/Packages"
+    fi
     PREFERENCES="Preferences (OSX).sublime-settings"
 elif [[ $HOST_OS == "Linux" ]] ; then
-    PACKAGES_DIR="$HOME/.config/sublime-text-3/Packages"
+    if [[ -d "$HOME/.config/sublime-text-3" ]] ; then
+        PACKAGES_DIR="$HOME/.config/sublime-text-3/Packages/Packages"
+    else
+        PACKAGES_DIR="$HOME/.config/sublime-text/Packages/Packages"
+    fi
     PREFERENCES="Preferences (Linux).sublime-settings"
 else
     echo "Unknown host: $(HOST_OS)"
