@@ -73,6 +73,11 @@ init_shell()
         bindkey -s "^[OM" "^M" # Enter
     fi
 
+    # Disable Homebrew anayltics
+    if [[ $host_os == "Darwin" ]] ; then
+        export HOMEBREW_NO_ANALYTICS=1
+    fi
+
     # PATH changes
     path_add "$HOME/.local/bin"
     path_add "$HOME/.cargo/bin"
