@@ -11,9 +11,9 @@ if [[ $HOST_OS == "Darwin" ]] ; then
     PREFERENCES="Preferences (OSX).sublime-settings"
 elif [[ $HOST_OS == "Linux" ]] ; then
     if [[ -d "$HOME/.config/sublime-text-3" ]] ; then
-        PACKAGES_DIR="$HOME/.config/sublime-text-3/Packages/Packages"
+        PACKAGES_DIR="$HOME/.config/sublime-text-3/Packages"
     else
-        PACKAGES_DIR="$HOME/.config/sublime-text/Packages/Packages"
+        PACKAGES_DIR="$HOME/.config/sublime-text/Packages"
     fi
     PREFERENCES="Preferences (Linux).sublime-settings"
 else
