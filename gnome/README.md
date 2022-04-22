@@ -7,7 +7,7 @@ Uninstall the snap, and install from Mozilla's PPA:
 ```bash
 sudo snap remove --purge firefox
 sudo add-apt-repository ppa:mozillateam/ppa
-sudo apt install -t 'o=LP-PPA-mozillateam' -y firefox
+sudo apt install -t 'o=LP-PPA-mozillateam' firefox
 ```
 
 Ensure updates come from the PPA:
@@ -22,10 +22,7 @@ Pin-Priority: 501
 
 ## Preparation
 
-Install Gnome Tweaks from Ubuntu Software Center and install Gnome extensions:
-```bash
-sudo apt install -y gnome-shell-extensions 
-```
+Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
 ## Appearance
 
