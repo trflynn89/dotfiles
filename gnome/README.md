@@ -163,12 +163,13 @@ Install Material profile <https://mayccoll.github.io/Gogh/>
 # GCC 11
 
 ```bash
-sudo apt install -y gcc-11 g++-11
+sudo add-apt-repository ppa:ubuntu-toolchain-r/ppa
+sudo apt install -y gcc-12 g++-12
 
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 1100
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 1100
-sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-11 1100
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 1200
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-12 1200
+sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-12 1200
 
-sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc-11 1100
-sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-11 1100
+sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc-12 1200
+sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-12 1200
 ```
