@@ -1,25 +1,5 @@
 # Gnome Tweaks
 
-## Remove Firefox snap
-
-Uninstall the snap, and install from Mozilla's PPA:
-
-```bash
-sudo snap remove --purge firefox
-sudo add-apt-repository ppa:mozillateam/ppa
-sudo apt install -t 'o=LP-PPA-mozillateam' firefox
-```
-
-Ensure updates come from the PPA:
-
-```bash
-sudo vi /etc/apt/preferences.d/mozillateamppa
-
-Package: firefox*
-Pin: release o=LP-PPA-mozillateam
-Pin-Priority: 501
-```
-
 ## Preparation
 
 Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
@@ -160,7 +140,7 @@ Install Material profile <https://mayccoll.github.io/Gogh/>
 1. Uncheck "Limit scrollback"
 
 
-# GCC 11
+# GCC 12
 
 ```bash
 sudo add-apt-repository ppa:ubuntu-toolchain-r/ppa
