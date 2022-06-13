@@ -1,5 +1,10 @@
 $SUBLIME_DIR = "$ENV:UserProfile\Sublime"
-$PACKAGES_DIR = "$ENV:AppData\Sublime Text 3\Packages"
+$PACKAGES_DIR = "$ENV:AppData\Sublime Text\Packages"
+
+if (Test-Path -Path "$ENV:AppData\Sublime Text 3\Packages" -PathType Container)
+{
+    $PACKAGES_DIR = "$ENV:AppData\Sublime Text 3\Packages"
+}
 
 function Remove-Path($path)
 {
