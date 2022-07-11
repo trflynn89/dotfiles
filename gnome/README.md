@@ -112,7 +112,7 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
 # Terminal Profile
 
-Install Material profile <https://mayccoll.github.io/Gogh/>
+Install [Material](https://gogh-co.github.io/Gogh/) profile
 
 ## Global
 
