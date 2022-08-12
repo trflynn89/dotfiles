@@ -43,6 +43,7 @@
     // Ignore these files in the GoTo Anything feature.
     "file_exclude_patterns": [
         "*.a",
+        "*.ao",
         "*.class",
         "*.d",
         "*.db",
@@ -63,6 +64,7 @@
         "*.pyo",
         "*.sdf",
         "*.so",
+        "*.so.?.?.?",
         "*.suo",
         ".DS_Store",
     ],
