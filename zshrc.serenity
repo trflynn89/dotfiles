@@ -16,7 +16,7 @@ sed -i "s/Height=768/Height=900/" mnt/etc/WindowServer.ini
 sed -i "s/Name=Default/Name=Redmond 2000/" mnt/etc/WindowServer.ini
 
 echo "America/New_York" > mnt/etc/timezone
-echo "\nfortune" >> mnt/home/anon/.shellrc
+echo "fortune" > mnt/home/anon/.shellrc
 EOF
 }
 
