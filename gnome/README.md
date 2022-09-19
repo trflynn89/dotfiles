@@ -132,8 +132,9 @@ Install [Material](https://gogh-co.github.io/Gogh/) profile
 
 1. Background color: #0d1117
 2. Palette entry 4: #a2e9f6
-3. Palette entry 12: #6fb4ff
-4. Palette entry 14: #34e2e2
+3. Palette entry 8: #129cbf
+4. Palette entry 12: #6fb4ff
+5. Palette entry 14: #34e2e2
 
 ### Scrolling
 
