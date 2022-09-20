@@ -15,6 +15,8 @@ sed -i "s/Width=1024/Width=1600/" mnt/etc/WindowServer.ini
 sed -i "s/Height=768/Height=900/" mnt/etc/WindowServer.ini
 sed -i "s/Name=Default/Name=Redmond 2000/" mnt/etc/WindowServer.ini
 
+sed -i "s/TimeFormat=%T/TimeFormat=\xf4\x8c\xb4\x8b %b %d %r/" mnt/home/anon/.config/Taskbar.ini
+
 echo "America/New_York" > mnt/etc/timezone
 echo "fortune" > mnt/home/anon/.shellrc
 EOF
