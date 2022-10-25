@@ -8,7 +8,7 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
 ### Themes
 
-1. Applications: Matcha-dark-azul <https://www.gnome-look.org/p/1187179/>
+1. Legacy Applications: Matcha-dark-azul <https://www.gnome-look.org/p/1187179/>
 
     ```bash
     tar -xvf Matcha-azul.tar.xz
@@ -71,9 +71,17 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
 ### Enable
 
-1. Desktop icons
+1. Applications Menu
+
+2. Desktop Icons NG
     * Uncheck personal folder and trash icon
     * Uncheck 'Mounted Volumes'
+
+3. User Themes
+
+### Disable
+
+1. Ubuntu Dock
 
 ## Keyboard & Mouse
 
@@ -108,7 +116,8 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
 # Terminal Profile
 
-Install [Material](https://gogh-co.github.io/Gogh/) profile
+1. Ensure the main terminal profile is called "Default".
+2. Install [Material](https://gogh-co.github.io/Gogh/) profile.
 
 ## Global
 
@@ -140,7 +149,6 @@ Install [Material](https://gogh-co.github.io/Gogh/) profile
 # GCC 12
 
 ```bash
-sudo add-apt-repository ppa:ubuntu-toolchain-r/ppa
 sudo apt install -y gcc-12 g++-12
 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 1200
@@ -150,3 +158,19 @@ sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-12 1200
 sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc-12 1200
 sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-12 1200
 ```
+
+# Grub
+
+If the grub menu is slow, lower the resolution.
+
+1. Edit /etc/default/grub and set:
+
+    ```bash
+    GRUB_GFXMODE=1280x1024x32,auto
+    ```
+
+2. Run:
+
+    ```bash
+    sudo update-grub
+    ```
