@@ -53,10 +53,6 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
 3. Extensions to install:
 
-    * [User Themes](https://extensions.gnome.org/extension/19/user-themes/) `user-theme@gnome-shell-extensions.gcampax.github.com`
-
-    * [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/) `apps-menu@gnome-shell-extensions.gcampax.github.com`
-
     * [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/) `dash-to-dock@micxgx.gmail.com`
         * Position and size
             * Icon size limit: 32px
