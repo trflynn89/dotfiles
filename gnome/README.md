@@ -8,15 +8,24 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
 ### Themes
 
-1. Legacy Applications: Matcha-dark-azul <https://www.gnome-look.org/p/1187179/>
+1. Legacy Applications: [Matcha-dark-azul](https://www.gnome-look.org/p/1187179/)
 
     ```bash
-    tar -xvf Matcha-azul.tar.xz
     mkdir ~/.themes
+    tar -xvf Matcha-azul.tar.xz
     mv Matcha-dark-azul ~/.themes/
     ```
 
-2. Icons: Papirus-Dark <https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/>
+    Or if gnome-look hasn't been updated in a while, install [from source](https://github.com/vinceliuice/Matcha-gtk-theme):
+
+    ```bash
+    mkdir ~/.themes
+    git clone https://github.com/vinceliuice/Matcha-gtk-theme.git
+    cd Matcha-gtk-theme
+    ./install.sh -c dark -t azul
+    ```
+
+2. Icons: [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/)
 
     ```bash
     sudo add-apt-repository ppa:papirus/papirus
