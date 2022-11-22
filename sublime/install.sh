@@ -58,6 +58,8 @@ clone Seti_UI
 clone sublime-copy-paths
 clone sublime-format
 
+git -C "${SUBLIME_DIR}/Packages" remote add upstream https://github.com/sublimehq/Packages.git
+
 make_link "dotfiles/sublime/Preferences.sublime-settings" "User/Preferences.sublime-settings"
 make_link "dotfiles/sublime/$PREFERENCES" "Preferences.sublime-settings"
 
