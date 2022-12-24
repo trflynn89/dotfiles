@@ -123,10 +123,7 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 1. Static Workspaces
 2. Number of Workspaces: 3
 
-# Terminal Profile
-
-1. Ensure the main terminal profile is called "Default".
-2. Install [Material](https://gogh-co.github.io/Gogh/) profile.
+# Terminal
 
 ## Global
 
@@ -134,21 +131,33 @@ Install Gnome Tweaks from Ubuntu Software Center, then open Tweaks.
 
 1. Theme variant: Dark
 
-## Profiles > Material
-
-1. Set Material as default
-
 ### Text
 
 1. Terminal bell: off
 
 ### Colors
 
-1. Background color: #0d1117
-2. Palette entry 4: #a2e9f6
-3. Palette entry 8: #129cbf
-4. Palette entry 12: #6fb4ff
-5. Palette entry 14: #34e2e2
+    Text default color: #c3c7d1
+    Background default color: #0d1117
+    Text cursor color: #1e282c
+    Background cursor color: #657b83
+
+    Palette entry 0: #073641
+    Palette entry 1: #eb606b
+    Palette entry 2: #c3e88d
+    Palette entry 3: #f7eb95
+    Palette entry 4: #a2e9f6
+    Palette entry 5: #ff2490
+    Palette entry 6: #aeddff
+    Palette entry 7: #ffffff
+    Palette entry 8: #129cbf
+    Palette entry 9: #eb606b
+    Palette entry 10: #c3e88d
+    Palette entry 11: #f7eb95
+    Palette entry 12: #6fb4ff
+    Palette entry 13: #6c71c3
+    Palette entry 14: #34e2e2
+    Palette entry 15: #ffffff
 
 ### Scrolling
 
