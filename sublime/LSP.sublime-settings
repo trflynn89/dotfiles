@@ -1,0 +1,17 @@
+{
+    "document_highlight_style": "stippled",
+    "hover_highlight_style": "stippled",
+    "link_highlight_style": "none",
+    "show_diagnostics_count_in_view_status": true,
+
+    "clients": {
+        "clangd": {
+            "command": [
+                "clangd",
+                "--background-index",
+                "--enable-config",
+                "--header-insertion", "never",
+            ],
+        },
+    }
+}

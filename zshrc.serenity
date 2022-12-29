@@ -2,13 +2,36 @@
 
 # Utilities for working with SerenityOS - https://github.com/SerenityOS/serenity
 
-create_serenity_sync_local()
+create_serenity_clangd()
 {
-    if [[ ! -d $SERENITY_SOURCE_DIR ]] ; then
+    if [[ ! -d "${SERENITY_SOURCE_DIR}" ]] ; then
         return
     fi
 
-    cat <<EOF > $SERENITY_SOURCE_DIR/sync-local.sh
+    local toolchain=("${SERENITY_SOURCE_DIR}/Toolchain/Local/${SERENITY_ARCH}/${SERENITY_ARCH}-pc-serenity/include/c++"/*)
+
+    cat <<EOF > "${SERENITY_SOURCE_DIR}/.clangd"
+CompileFlags:
+  Add:
+    - "-D__serenity__"
+    - "-I${toolchain}"
+    - "-I${toolchain}/${SERENITY_ARCH}-pc-serenity"
+  CompilationDatabase: "Build/${SERENITY_ARCH}"
+
+Diagnostics:
+  ClangTidy:
+    Remove:
+      - misc-const-correctness
+EOF
+}
+
+create_serenity_sync_local()
+{
+    if [[ ! -d "${SERENITY_SOURCE_DIR}" ]] ; then
+        return
+    fi
+
+    cat <<EOF > "${SERENITY_SOURCE_DIR}/sync-local.sh"
 #!/bin/sh
 
 sed -i "s/Width=1024/Width=1600/" mnt/etc/WindowServer.ini
@@ -22,29 +45,35 @@ echo "fortune" > mnt/home/anon/.shellrc
 EOF
 }
 
+initialize_serenity()
+{
+    create_serenity_clangd
+    create_serenity_sync_local
+}
+
 serenity()
 {
-    if [[ ! -d $SERENITY_SOURCE_DIR ]] ; then
+    if [[ ! -d "${SERENITY_SOURCE_DIR}" ]] ; then
         return
     fi
 
     if [[ $# -eq 1 ]] ; then
-        $SERENITY_SOURCE_DIR/Meta/serenity.sh $1 $SERENITY_ARCH GNU
+        "${SERENITY_SOURCE_DIR}/Meta/serenity.sh" "${1}" "${SERENITY_ARCH}" "GNU"
     else
-        $SERENITY_SOURCE_DIR/Meta/serenity.sh $1 lagom ${@:2}
+        "${SERENITY_SOURCE_DIR}/Meta/serenity.sh" "${1}" "lagom" "${@:2}"
     fi
 }
 
 init_shell()
 {
-    local serenity_source_dir=$HOME/workspace/serenity
+    local serenity_source_dir="${HOME}/workspace/serenity"
 
-    if [[ -d $serenity_source_dir ]] ; then
-        export SERENITY_SOURCE_DIR=$serenity_source_dir
+    if [[ -d "${serenity_source_dir}" ]] ; then
+        export SERENITY_SOURCE_DIR="${serenity_source_dir}"
         export SERENITY_RAM_SIZE=2048M
         export SERENITY_ARCH=x86_64
 
-        alias si=create_serenity_sync_local
+        alias si=initialize_serenity
         alias sb='serenity build'
         alias sr='serenity run'
     fi

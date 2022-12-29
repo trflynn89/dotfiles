@@ -75,6 +75,7 @@ Clone Seti_UI
 Clone sublime-copy-paths
 Clone sublime-format
 
+Make-Link "dotfiles\sublime\LSP.sublime-settings" "User\LSP.sublime-settings"
 Make-Link "dotfiles\sublime\Preferences.sublime-settings" "User\Preferences.sublime-settings"
 Make-Link "dotfiles\sublime\Preferences (Windows).sublime-settings" "Preferences.sublime-settings"
 

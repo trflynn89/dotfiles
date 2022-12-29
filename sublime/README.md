@@ -58,9 +58,7 @@ package from Package Control. Then modify the project's settings:
 ```json
 "settings": {
     "LSP": {
-        "only_show_lsp_completions": true,
         "clangd": {
-            "command": ["clangd", "--background-index"],
             "enabled": true,
         },
     },
