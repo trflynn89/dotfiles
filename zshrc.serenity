@@ -22,6 +22,9 @@ Diagnostics:
   ClangTidy:
     Remove:
       - misc-const-correctness
+      - misc-no-recursion
+      - performance-unnecessary-copy-initialization
+      - readability-function-cognitive-complexity
 EOF
 }
 
