@@ -28,6 +28,26 @@ Diagnostics:
 EOF
 }
 
+create_lagom_clangd()
+{
+    if [[ ! -d "${SERENITY_SOURCE_DIR}" ]] ; then
+        return
+    fi
+
+    cat <<EOF > "${SERENITY_SOURCE_DIR}/.clangd"
+CompileFlags:
+  CompilationDatabase: "Build/lagom"
+
+Diagnostics:
+  ClangTidy:
+    Remove:
+      - misc-const-correctness
+      - misc-no-recursion
+      - performance-unnecessary-copy-initialization
+      - readability-function-cognitive-complexity
+EOF
+}
+
 create_serenity_sync_local()
 {
     if [[ ! -d "${SERENITY_SOURCE_DIR}" ]] ; then
@@ -50,8 +70,12 @@ EOF
 
 initialize_serenity()
 {
-    create_serenity_clangd
-    create_serenity_sync_local
+    if [[ $# -eq 0 ]] ; then
+        create_serenity_clangd
+        create_serenity_sync_local
+    else
+        create_lagom_clangd
+    fi
 }
 
 serenity()
