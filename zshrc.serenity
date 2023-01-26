@@ -84,6 +84,9 @@ serenity()
         return
     fi
 
+    export CC=gcc
+    export CXX=g++
+
     if [[ $# -eq 1 ]] ; then
         "${SERENITY_SOURCE_DIR}/Meta/serenity.sh" "${1}" "${SERENITY_ARCH}" "GNU"
     else
