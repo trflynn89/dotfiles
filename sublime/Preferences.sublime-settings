@@ -92,6 +92,6 @@
 
     // Ignore these packages.
     "ignored_packages": [
-        "Vintage"
+        "Vintage",
     ],
 }
