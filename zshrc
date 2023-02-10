@@ -82,6 +82,15 @@ init_shell()
     path_add "$HOME/.local/bin"
     path_add "$HOME/.cargo/bin"
 
+    if [[ $host_os == "Darwin" ]] ; then
+        path_add "/opt/homebrew/bin"
+        path_add "/Applications/Sublime Text.app/Contents/SharedSupport/bin"
+
+        if [[ -x $(which xcode-select 2>/dev/null) ]] ; then
+            path_add "$(xcode-select -p)/Toolchains/XcodeDefault.xctoolchain/usr/bin"
+        fi
+    fi
+
     # Utility aliases
     if [[ -x $(which rg 2>/dev/null) ]] ; then
         alias cgr='rg -n -tc -tcpp -tobjc -tobjcpp'
