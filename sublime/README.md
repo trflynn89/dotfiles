@@ -40,7 +40,10 @@ The above installation also installs the following plugins:
 ## Language Servers
 
 For projects wishing to use a language server, install the [LSP](https://github.com/sublimelsp/LSP)
-package from Package Control. Then modify the project's settings:
+package from Package Control. Then install the specific language server package, e.g. for clangd:
+[LSP-clangd](https://github.com/sublimelsp/LSP-clangd).
+
+Then modify the project's settings:
 
 1. Disable Sublime's indexing of each folder in the project with `index_exclude_patterns`:
 
@@ -53,7 +56,7 @@ package from Package Control. Then modify the project's settings:
 ],
 ```
 
-2. Configure the LSP package settings (e.g. for clangd):
+2. Configure the LSP package settings, e.g. for clangd:
 
 ```json
 "settings": {

@@ -1,0 +1,7 @@
+{
+    "initializationOptions": {
+        "clangd.background-index": true,
+        "clangd.enable-config": true,
+        "clangd.header-insertion": "never",
+    }
+}

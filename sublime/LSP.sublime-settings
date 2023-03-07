@@ -6,15 +6,4 @@
     "show_diagnostics_count_in_view_status": true,
     "show_diagnostics_severity_level": 2,
     "diagnostics_panel_include_severity_level": 2,
-
-    "clients": {
-        "clangd": {
-            "command": [
-                "clangd",
-                "--background-index",
-                "--enable-config",
-                "--header-insertion", "never",
-            ],
-        },
-    }
 }
