@@ -8,14 +8,10 @@ create_serenity_clangd()
         return
     fi
 
-    local toolchain=("${SERENITY_SOURCE_DIR}/Toolchain/Local/${SERENITY_ARCH}/${SERENITY_ARCH}-pc-serenity/include/c++"/*)
-
     cat <<EOF > "${SERENITY_SOURCE_DIR}/.clangd"
 CompileFlags:
   Add:
     - "-D__serenity__"
-    - "-I${toolchain}"
-    - "-I${toolchain}/${SERENITY_ARCH}-pc-serenity"
   CompilationDatabase: "Build/${SERENITY_ARCH}"
 
 Diagnostics:
