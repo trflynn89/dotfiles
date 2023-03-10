@@ -93,6 +93,32 @@ initialize_serenity()
     fi
 }
 
+lagom_sanitize()
+{
+    local flag
+
+    if [[ $# -eq 0 || "${1}" == "off" ]] ; then
+        flag="OFF"
+    else
+        flag="ON"
+    fi
+
+    cmake -S Meta/Lagom -B Build/lagom -DBUILD_LAGOM=ON -DENABLE_ADDRESS_SANITIZER="${flag}" -DENABLE_UNDEFINED_SANITIZER="${flag}"
+}
+
+lagom_web()
+{
+    local flag
+
+    if [[ $# -eq 0 || "${1}" == "off" ]] ; then
+        flag="OFF"
+    else
+        flag="ON"
+    fi
+
+    cmake -S Meta/Lagom -B Build/lagom -DBUILD_LAGOM=ON -DENABLE_LAGOM_LIBWEB="${flag}" -DENABLE_LAGOM_LADYBIRD="${flag}"
+}
+
 serenity()
 {
     if [[ ! -d "${SERENITY_SOURCE_DIR}" ]] ; then
