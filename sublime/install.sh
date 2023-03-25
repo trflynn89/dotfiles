@@ -65,6 +65,7 @@ make_link "dotfiles/sublime/LSP-clangd.sublime-settings" "User/LSP-clangd.sublim
 make_link "dotfiles/sublime/Preferences.sublime-settings" "User/Preferences.sublime-settings"
 make_link "dotfiles/sublime/$PREFERENCES" "Preferences.sublime-settings"
 
+make_link "dotfiles/sublime/Default"
 make_link "dotfiles/sublime/Flynn"
 make_link "dotfiles/sublime/GN"
 

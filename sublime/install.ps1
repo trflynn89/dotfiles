@@ -80,6 +80,7 @@ Make-Link "dotfiles\sublime\LSP-clangd.sublime-settings" "User\LSP-clangd.sublim
 Make-Link "dotfiles\sublime\Preferences.sublime-settings" "User\Preferences.sublime-settings"
 Make-Link "dotfiles\sublime\Preferences (Windows).sublime-settings" "Preferences.sublime-settings"
 
+Make-Link "dotfiles\sublime\Default"
 Make-Link "dotfiles\sublime\Flynn"
 Make-Link "dotfiles\sublime\GN"
 
