@@ -66,8 +66,6 @@ make_link "dotfiles/sublime/Preferences.sublime-settings" "User/Preferences.subl
 make_link "dotfiles/sublime/$PREFERENCES" "Preferences.sublime-settings"
 
 make_link "dotfiles/sublime/Flynn"
-make_link "dotfiles/sublime/MIB"
-make_link "dotfiles/sublime/YANG"
 make_link "dotfiles/sublime/GN"
 
 make_link "Packages/C++"
