@@ -19,6 +19,7 @@ Diagnostics:
     Remove:
       - misc-const-correctness
       - misc-no-recursion
+      - misc-use-anonymous-namespace
       - performance-unnecessary-copy-initialization
       - readability-function-cognitive-complexity
 EOF
