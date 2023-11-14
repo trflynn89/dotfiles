@@ -87,7 +87,13 @@ init_shell()
         path_add "/Applications/Sublime Text.app/Contents/SharedSupport/bin"
 
         if [[ -x $(which xcode-select 2>/dev/null) ]] ; then
+            local xcode_sdk_path=$(xcrun --sdk macosx --show-sdk-path)
+            local xcode_lib_path="${xcode_sdk_path}/usr/lib"
+
             path_add "$(xcode-select -p)/Toolchains/XcodeDefault.xctoolchain/usr/bin"
+
+            export LIBRARY_PATH="${LIBRARY_PATH:+$LIBRARY_PATH:}${xcode_lib_path}"
+            export SDKROOT="${xcode_sdk_path}"
         fi
     fi
 
