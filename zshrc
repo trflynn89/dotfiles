@@ -100,11 +100,13 @@ init_shell()
     # Utility aliases
     if [[ -x $(which rg 2>/dev/null) ]] ; then
         alias cgr='rg -n -tc -tcpp -tobjc -tobjcpp'
+        alias ggr='rg -n -g \*.gn -g \*.gni'
         alias jgr='rg -n -tjava'
         alias pgr='rg -n -tpy'
         alias wgr='rg -n -thtml -txml -tcss -tjs'
     else
         alias cgr='grep -Irn --include=\*.{c,cc,cpp,h,hh,hpp,m,mm}'
+        alias ggr='grep -Irn --include=\*.{gn,gni}'
         alias jgr='grep -Irn --include=\*.{java,jsp}'
         alias pgr='grep -Irn --include=\*.{py}'
         alias wgr='grep -Irn --include=\*.{html,xml,css,js}'
