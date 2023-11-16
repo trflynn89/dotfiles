@@ -165,13 +165,24 @@ ladybird()
     fi
 
     local command="${1}"
+    local target="${2}"
 
-    ninja -C "${SERENITY_SOURCE_DIR}/Build" Ladybird
+    ninja -C "${SERENITY_SOURCE_DIR}/Build" ${target}
 
-    if [[ "${command}" == "run" ]] ; then
+    if [[ "${command}" != "run" ]] ; then
+        return
+    fi
+    if [[ -z "${target}" ]] ; then
+        echo "\n\033[33;1mPlease provide the target to run\033[0m"
+        return
+    fi
+
+    if [[ "${target}" == "Ladybird" ]] ; then
         # FIXME: SERENITY_SOURCE_DIR currently interferes with the GN build's ability to load resources.
         local ladybird="${SERENITY_SOURCE_DIR}/Build/Ladybird.app/Contents/MacOS/Ladybird"
-        env -u SERENITY_SOURCE_DIR "${ladybird}" "${@:2}"
+        env -u SERENITY_SOURCE_DIR "${ladybird}" "${@:3}"
+    else
+        "${SERENITY_SOURCE_DIR}/Build/bin/${target}" "${@:3}"
     fi
 }
 
