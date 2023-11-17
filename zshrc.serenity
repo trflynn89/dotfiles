@@ -168,6 +168,10 @@ ladybird()
     local target="${2}"
 
     ninja -C "${SERENITY_SOURCE_DIR}/Build" ${target}
+    if [[ $? -ne 0 ]] ; then
+        echo "\n\033[31;1mCould not build ${target}\033[0m"
+        return 1
+    fi
 
     if [[ "${command}" != "run" ]] ; then
         return
