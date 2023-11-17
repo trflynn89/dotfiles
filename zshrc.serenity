@@ -167,6 +167,10 @@ ladybird()
     local command="${1}"
     local target="${2}"
 
+    if [[ "${target}" == "ladybird" ]] ; then
+        target="Ladybird"
+    fi
+
     ninja -C "${SERENITY_SOURCE_DIR}/Build" ${target}
     if [[ $? -ne 0 ]] ; then
         echo "\n\033[31;1mCould not build ${target}\033[0m"
