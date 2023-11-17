@@ -186,9 +186,11 @@ ladybird()
     fi
 
     if [[ "${target}" == "Ladybird" ]] ; then
+        local ladybird="${SERENITY_SOURCE_DIR}/Build/Ladybird.app"
+        local tty="$(tty)"
+
         # FIXME: SERENITY_SOURCE_DIR currently interferes with the GN build's ability to load resources.
-        local ladybird="${SERENITY_SOURCE_DIR}/Build/Ladybird.app/Contents/MacOS/Ladybird"
-        env -u SERENITY_SOURCE_DIR "${ladybird}" "${@:3}"
+        env -u SERENITY_SOURCE_DIR open "${ladybird}" --wait-apps --stdout "${tty}" --stderr "${tty}" --args "${@:3}"
     else
         "${SERENITY_SOURCE_DIR}/Build/bin/${target}" "${@:3}"
     fi
