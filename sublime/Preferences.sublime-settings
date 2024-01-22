@@ -28,17 +28,11 @@
     "fold_buttons": false,
     "margin": 8,
 
-    // Disable git integration.
-    "mini_diff": false,
-    "show_git_status": false,
-
     // Highlight active indent guide.
     "indent_guide_options": [
         "draw_active",
         "draw_normal",
     ],
-
-    "remember_workspace": false,
 
     // Ignore these files in the GoTo Anything feature.
     "file_exclude_patterns": [
