@@ -63,6 +63,7 @@
         ".DS_Store",
     ],
     "folder_exclude_patterns": [
+        ".cache",
         ".git",
         ".hg",
         ".svn",
