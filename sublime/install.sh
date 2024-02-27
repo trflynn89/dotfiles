@@ -57,6 +57,7 @@ clone Packages
 clone Seti_UI
 clone sublime-copy-paths
 clone sublime-format
+clone sublime-insert-sequence
 
 git -C "${SUBLIME_DIR}/Packages" remote add upstream https://github.com/sublimehq/Packages.git
 
@@ -78,3 +79,4 @@ make_link "Seti_UI"
 
 make_link "sublime-copy-paths"
 make_link "sublime-format"
+make_link "sublime-insert-sequence"

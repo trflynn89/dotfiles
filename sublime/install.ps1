@@ -74,6 +74,7 @@ Clone Packages
 Clone Seti_UI
 Clone sublime-copy-paths
 Clone sublime-format
+Clone sublime-insert-sequence
 
 Make-Link "dotfiles\sublime\LSP.sublime-settings" "User\LSP.sublime-settings"
 Make-Link "dotfiles\sublime\LSP-clangd.sublime-settings" "User\LSP-clangd.sublime-settings"
@@ -93,3 +94,4 @@ Make-Link "Seti_UI"
 
 Make-Link "sublime-copy-paths"
 Make-Link "sublime-format"
+Make-Link "sublime-insert-sequence"
