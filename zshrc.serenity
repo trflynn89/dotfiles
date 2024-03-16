@@ -189,10 +189,7 @@ ladybird()
         local tty="$(tty)"
 
         trap - SIGINT
-
-        # FIXME: SERENITY_SOURCE_DIR currently interferes with the GN build's ability to load resources.
-        env -u SERENITY_SOURCE_DIR open "${ladybird}" --wait-apps --stdout "${tty}" --stderr "${tty}" --args "${@:3}" &
-
+        open "${ladybird}" --wait-apps --stdout "${tty}" --stderr "${tty}" --args "${@:3}" &
         trap "" SIGINT
         fg
 
