@@ -194,6 +194,8 @@ ladybird()
         fg
 
         pkill Ladybird 2>/dev/null
+    elif [[ "${target}" == "headless-browser" || "${target}" == "WebDriver" ]] ; then
+        "${SERENITY_SOURCE_DIR}/Build/Ladybird.app/Contents/MacOS/${target}" "${@:3}"
     else
         "${SERENITY_SOURCE_DIR}/Build/bin/${target}" "${@:3}"
     fi
