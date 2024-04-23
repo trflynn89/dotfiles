@@ -203,7 +203,7 @@
             1. Display Style: Line Chart
         1. Sensor Details
             1. Sensors
-                1. Total Usage: #5294e2
+                1. Total Usage: #00aaff
     1. Memory Usage
         1. Appearance
             1. Display Style: Line Chart
