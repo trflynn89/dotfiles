@@ -223,8 +223,8 @@ init_shell()
         alias sr='ladybird run'
     else
         export SERENITY_USING_GN=0
-        export CC=gcc
-        export CXX=g++
+        export CC=clang
+        export CXX=clang++
 
         alias si=initialize_serenity
         alias sb='serenity build'
