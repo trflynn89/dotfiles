@@ -62,8 +62,8 @@
     1. Application Style: Breeze
     1. Window Decorations: Arc Dark
         1. Configure Titlebar Buttons
-            1. Left icons: More actions, close, minimize, maximize
-            1. Right icons: On all desktops, help
+            1. Left icons: Close, minimize, maximize
+            1. Right icons: More actions, on all desktops, help
     1. Cursors: Nordic-cursors
 
 ## Window Management
@@ -178,6 +178,7 @@
 
 1. Left Widgets
     1. Applications Launcher
+        1. Icon: start-here
     1. Virtual Desktops
     1. Icons-only Task Manager
         1. Appearance
