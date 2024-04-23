@@ -192,12 +192,9 @@
     1. Digital Clock
         1. Appearance
             1. Information
-                1. Show date: Always beside time
+                1. Show date: Always below time
             1. Show seconds: Always
-            1. Date format: Custom
-                ```
-                ddd, MMM d ｜
-                ```
+            1. Date format: Long Date
     1. Spacer
 
 1. Right Widgets
