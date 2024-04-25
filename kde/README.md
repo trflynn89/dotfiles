@@ -9,7 +9,7 @@
 1. Enable full ffmpeg
 
     ```bash
-    sudo dnf swap ffmpeg-free ffmpeg --
+   sudo dnf swap ffmpeg-free ffmpeg --allowerasing
     ```
 
 1. Add Sublime Text configuration
