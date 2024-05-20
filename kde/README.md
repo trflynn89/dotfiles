@@ -6,10 +6,12 @@
     sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
     ```
 
-1. Enable full ffmpeg
+1. Enable full ffmpeg https://rpmfusion.org/Howto/Multimedia
 
     ```bash
-   sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+    sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+    sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
+    sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
     ```
 
 1. Add Sublime Text configuration
