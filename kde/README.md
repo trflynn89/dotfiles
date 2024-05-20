@@ -139,7 +139,6 @@
 
 1. Text interaction
     1. Copy options
-        1. Trim leading spaces
         1. Trim trailing spaces
 
 ## Tab Bar / Splitters
