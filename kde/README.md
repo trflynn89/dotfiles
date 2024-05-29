@@ -1,5 +1,7 @@
 # Terminal Installations
 
+## Fedora
+
 1. Enable RPM fusion
 
     ```bash
@@ -14,7 +16,7 @@
     sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
     ```
 
-1. Add Sublime Text configuration
+1. Add [Sublime Text](https://www.sublimetext.com/docs/linux_repositories.html#yum) configuration
 
     ```bash
     sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
@@ -26,7 +28,36 @@
     ```bash
     sudo dnf install -y arc-kde git python3 python3-pip ripgrep sublime-text vim zsh
     pip3 install ydiff
+    ```
 
+1. Install [Ubuntu Font Family](https://design.ubuntu.com/font)
+
+    ```bash
+    mkdir -p ~/.local/share/fonts
+    mv ubuntu-font-family-0.83 ~/.local/share/fonts
+    ```
+
+## Ubuntu
+
+1. Add [Sublime Text](https://www.sublimetext.com/docs/linux_repositories.html#apt) configuration
+
+    ```bash
+    wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null
+    echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+    ```
+
+1. Installations
+
+    ```bash
+    sudo apt install -y arc-kde curl git python3 python3-pip ripgrep sublime-text vim zsh
+    pip3 install --break-system-packages ydiff
+    ```
+
+## Common
+
+1. Installations
+
+    ```bash
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     ```
 
@@ -86,16 +117,6 @@
     1. After a period of inactivity: Do nothing
     1. Dim automatically: Uncheck
     1. Turn off screen: Uncheck
-
-# Ubuntu Fonts
-
-1. [Download the Ubuntu Font Family](https://design.ubuntu.com/font)
-1. Installation:
-
-    ```bash
-    mkdir -p ~/.local/share/fonts
-    mv ubuntu-font-family-0.83 ~/.local/share/fonts
-    ```
 
 # Konsole
 
