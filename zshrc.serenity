@@ -112,7 +112,21 @@ initialize_ladybird()
         path_add "${SERENITY_SOURCE_DIR}/Toolchain/Local/gn/bin"
     fi
 
-    gn gen "${SERENITY_SOURCE_DIR}/Build"
+    local host_os="$(uname -s)"
+    local args
+
+    if [[ "${host_os}" == "Linux" ]] ; then
+        args="${args} host_cc=\"clang\""
+        args="${args} host_cxx=\"clang++\""
+        args="${args} is_clang=true"
+        args="${args} use_lld=true"
+
+        args="${args} qt_install_headers=\"/usr/include/x86_64-linux-gnu/qt6/\""
+        args="${args} qt_install_lib=\"/usr/lib/x86_64-linux-gnu\""
+        args="${args} qt_install_libexec=\"/usr/lib/qt6/libexec/\""
+    fi
+
+    gn gen --args="${args}" "${SERENITY_SOURCE_DIR}/Build"
     create_lagom_clangd "Build"
 }
 
@@ -164,6 +178,7 @@ ladybird()
         return
     fi
 
+    local host_os="$(uname -s)"
     local command="${1}"
     local target="${2}"
 
@@ -184,21 +199,25 @@ ladybird()
         return
     fi
 
-    if [[ "${target}" == "Ladybird" ]] ; then
-        local ladybird="${SERENITY_SOURCE_DIR}/Build/Ladybird.app"
-        local tty="$(tty)"
+    if [[ "${host_os}" == "Darwin" ]] ; then
+        if [[ "${target}" == "Ladybird" ]] ; then
+            local ladybird="${SERENITY_SOURCE_DIR}/Build/Ladybird.app"
+            local tty="$(tty)"
 
-        trap - SIGINT
-        open "${ladybird}" --wait-apps --stdout "${tty}" --stderr "${tty}" --args "${@:3}" &
-        trap "" SIGINT
-        fg
+            trap - SIGINT
+            open "${ladybird}" --wait-apps --stdout "${tty}" --stderr "${tty}" --args "${@:3}" &
+            trap "" SIGINT
+            fg
 
-        pkill Ladybird 2>/dev/null
-    elif [[ "${target}" == "headless-browser" || "${target}" == "WebDriver" ]] ; then
-        "${SERENITY_SOURCE_DIR}/Build/Ladybird.app/Contents/MacOS/${target}" "${@:3}"
-    else
-        "${SERENITY_SOURCE_DIR}/Build/bin/${target}" "${@:3}"
+            pkill Ladybird 2>/dev/null
+            return
+        elif [[ "${target}" == "headless-browser" || "${target}" == "WebDriver" ]] ; then
+            "${SERENITY_SOURCE_DIR}/Build/Ladybird.app/Contents/MacOS/${target}" "${@:3}"
+            return
+        fi
     fi
+
+    "${SERENITY_SOURCE_DIR}/Build/bin/${target}" "${@:3}"
 }
 
 init_shell()
@@ -214,22 +233,12 @@ init_shell()
     export SERENITY_RAM_SIZE=2048M
     export SERENITY_ARCH=x86_64
 
-    if [[ "${host_os}" == "Darwin" ]] ; then
-        path_add "${SERENITY_SOURCE_DIR}/Toolchain/Local/gn/bin"
-        export SERENITY_USING_GN=1
+    path_add "${SERENITY_SOURCE_DIR}/Toolchain/Local/gn/bin"
+    export SERENITY_USING_GN=1
 
-        alias si=initialize_ladybird
-        alias sb='ladybird build'
-        alias sr='ladybird run'
-    else
-        export SERENITY_USING_GN=0
-        export CC=clang
-        export CXX=clang++
-
-        alias si=initialize_serenity
-        alias sb='serenity build'
-        alias sr='serenity run'
-    fi
+    alias si=initialize_ladybird
+    alias sb='ladybird build'
+    alias sr='ladybird run'
 }
 
 init_shell
