@@ -98,35 +98,40 @@ initialize_ladybird()
     if [[ ! -d "${SERENITY_SOURCE_DIR}" ]] ; then
         return
     fi
-    if [[ ${SERENITY_USING_GN} -ne 1 ]] ; then
-        return
-    fi
 
-    if [[ ! -x $(which gn 2>/dev/null) ]] ; then
-        "${SERENITY_SOURCE_DIR}/Toolchain/BuildGN.sh"
-        if [[ $? -ne 0 ]] ; then
-            echo "\n\033[31;1mCould not build GN\033[0m"
-            return 1
+    local cc="clang"
+    local cxx="clang++"
+
+    if [[ ${LADYBIRD_USING_GN} -eq 1 ]] ; then
+        if [[ ! -x $(which gn 2>/dev/null) ]] ; then
+            "${SERENITY_SOURCE_DIR}/Toolchain/BuildGN.sh"
+            if [[ $? -ne 0 ]] ; then
+                echo "\n\033[31;1mCould not build GN\033[0m"
+                return 1
+            fi
+
+            path_add "${SERENITY_SOURCE_DIR}/Toolchain/Local/gn/bin"
         fi
 
-        path_add "${SERENITY_SOURCE_DIR}/Toolchain/Local/gn/bin"
+        local host_os="$(uname -s)"
+        local args
+
+        if [[ "${host_os}" == "Linux" ]] ; then
+            args="${args} host_cc=\"${cc}\""
+            args="${args} host_cxx=\"${cxx}\""
+            args="${args} is_clang=true"
+            args="${args} use_lld=true"
+
+            args="${args} qt_install_headers=\"/usr/include/x86_64-linux-gnu/qt6/\""
+            args="${args} qt_install_lib=\"/usr/lib/x86_64-linux-gnu\""
+            args="${args} qt_install_libexec=\"/usr/lib/qt6/libexec/\""
+        fi
+
+        gn gen --args="${args}" "${SERENITY_SOURCE_DIR}/Build"
+    else
+        cmake -DCMAKE_C_COMPILER="${cc}" -DCMAKE_CXX_COMPILER="${cxx}" -G Ninja -S Ladybird -B Build
     fi
 
-    local host_os="$(uname -s)"
-    local args
-
-    if [[ "${host_os}" == "Linux" ]] ; then
-        args="${args} host_cc=\"clang\""
-        args="${args} host_cxx=\"clang++\""
-        args="${args} is_clang=true"
-        args="${args} use_lld=true"
-
-        args="${args} qt_install_headers=\"/usr/include/x86_64-linux-gnu/qt6/\""
-        args="${args} qt_install_lib=\"/usr/lib/x86_64-linux-gnu\""
-        args="${args} qt_install_libexec=\"/usr/lib/qt6/libexec/\""
-    fi
-
-    gn gen --args="${args}" "${SERENITY_SOURCE_DIR}/Build"
     create_lagom_clangd "Build"
 }
 
@@ -172,9 +177,6 @@ serenity()
 ladybird()
 {
     if [[ ! -d "${SERENITY_SOURCE_DIR}" ]] ; then
-        return
-    fi
-    if [[ ${SERENITY_USING_GN} -ne 1 ]] ; then
         return
     fi
 
@@ -233,10 +235,17 @@ init_shell()
     export SERENITY_RAM_SIZE=2048M
     export SERENITY_ARCH=x86_64
 
-    path_add "${SERENITY_SOURCE_DIR}/Toolchain/Local/gn/bin"
-    export SERENITY_USING_GN=1
+    if [[ "${host_os}" == "Darwin" ]] ; then
+        export LADYBIRD_USING_GN=1
+    else
+        export LADYBIRD_USING_GN=0
+    fi
 
-    alias si=initialize_ladybird
+    if [[ ${LADYBIRD_USING_GN} -eq 1 ]] ; then
+        path_add "${SERENITY_SOURCE_DIR}/Toolchain/Local/gn/bin"
+    fi
+
+    alias si='initialize_ladybird'
     alias sb='ladybird build'
     alias sr='ladybird run'
 }
