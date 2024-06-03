@@ -149,7 +149,8 @@ init_shell()
 
     alias ib='initialize_ladybird'
     alias bb='ladybird build'
-    alias br='ladybird run'
+    alias rb='ladybird run'
+    alias br='ladybird run Ladybird'
 }
 
 init_shell
