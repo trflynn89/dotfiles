@@ -1,0 +1,155 @@
+#!/usr/bin/env zsh
+
+# Utilities for working with Ladybird - https://github.com/LadybirdWebBrowser/ladybird
+
+create_ladybird_clangd()
+{
+    if [[ ! -d "${SERENITY_SOURCE_DIR}" ]] ; then
+        return
+    fi
+
+    cat <<EOF > "${SERENITY_SOURCE_DIR}/.clangd"
+CompileFlags:
+  CompilationDatabase: "Build"
+
+Diagnostics:
+  ClangTidy:
+    Remove:
+      - misc-const-correctness
+      - misc-no-recursion
+      - misc-use-anonymous-namespace
+      - performance-unnecessary-copy-initialization
+      - readability-function-cognitive-complexity
+EOF
+}
+
+initialize_ladybird()
+{
+    if [[ ! -d "${SERENITY_SOURCE_DIR}" ]] ; then
+        return
+    fi
+
+    local cc="clang"
+    local cxx="clang++"
+
+    if [[ ${LADYBIRD_USING_GN} -eq 1 ]] ; then
+        if [[ ! -x $(which gn 2>/dev/null) ]] ; then
+            "${SERENITY_SOURCE_DIR}/Toolchain/BuildGN.sh"
+            if [[ $? -ne 0 ]] ; then
+                echo "\n\033[31;1mCould not build GN\033[0m"
+                return 1
+            fi
+
+            path_add "${SERENITY_SOURCE_DIR}/Toolchain/Local/gn/bin"
+        fi
+
+        local host_os="$(uname -s)"
+        local args
+
+        if [[ "${host_os}" == "Linux" ]] ; then
+            args="${args} host_cc=\"${cc}\""
+            args="${args} host_cxx=\"${cxx}\""
+            args="${args} is_clang=true"
+            args="${args} use_lld=true"
+
+            args="${args} qt_install_headers=\"/usr/include/x86_64-linux-gnu/qt6/\""
+            args="${args} qt_install_lib=\"/usr/lib/x86_64-linux-gnu\""
+            args="${args} qt_install_libexec=\"/usr/lib/qt6/libexec/\""
+        fi
+
+        gn gen --args="${args}" "${SERENITY_SOURCE_DIR}/Build"
+    else
+        cmake -S Ladybird -B Build -G Ninja -DCMAKE_C_COMPILER="${cc}" -DCMAKE_CXX_COMPILER="${cxx}"
+    fi
+
+    create_ladybird_clangd
+}
+
+ladybird_sanitize()
+{
+    local flag
+
+    if [[ $# -eq 0 || "${1}" == "off" ]] ; then
+        flag="OFF"
+    else
+        flag="ON"
+    fi
+
+    cmake -S Ladybird -B Build -DENABLE_ADDRESS_SANITIZER="${flag}" -DENABLE_UNDEFINED_SANITIZER="${flag}"
+}
+
+ladybird()
+{
+    if [[ ! -d "${SERENITY_SOURCE_DIR}" ]] ; then
+        return
+    fi
+
+    local host_os="$(uname -s)"
+    local command="${1}"
+    local target="${2}"
+
+    if [[ "${target}" == "ladybird" ]] ; then
+        target="Ladybird"
+    fi
+
+    ninja -C "${SERENITY_SOURCE_DIR}/Build" ${target}
+    if [[ $? -ne 0 ]] ; then
+        return 1
+    fi
+
+    if [[ "${command}" != "run" ]] ; then
+        return
+    fi
+    if [[ -z "${target}" ]] ; then
+        echo "\n\033[33;1mPlease provide the target to run\033[0m"
+        return
+    fi
+
+    if [[ "${host_os}" == "Darwin" ]] ; then
+        if [[ "${target}" == "Ladybird" ]] ; then
+            local ladybird="${SERENITY_SOURCE_DIR}/Build/Ladybird.app"
+            local tty="$(tty)"
+
+            trap - SIGINT
+            open "${ladybird}" --wait-apps --stdout "${tty}" --stderr "${tty}" --args "${@:3}" &
+            trap "" SIGINT
+            fg
+
+            pkill Ladybird 2>/dev/null
+            return
+        elif [[ "${target}" == "headless-browser" || "${target}" == "WebDriver" ]] ; then
+            "${SERENITY_SOURCE_DIR}/Build/Ladybird.app/Contents/MacOS/${target}" "${@:3}"
+            return
+        fi
+    fi
+
+    "${SERENITY_SOURCE_DIR}/Build/bin/${target}" "${@:3}"
+}
+
+init_shell()
+{
+    local serenity_source_dir="${HOME}/workspace/ladybird"
+    local host_os="$(uname -s)"
+
+    if [[ ! -d "${serenity_source_dir}" ]] ; then
+        return
+    fi
+
+    export SERENITY_SOURCE_DIR="${serenity_source_dir}"
+
+    if [[ "${host_os}" == "Darwin" ]] ; then
+        export LADYBIRD_USING_GN=1
+    else
+        export LADYBIRD_USING_GN=0
+    fi
+
+    if [[ ${LADYBIRD_USING_GN} -eq 1 ]] ; then
+        path_add "${SERENITY_SOURCE_DIR}/Toolchain/Local/gn/bin"
+    fi
+
+    alias ib='initialize_ladybird'
+    alias bb='ladybird build'
+    alias br='ladybird run'
+}
+
+init_shell
