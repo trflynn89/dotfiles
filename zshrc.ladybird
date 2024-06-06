@@ -153,7 +153,7 @@ init_shell()
     export LADYBIRD_SOURCE_DIR="${ladybird_source_dir}"
 
     if [[ "${host_os}" == "Darwin" ]] ; then
-        export LADYBIRD_USING_GN=1
+        export LADYBIRD_USING_GN=0
     else
         export LADYBIRD_USING_GN=0
     fi
