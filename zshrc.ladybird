@@ -157,6 +157,8 @@ init_shell()
         export LADYBIRD_USING_GN=0
     fi
 
+    path_add "${LADYBIRD_SOURCE_DIR}/Toolchain/Local/vcpkg/bin"
+
     if [[ ${LADYBIRD_USING_GN} -eq 1 ]] ; then
         path_add "${LADYBIRD_SOURCE_DIR}/Toolchain/Local/gn/bin"
     fi
