@@ -10,7 +10,7 @@ create_ladybird_clangd()
 
     cat <<EOF > "${LADYBIRD_SOURCE_DIR}/.clangd"
 CompileFlags:
-  CompilationDatabase: "Build"
+  CompilationDatabase: "Build/ladybird"
 
 Diagnostics:
   ClangTidy:
@@ -58,8 +58,6 @@ initialize_ladybird()
         fi
 
         gn gen --args="${args}" "${LADYBIRD_SOURCE_DIR}/Build"
-    else
-        cmake -S Ladybird -B Build -G Ninja -DCMAKE_C_COMPILER="${cc}" -DCMAKE_CXX_COMPILER="${cxx}"
     fi
 
     create_ladybird_clangd
@@ -75,15 +73,11 @@ ladybird_sanitize()
         flag="ON"
     fi
 
-    cmake -S Ladybird -B Build -DENABLE_ADDRESS_SANITIZER="${flag}" -DENABLE_UNDEFINED_SANITIZER="${flag}"
+    cmake -B Build/ladybird -DENABLE_ADDRESS_SANITIZER="${flag}" -DENABLE_UNDEFINED_SANITIZER="${flag}"
 }
 
-ladybird()
+ladybird_gn()
 {
-    if [[ ! -d "${LADYBIRD_SOURCE_DIR}" ]] ; then
-        return
-    fi
-
     local host_os="$(uname -s)"
     local command="${1}"
     local target="${2}"
@@ -126,6 +120,26 @@ ladybird()
     "${LADYBIRD_SOURCE_DIR}/Build/bin/${target}" "${@:3}"
 }
 
+ladybird_cmake()
+{
+    local command="${1}"
+
+    "${LADYBIRD_SOURCE_DIR}/Meta/ladybird.sh" "${command}" "${@:2}"
+}
+
+ladybird()
+{
+    if [[ ! -d "${LADYBIRD_SOURCE_DIR}" ]] ; then
+        return
+    fi
+
+    if [[ ${LADYBIRD_USING_GN} -eq 1 ]] ; then
+        ladybird_gn ${@}
+    else
+        ladybird_cmake ${@}
+    fi
+}
+
 init_shell()
 {
     local ladybird_source_dir="${HOME}/workspace/ladybird"
@@ -150,7 +164,7 @@ init_shell()
     alias ib='initialize_ladybird'
     alias bb='ladybird build'
     alias rb='ladybird run'
-    alias br='ladybird run Ladybird'
+    alias br='ladybird run ladybird'
 }
 
 init_shell
