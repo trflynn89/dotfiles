@@ -158,6 +158,7 @@ init_shell()
         export LADYBIRD_USING_GN=0
     fi
 
+    export VCPKG_ROOT="${LADYBIRD_SOURCE_DIR}/Toolchain/Tarballs/vcpkg"
     path_add "${LADYBIRD_SOURCE_DIR}/Toolchain/Local/vcpkg/bin"
 
     if [[ ${LADYBIRD_USING_GN} -eq 1 ]] ; then
