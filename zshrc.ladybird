@@ -125,6 +125,10 @@ ladybird_cmake()
 {
     local command="${1}"
 
+    # Export the compiler to be used for vcpkg.
+    export CC="clang"
+    export CXX="clang++"
+
     "${LADYBIRD_SOURCE_DIR}/Meta/ladybird.sh" "${command}" "${@:2}"
 }
 
