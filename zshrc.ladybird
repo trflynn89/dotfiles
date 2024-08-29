@@ -24,16 +24,30 @@ Diagnostics:
 EOF
 }
 
+ladybird_compiler()
+{
+    local host_os="$(uname -s)"
+
+    # Export the compiler to be used for vcpkg.
+    if [[ "${host_os}" == "Linux" ]] ; then
+        export CC="clang"
+        export CXX="clang++"
+    else
+        local prefix="$(brew --prefix llvm@18)/bin"
+        export CC="${prefix}/clang"
+        export CXX="${prefix}/clang++"
+    fi
+}
+
 initialize_ladybird()
 {
     if [[ ! -d "${LADYBIRD_SOURCE_DIR}" ]] ; then
         return
     fi
 
-    local cc="clang"
-    local cxx="clang++"
-
     if [[ ${LADYBIRD_USING_GN} -eq 1 ]] ; then
+        ladybird_compiler
+
         if [[ ! -x $(which gn 2>/dev/null) ]] ; then
             "${LADYBIRD_SOURCE_DIR}/Toolchain/BuildGN.sh"
             if [[ $? -ne 0 ]] ; then
@@ -48,8 +62,8 @@ initialize_ladybird()
         local args
 
         if [[ "${host_os}" == "Linux" ]] ; then
-            args="${args} host_cc=\"${cc}\""
-            args="${args} host_cxx=\"${cxx}\""
+            args="${args} host_cc=\"${CC}\""
+            args="${args} host_cxx=\"${CXX}\""
             args="${args} is_clang=true"
             args="${args} use_lld=true"
 
@@ -125,9 +139,7 @@ ladybird_cmake()
 {
     local command="${1}"
 
-    # Export the compiler to be used for vcpkg.
-    export CC="clang"
-    export CXX="clang++"
+    ladybird_compiler
 
     "${LADYBIRD_SOURCE_DIR}/Meta/ladybird.sh" "${command}" "${@:2}"
 }
