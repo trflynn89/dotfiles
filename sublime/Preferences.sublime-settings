@@ -28,6 +28,9 @@
     "fold_buttons": false,
     "margin": 8,
 
+    // Do not use the find clipboard.
+    "use_find_clipboard": false,
+
     // Highlight active indent guide.
     "indent_guide_options": [
         "draw_active",
