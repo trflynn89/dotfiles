@@ -55,6 +55,20 @@ cls()
     printf '\033[2J\033[3J\033[1;1H'
 }
 
+# Use ffmpeg to convert a file to an MP4.
+convert_to_mp4()
+{
+    if [[ $# -lt 1 ]] ; then
+        echo "Usage: $0 <file to convert>"
+        return 1
+    fi
+
+    local input="${1}"
+    local output="${1%.*}.mp4"
+
+    ffmpeg -i "${input}" -c copy -movflags +faststart "${output}"
+}
+
 # Initialize everything needed on the shell
 init_shell()
 {
