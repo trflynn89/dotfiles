@@ -55,6 +55,15 @@
     pip3 install --break-system-packages ydiff
     ```
 
+1. Firefox
+
+    ```bash
+    sudo apt install -y flatpak
+
+    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    flatpak install flathub org.mozilla.firefox
+    ```
+
 ## Common
 
 1. Installations
