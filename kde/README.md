@@ -212,6 +212,8 @@
 1. Left Widgets
     1. Applications Launcher
         1. Icon: start-here
+        1. Show buttons for: Power and sessions
+            1. Show action button captions: Uncheck
     1. Virtual Desktops
     1. Icons-only Task Manager
         1. Appearance
