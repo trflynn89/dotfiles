@@ -78,7 +78,7 @@
 ### Mouse & Touchpad
 
 1. Mouse
-    1. Pointer speed: 0.60
+    1. Pointer speed: 0.40
     1. Scrolling speed: 5 / 15
 
 ### Keyboard
