@@ -27,6 +27,7 @@
 
     ```bash
     sudo dnf install -y arc-kde git python3 python3-pip ripgrep sublime-text vim zsh
+    pip3 install setuptools
     pip3 install ydiff
     ```
 
@@ -50,6 +51,7 @@
 
     ```bash
     sudo apt install -y arc-kde curl git python3 python3-pip ripgrep sublime-text vim zsh
+    pip3 install --break-system-packages setuptools
     pip3 install --break-system-packages ydiff
     ```
 
