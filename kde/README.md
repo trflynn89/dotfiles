@@ -131,6 +131,16 @@
 
 # Konsole
 
+1. Settings
+    1. Toolbars Shown
+        1. Main Toolbar: Check
+        1. Session Toolbar: Check
+    1. Toolbar Settings (right-click on each of the above toolbars)
+        1. Text Position
+            1. Icons Only
+    1. Configure Keyboard Shortcuts
+        1. Select All: Ctrl+Shift+A
+
 ## Profiles
 
 ### General
