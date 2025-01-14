@@ -156,10 +156,10 @@
     | Name       | Color   | Intense Color |
     | -----------|---------|---------------|
     | Foreground | #c3c7d1 |               |
-    | Background | #0d1117 |               |
+    | Background | #0d1016 |               |
     | Color 1    | #073641 | #129cbf       |
     | Color 2    | #eb606b | #eb606b       |
-    | Color 3    | #c3e88d | #c3e88d       |
+    | Color 3    | #a8ff60 | #56d364       |
     | Color 4    | #f7eb95 | #f7eb95       |
     | Color 5    | #a2e9f6 | #6fb4ff       |
     | Color 6    | #ff2490 | #6c71c3       |
