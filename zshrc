@@ -160,6 +160,13 @@ init_shell()
     unsetopt share_history
     setopt rm_star_silent
 
+    export HISTSIZE=10000000
+    export SAVEHIST=10000000
+    setopt hist_find_no_dups
+    setopt hist_ignore_all_dups
+    setopt hist_ignore_dups
+    setopt hist_save_no_dups
+
     # Import machine specific zshrc
     for zshrc in $(ls ~/.zshrc.* 2>/dev/null) ; do
         source $zshrc
