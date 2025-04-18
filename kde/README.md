@@ -166,7 +166,7 @@
     | Color 7    | #aeddff | #34e2e2       |
     | Color 8    | #ffffff | #ffffff       |
 
-    1. Font: Ubuntu Mono 11pt
+    1. Font: Ubuntu Mono 10pt
 
 1. Cursor
     1. Color: Custom cursor color
