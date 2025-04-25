@@ -26,17 +26,9 @@ EOF
 
 ladybird_compiler()
 {
-    local host_os="$(uname -s)"
-
     # Export the compiler to be used for vcpkg.
-    if [[ "${host_os}" == "Linux" ]] ; then
-        export CC="clang"
-        export CXX="clang++"
-    else
-        local prefix="$(brew --prefix llvm@18)/bin"
-        export CC="${prefix}/clang"
-        export CXX="${prefix}/clang++"
-    fi
+    export CC="clang"
+    export CXX="clang++"
 }
 
 initialize_ladybird()
