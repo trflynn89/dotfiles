@@ -37,6 +37,13 @@ The above installation also installs the following plugins:
 * [sublime-clang-format](https://github.com/trflynn89/sublime-clang-format)
 * [sublime-copy-paths](https://github.com/trflynn89/sublime-copy-paths)
 
+Manually installed plugins:
+
+* CMake
+* LSP
+* LSP-clangd
+* WebIDL
+
 ## Language Servers
 
 For projects wishing to use a language server, install the [LSP](https://github.com/sublimelsp/LSP)
