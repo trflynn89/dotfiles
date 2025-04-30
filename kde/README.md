@@ -220,11 +220,12 @@
 # Panel Widgets
 
 1. Left Widgets
-    1. Applications Launcher
+    1. Application Launcher
         1. Icon: start-here
         1. Show buttons for: Power and sessions
             1. Show action button captions: Uncheck
-    1. Virtual Desktops
+    1. Pager
+        1. Show window outlines: Uncheck
     1. Icons-only Task Manager
         1. Appearance
             1. Mark applications that play audio: Uncheck
@@ -233,14 +234,14 @@
                 1. From current desktop: Uncheck
 
 1. Middle Widgets
-    1. Spacer
+    1. Panel Spacer
     1. Digital Clock
         1. Appearance
             1. Information
                 1. Show date: Always below time
             1. Show seconds: Always
             1. Date format: Long Date
-    1. Spacer
+    1. Panel Spacer
 
 1. Right Widgets
     1. Total CPU Use
