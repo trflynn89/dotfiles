@@ -118,16 +118,16 @@
 ## Security & Privacy
 
 1. Screen Locking
-    1. Lock screen automatically: Uncheck both "After" options
+    1. Lock screen automatically: Never
 1. Recent Files
     1. Remember opened documents: Do not remember
 
 ## System
 
-1. Energy Saving
-    1. After a period of inactivity: Do nothing
-    1. Dim automatically: Uncheck
-    1. Turn off screen: Uncheck
+1. Power Management
+    1. When inactive: Do nothing
+    1. Dim automatically: Never
+    1. Turn off screen: Never
 
 # Konsole
 
