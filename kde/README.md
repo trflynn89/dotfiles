@@ -128,6 +128,9 @@
     1. When inactive: Do nothing
     1. Dim automatically: Never
     1. Turn off screen: Never
+1. Session
+    1. Desktop Session
+        1. On login, launch apps that were open: Start with an empty session
 
 # Konsole
 
