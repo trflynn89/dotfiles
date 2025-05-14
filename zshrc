@@ -139,12 +139,15 @@ init_shell()
     if [[ -x $(which ydiff 2>/dev/null) ]] ; then
         alias gd='ydiff -s -w0 --ignore-space-at-eol'
     fi
+
+    alias gds='gd --staged'
+    alias gbd='git branch -D'
+    alias gch='git checkout HEAD'
     alias gfp='git fetch origin --prune'
     alias gfm='git fetch origin $(git_main_branch):$(git_main_branch)'
     alias gfu='git fetch upstream $(git_main_branch):$(git_main_branch)'
-    alias gch='git checkout HEAD'
-    alias gbd='git branch -D'
-    alias gds='gd --staged'
+    alias gro='git rebase origin/$(git_main_branch) --autostash'
+    alias gru='git rebase upstream/$(git_main_branch) --autostash'
 
     # Set vim as the default system editor
     if [[ -x $(which vim 2>/dev/null) ]] ; then
