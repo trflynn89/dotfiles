@@ -125,14 +125,14 @@ init_shell()
         alias igr='rg -n -g \*.idl'
         alias jgr='rg -n -tjava'
         alias pgr='rg -n -tpy'
-        alias wgr='rg -n -thtml -txml -tcss -tjs'
+        alias wgr='rg -n -thtml -txml -tcss -tjs -tts'
     else
         alias cgr='grep -Irn --include=\*.{c,cc,cpp,h,hh,hpp,m,mm}'
         alias ggr='grep -Irn --include=\*.{gn,gni}'
         alias igr='grep -Irn --include=\*.{idl}'
         alias jgr='grep -Irn --include=\*.{java,jsp}'
         alias pgr='grep -Irn --include=\*.{py}'
-        alias wgr='grep -Irn --include=\*.{html,xml,css,js}'
+        alias wgr='grep -Irn --include=\*.{html,xml,css,js,ts}'
     fi
 
     # Git aliases
