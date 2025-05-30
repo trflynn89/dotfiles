@@ -133,7 +133,7 @@ ladybird_cmake()
 
     ladybird_compiler
 
-    "${LADYBIRD_SOURCE_DIR}/Meta/ladybird.sh" "${command}" "${@:2}"
+    "${LADYBIRD_SOURCE_DIR}/Meta/ladybird.py" "${command}" "${@:2}"
 }
 
 ladybird()
