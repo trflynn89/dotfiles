@@ -24,13 +24,6 @@ Diagnostics:
 EOF
 }
 
-ladybird_compiler()
-{
-    # Export the compiler to be used for vcpkg.
-    export CC="clang"
-    export CXX="clang++"
-}
-
 initialize_ladybird()
 {
     if [[ ! -d "${LADYBIRD_SOURCE_DIR}" ]] ; then
@@ -38,7 +31,8 @@ initialize_ladybird()
     fi
 
     if [[ ${LADYBIRD_USING_GN} -eq 1 ]] ; then
-        ladybird_compiler
+        export CC="clang"
+        export CXX="clang++"
 
         if [[ ! -x $(which gn 2>/dev/null) ]] ; then
             "${LADYBIRD_SOURCE_DIR}/Toolchain/BuildGN.sh"
@@ -131,9 +125,7 @@ ladybird_cmake()
 {
     local command="${1}"
 
-    ladybird_compiler
-
-    "${LADYBIRD_SOURCE_DIR}/Meta/ladybird.py" "${command}" "${@:2}"
+    "${LADYBIRD_SOURCE_DIR}/Meta/ladybird.py" "${command}" --cc "clang" --cxx "clang++" "${@:2}"
 }
 
 ladybird()
