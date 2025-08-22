@@ -5,6 +5,8 @@
 ```
 app.normandy.enabled = false
 beacon.enabled = false
+browser.ml.enable = false
+browser.ml.chat.enabled = false
 browser.safebrowsing.downloads.remote.enabled = false
 dom.event.clipboardevents.enabled = false
 extensions.pocket.enabled = false
