@@ -93,7 +93,7 @@
 ### Keyboard
 
 1. Shortcuts
-    1. KWin
+    1. Window Management
         1. Switch One Desktop Down: Ctrl+Alt+Down
         1. Switch One Desktop Up: Ctrl+Alt+Up
         1. Window One Desktop Down: Ctrl+Alt+Shift+Down
