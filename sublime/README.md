@@ -42,6 +42,8 @@ Manually installed plugins:
 * CMake
 * LSP
 * LSP-clangd
+* LSP-pyright
+* LSP-ruff
 * WebIDL
 
 ## Language Servers
