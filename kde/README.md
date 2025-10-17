@@ -231,7 +231,7 @@
         1. Show window outlines: Uncheck
     1. Icons-only Task Manager
         1. Appearance
-            1. Mark applications that play audio: Uncheck
+            1. Show an indicator when a task is playing audio: Uncheck
         1. Behavior
             1. Show only tasks
                 1. From current desktop: Uncheck
