@@ -191,6 +191,7 @@
 ## Tab Bar / Splitters
 
 1. Appearance
+    1. Show Search Tabs button: Never
     1. Miscellaneous
         1. Expand individual tab widths to full window
 
