@@ -164,7 +164,7 @@
     | Color 1    | #073641 | #129cbf       |
     | Color 2    | #eb606b | #eb606b       |
     | Color 3    | #a8ff60 | #56d364       |
-    | Color 4    | #f7eb95 | #f7eb95       |
+    | Color 4    | #f67400 | #f7eb95       |
     | Color 5    | #a2e9f6 | #6fb4ff       |
     | Color 6    | #ff2490 | #6c71c3       |
     | Color 7    | #aeddff | #34e2e2       |
