@@ -42,8 +42,8 @@ function gch { git checkout HEAD $args }
 
 function glo { git log --oneline --decorate $args }
 
-function gfa { git fetch --all --tags --prune --jobs=10 }
-function gfp { git fetch origin --prune }
+function gfa { git fetch --all --no-tags --prune --jobs=10 }
+function gfp { git fetch origin --no-tags --prune }
 
 function gfm { git fetch origin $(git-main-branch):$(git-main-branch) }
 function gfu { git fetch upstream $(git-main-branch):$(git-main-branch) }
