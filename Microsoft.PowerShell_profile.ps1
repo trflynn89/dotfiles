@@ -1,6 +1,3 @@
-# Set-ExecutionPolicy Unrestricted -Scope CurrentUser
-# Open with: subl $PROFILE
-
 function subl { & 'C:\Program Files\Sublime Text\subl.exe' $args }
 
 function git-current-branch {

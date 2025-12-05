@@ -18,7 +18,8 @@ Open Sublime Text once after installation - this will setup needed directories.
 
 ### Windows (PowerShell)
 
-PowerShell must be run as an administrator to create the symbolic links.
+> [!NOTE]
+> PowerShell must be run as an administrator to create the symbolic links.
 
 ```PowerShell
 Invoke-Command -ScriptBlock ([Scriptblock]::Create((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/trflynn89/dotfiles/main/sublime/install.ps1')))

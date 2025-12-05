@@ -22,6 +22,18 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/cu
 ln -sf $(pwd)/vimrc ~/.vimrc
 ```
 
+[Microsoft.PowerShell_profile.ps1](Microsoft.PowerShell_profile.ps1) - Powershell profile with zsh-like git aliases.
+
+> [!NOTE]
+> PowerShell must be run as an administrator to create the symbolic links.
+
+```PowerShell
+# Required to be able to execute PowerShell scripts.
+Set-ExecutionPolicy Unrestricted -Scope CurrentUser
+
+New-Item -ItemType SymbolicLink -Force -Path $PROFILE -Target "$ENV:UserProfile\Sublime\dotfiles\Microsoft.PowerShell_profile.ps1"
+```
+
 [keyboard_shortcuts.ahk](keyboard_shortcuts.ahk) - AutoHotkey script for:
 * Controlling volume with a mouse
 * Putting monitors to sleep
