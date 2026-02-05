@@ -45,8 +45,8 @@ function gfp { git fetch origin --no-tags --prune }
 function gfm { git fetch origin $(git-main-branch):$(git-main-branch) }
 function gfu { git fetch upstream $(git-main-branch):$(git-main-branch) }
 
-function gro { git rebase origin/$(git-main-branch) $args }
-function gru { git rebase upstream/$(git-main-branch) $args }
+function gro { git rebase origin/$(git-main-branch) --autostash $args }
+function gru { git rebase upstream/$(git-main-branch) --autostash $args }
 
 function gd { git diff $args }
 function gds { git diff --staged $args }
