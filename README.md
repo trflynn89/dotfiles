@@ -16,6 +16,12 @@ ln -sf $(pwd)/zshrc.p10k ~/.zshrc.p10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
 ```
 
+[config.ghostty](config.ghostty) - My [ghostty](https://ghostty.org/docs/config/reference) configuration.
+
+```bash
+ln -sf $(pwd)/config.ghostty ~/Library/Application\ Support/com.mitchellh.ghostty/config.ghostty
+```
+
 [vimrc](vimrc) - Taken from [A Good Vimrc](https://dougblack.io/words/a-good-vimrc.html).
 
 ```bash

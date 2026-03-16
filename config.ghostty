@@ -1,0 +1,35 @@
+confirm-close-surface = false
+quit-after-last-window-closed = true
+shell-integration-features = no-cursor
+
+font-size = 12
+font-family = Monaco
+
+cursor-style = block
+cursor-style-blink = false
+
+split-divider-color = #3b5070
+unfocused-split-opacity = 0.6
+
+background = #0d1016
+foreground = #c3c7d1
+selection-background = #3b5070
+selection-foreground = #ffffff
+cursor-color = #657b83
+cursor-text = #657b83
+palette = 0=#000000
+palette = 1=#eb606b
+palette = 2=#a8ff60
+palette = 3=#f67400
+palette = 4=#6ca4f8
+palette = 5=#ff2490
+palette = 6=#34e2e2
+palette = 7=#ffffff
+palette = 8=#4d4d4d
+palette = 9=#eb606b
+palette = 10=#56d364
+palette = 11=#e3b341
+palette = 12=#6fb4ff
+palette = 13=#6c71c3
+palette = 14=#34e2e2
+palette = 15=#ffffff
