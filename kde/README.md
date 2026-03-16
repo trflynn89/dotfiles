@@ -161,13 +161,13 @@
     | -----------|---------|---------------|
     | Foreground | #c3c7d1 |               |
     | Background | #0d1016 |               |
-    | Color 1    | #073641 | #129cbf       |
+    | Color 1    | #000000 | #4d4d4d       |
     | Color 2    | #eb606b | #eb606b       |
     | Color 3    | #a8ff60 | #56d364       |
-    | Color 4    | #f67400 | #f7eb95       |
-    | Color 5    | #a2e9f6 | #6fb4ff       |
+    | Color 4    | #f67400 | #e3b341       |
+    | Color 5    | #6ca4f8 | #6fb4ff       |
     | Color 6    | #ff2490 | #6c71c3       |
-    | Color 7    | #aeddff | #34e2e2       |
+    | Color 7    | #34e2e2 | #34e2e2       |
     | Color 8    | #ffffff | #ffffff       |
 
     1. Font: Ubuntu Mono 10pt
