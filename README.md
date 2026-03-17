@@ -21,8 +21,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/cu
 ### Linux
 
 ```bash
-ln -sf $(pwd)/config.ghostty "${XDG_CONFIG_HOME}/ghostty/config.ghostty"
-ln -sf $(pwd)/config.linux.ghostty "${XDG_CONFIG_HOME}/ghostty/config.linux.ghostty"
+ln -sf $(pwd)/config.ghostty ~/.config/ghostty/config.ghostty
+ln -sf $(pwd)/config.linux.ghostty ~/.config/ghostty/config.linux.ghostty
 ```
 
 ### macOS
