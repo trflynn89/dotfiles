@@ -25,7 +25,7 @@ Open Sublime Text once after installation - this will setup needed directories.
 Invoke-Command -ScriptBlock ([Scriptblock]::Create((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/trflynn89/dotfiles/main/sublime/install.ps1')))
 ```
 
-### Linux and OS X
+### Linux and macOS
 
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/trflynn89/dotfiles/main/sublime/install.sh)"

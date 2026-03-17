@@ -18,8 +18,18 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/cu
 
 [config.ghostty](config.ghostty) - My [ghostty](https://ghostty.org/docs/config/reference) configuration.
 
+### Linux
+
+```bash
+ln -sf $(pwd)/config.ghostty "${XDG_CONFIG_HOME}/ghostty/config.ghostty"
+ln -sf $(pwd)/config.linux.ghostty "${XDG_CONFIG_HOME}/ghostty/config.linux.ghostty"
+```
+
+### macOS
+
 ```bash
 ln -sf $(pwd)/config.ghostty ~/Library/Application\ Support/com.mitchellh.ghostty/config.ghostty
+ln -sf $(pwd)/config.macos.ghostty ~/Library/Application\ Support/com.mitchellh.ghostty/config.macos.ghostty
 ```
 
 [vimrc](vimrc) - Taken from [A Good Vimrc](https://dougblack.io/words/a-good-vimrc.html).

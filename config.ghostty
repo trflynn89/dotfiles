@@ -1,12 +1,12 @@
+# https://ghostty.org/docs/config/reference
+
 confirm-close-surface = false
 quit-after-last-window-closed = true
-shell-integration-features = no-cursor
-
-font-size = 12
-font-family = Monaco
 
 cursor-style = block
 cursor-style-blink = false
+
+shell-integration-features = no-cursor
 
 split-divider-color = #3b5070
 unfocused-split-opacity = 0.6
@@ -33,3 +33,6 @@ palette = 12=#6fb4ff
 palette = 13=#6c71c3
 palette = 14=#34e2e2
 palette = 15=#ffffff
+
+config-file = ?config.linux.ghostty
+config-file = ?config.macos.ghostty
