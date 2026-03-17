@@ -1,8 +1,8 @@
 font-size = 10
 font-family = Ubuntu Mono
 
-gtk-toolbar-style = flat
 gtk-titlebar-style = tabs
+window-theme = ghostty
 
 # https://github.com/ghostty-org/ghostty/discussions/7439
 window-decoration = client
