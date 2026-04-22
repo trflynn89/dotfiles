@@ -141,6 +141,9 @@ init_shell()
         export HOMEBREW_NO_ANALYTICS=1
     fi
 
+    # Disable GitHub CLI analytics
+    export GH_TELEMETRY=0
+
     # PATH changes
     path_add "$HOME/.local/bin"
     path_add "$HOME/.cargo/bin"
