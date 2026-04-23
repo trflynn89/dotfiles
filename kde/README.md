@@ -111,10 +111,14 @@
             1. Right icons: More actions, on all desktops, help
     1. Cursors: Nordic-cursors
 
-## Window Management
+## Apps & Windows
 
-1. Virtual Desktops
-    1. 3 rows, one desktop per row
+1. Window Management
+    1. Desktop Effects
+        1. Translucency: Uncheck
+        1. Wobbly Windows: Uncheck
+    1. Virtual Desktops
+        1. 3 rows, one desktop per row
 
 ## Security & Privacy
 
