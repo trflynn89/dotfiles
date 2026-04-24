@@ -73,7 +73,7 @@ convert_to_mp4()
 set_clang_version()
 {
     if [[ $# -lt 1 ]] ; then
-        echo "Usage: $0 <clang version>"
+        echo "Usage: $0 <clang version> [<clang-format version>]"
         return 1
     fi
 
@@ -82,7 +82,6 @@ set_clang_version()
     sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-${version} ${version}00 \
         --slave /usr/bin/clang++ clang++ /usr/bin/clang++-${version} \
         --slave /usr/bin/clang-cpp clang-cpp /usr/bin/clang-cpp-${version} \
-        --slave /usr/bin/clang-format clang-format /usr/bin/clang-format-${version} \
         --slave /usr/bin/clangd clangd /usr/bin/clangd-${version} \
         --slave /usr/bin/ld.lld ld.lld /usr/bin/ld.lld-${version} \
         --slave /usr/bin/lld lld /usr/bin/lld-${version} \
@@ -109,6 +108,12 @@ set_clang_version()
         --slave /usr/bin/llvm-strip llvm-strip /usr/bin/llvm-strip-${version} \
         --slave /usr/bin/llvm-symbolizer llvm-symbolizer /usr/bin/llvm-symbolizer-${version} \
         --slave /usr/bin/llvm-tblgen llvm-tblgen /usr/bin/llvm-tblgen-${version}
+
+    if [[ $# -eq 2 ]] ; then
+        version="${2}"
+    fi
+
+    sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-${version} ${version}00
 }
 
 # Initialize everything needed on the shell
