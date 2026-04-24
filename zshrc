@@ -72,6 +72,10 @@ convert_to_mp4()
 # Switch primary clang / llvm installation
 set_clang_version()
 {
+    if [[ ! -x $(which update-alternatives 2>/dev/null) ]] ; then
+        return
+    fi
+
     if [[ $# -lt 1 ]] ; then
         echo "Usage: $0 <clang version> [<clang-format version>]"
         return 1
