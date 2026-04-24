@@ -81,6 +81,12 @@
     git config --global credential.helper store
     ```
 
+1. Configure npm
+
+    ```bash
+    npm config set prefix '~/.local'
+    ```
+
 # System Settings
 
 ## Input & Output
