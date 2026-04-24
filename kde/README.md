@@ -1,3 +1,27 @@
+# Paritioning
+
+## Disk layout
+
+- `/dev/nvme0n1` - Kubuntu
+    - **1 MB** free space
+    - **300 MB** FAT32 EFI System Partition
+        - Shown in installer as "Windows boot manager"
+    - **900 GB** Kubuntu partition
+- `/dev/nvme1n1` - Windows
+
+## Installer
+
+1. Choose manual partitioning on `nvme0n1`
+1. Replace the Kubuntu partition
+    1. Delete the existing Kubuntu partition
+    1. Create a new parition in that freed space
+    1. Set mount point to `/`
+    1. Format as `ext4`
+1. Reuse the EFI partition
+    1. Set the existing partition as "EFI System Partition"
+    1. Set mount point to `/boot/efi`
+    1. Do **not** format
+
 # Terminal Installations
 
 ## Fedora
