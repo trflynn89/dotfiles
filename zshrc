@@ -175,6 +175,7 @@ init_shell()
         alias igr='rg -n -g \*.idl'
         alias jgr='rg -n -tjava'
         alias pgr='rg -n -tpy'
+        alias rgr='rg -n -trust'
         alias wgr='rg -n -thtml -txml -tcss -tjs -tts'
     else
         alias cgr='grep -Irn --include=\*.{c,cc,cpp,h,hh,hpp,m,mm}'
@@ -182,6 +183,7 @@ init_shell()
         alias igr='grep -Irn --include=\*.{idl}'
         alias jgr='grep -Irn --include=\*.{java,jsp}'
         alias pgr='grep -Irn --include=\*.{py}'
+        alias rgr='grep -Irn --include=\*.{rs}'
         alias wgr='grep -Irn --include=\*.{html,xml,css,js,ts}'
     fi
 
