@@ -15,4 +15,6 @@ media.navigator.enabled = false
 messaging-system.rsexperimentloader.enabled = false
 network.captive-portal-service.enabled = false
 network.http.referer.XOriginPolicy = 1
+sidebar.animation.expand-on-hover.delay-duration-ms = 100
+sidebar.animation.expand-on-hover.duration-ms = 100
 ```
