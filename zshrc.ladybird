@@ -2,76 +2,32 @@
 
 # Utilities for working with Ladybird - https://github.com/LadybirdWebBrowser/ladybird
 
-create_ladybird_clangd()
-{
-    if [[ ! -d "${LADYBIRD_SOURCE_DIR}" ]] ; then
-        return
-    fi
-
-    cat <<EOF > "${LADYBIRD_SOURCE_DIR}/.clangd"
-CompileFlags:
-  CompilationDatabase: "Build/ladybird"
-
-Diagnostics:
-  ClangTidy:
-    Remove:
-      - misc-const-correctness
-      - misc-no-recursion
-      - misc-use-anonymous-namespace
-      - performance-unnecessary-copy-initialization
-      - readability-function-cognitive-complexity
-      - readability-redundant-member-init
-EOF
-}
-
-initialize_ladybird()
-{
-    if [[ ! -d "${LADYBIRD_SOURCE_DIR}" ]] ; then
-        return
-    fi
-
-    create_ladybird_clangd
-}
-
-ladybird_sanitize()
-{
-    local flag
-
-    if [[ $# -eq 0 || "${1}" == "off" ]] ; then
-        flag="OFF"
-    else
-        flag="ON"
-    fi
-
-    cmake -B Build/release -DENABLE_ADDRESS_SANITIZER="${flag}" -DENABLE_UNDEFINED_SANITIZER="${flag}"
-}
-
 ladybird()
 {
-    if [[ ! -d "${LADYBIRD_SOURCE_DIR}" ]] ; then
-        return
+    local command="${1}"
+    local ladybird="./Meta/ladybird.py"
+
+    if [[ ! -f "${ladybird}" ]] ; then
+        local root=$(git rev-parse --show-toplevel 2>/dev/null)
+        ladybird="${root}/Meta/ladybird.py"
     fi
 
-    local command="${1}"
+    if [[ ! -f "${ladybird}" ]] ; then
+        echo "Unable to find ladybird.py"
+        return 1
+    fi
 
-    "${LADYBIRD_SOURCE_DIR}/Meta/ladybird.py" "${command}" --cc "clang" --cxx "clang++" "${@:2}"
+    "${ladybird}" "${command}" --cc "clang" --cxx "clang++" "${@:2}"
 }
 
 init_shell()
 {
     local ladybird_source_dir="${HOME}/workspace/ladybird"
-    local host_os="$(uname -s)"
 
-    if [[ ! -d "${ladybird_source_dir}" ]] ; then
-        return
+    if [[ -d "${ladybird_source_dir}" ]] ; then
+        export LADYBIRD_SOURCE_DIR="${ladybird_source_dir}"
     fi
 
-    export LADYBIRD_SOURCE_DIR="${ladybird_source_dir}"
-
-    export VCPKG_ROOT="${LADYBIRD_SOURCE_DIR}/Build/vcpkg"
-    path_add "${VCPKG_ROOT}"
-
-    alias ib='initialize_ladybird'
     alias bb='ladybird build'
     alias rb='ladybird run'
     alias br='ladybird run ladybird'
