@@ -43,8 +43,10 @@ Manually installed plugins:
 * CMake
 * LSP
 * LSP-clangd
+* LSP-file-watcher-rust
 * LSP-pyright
 * LSP-ruff
+* LSP-rust-analyzer
 * WebIDL
 
 ## Language Servers
@@ -71,9 +73,18 @@ Then modify the project's settings:
 ```json
 "settings": {
     "LSP": {
-        "clangd": {
+        "LSP-clangd": {
             "enabled": true,
         },
     },
 }
+```
+
+### Rust
+
+Install components needed for rust's LSP:
+
+```bash
+rustup component add rust-analyzer
+rustup component add rust-src
 ```
