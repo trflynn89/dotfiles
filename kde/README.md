@@ -89,7 +89,7 @@
 1. Installations
 
     ```bash
-    sudo apt install -y arc-kde curl git python3 python3-pip ripgrep sublime-text vim zsh
+    sudo apt install -y arc-kde curl git npm python3 python3-pip ripgrep sublime-text vim zsh
     pip3 install --break-system-packages setuptools
     pip3 install --break-system-packages ruff
     pip3 install --break-system-packages ydiff
