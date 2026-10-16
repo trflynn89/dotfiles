@@ -1,3 +1,18 @@
+# Flash USB drive
+
+1. Install fuse
+
+    ```bash
+    sudo apt install -y libfuse2t64
+    ```
+    
+1. Download and run [Etcher](https://github.com/balena-io/etcher/releases/tag/v1.18.11)
+
+    ```bash
+    chmod +x balenaEtcher-1.18.11-x64.AppImage
+    ./balenaEtcher-1.18.11-x64.AppImage
+    ```
+
 # Paritioning
 
 ## Disk layout
