@@ -12,6 +12,8 @@ shell-integration-features = no-cursor
 split-divider-color = #3b5070
 unfocused-split-opacity = 0.6
 
+scrollback-limit = 200000000
+
 background = #0d1016
 foreground = #c3c7d1
 selection-background = #3b5070
