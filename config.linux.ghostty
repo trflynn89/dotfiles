@@ -1,8 +1,8 @@
+# https://github.com/mkasberg/ghostty-ubuntu
+# In KDE: Configure Special Application Settings > Add property > No titlebar and frame > Remember
+
 font-size = 10
 font-family = Ubuntu Mono
 
 gtk-titlebar-style = tabs
 window-theme = ghostty
-
-# https://github.com/ghostty-org/ghostty/discussions/7439
-window-decoration = client
